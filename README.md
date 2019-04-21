@@ -39,11 +39,11 @@ Things you may want to cover:
 |profile|text||
 
 ### Association
--has_one :address
--has_one :payment
--has_many :evaluations
--has_many :points
--has_many :todos
+- has_one :address
+- has_one :payment
+- has_many :evaluations
+- has_many :points
+- has_many :todos
 
 
 ## addressテーブル
@@ -57,8 +57,8 @@ Things you may want to cover:
 |user_id|integer|foreign_key: true|
 
 ### Association
--has_one :prefecture
--belongs_to :user
+- has_one :prefecture
+- belongs_to :user
 
 ## paymentテーブル
 |Column|Type|Options|
@@ -70,7 +70,7 @@ Things you may want to cover:
 |user_id|integer|foreign_key: true|
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 ## evaluationテーブル
 |Column|Type|Options|
@@ -81,9 +81,9 @@ Things you may want to cover:
 |product_id|integer|foreign_key: true|
 
 ### Association
--belongs_to :user
--belings_to :product
--has_one :status
+- belongs_to :user
+- belings_to :product
+- has_one :status
 
 ## evaluation_statusテーブル
 |Column|Type|Options|
@@ -91,7 +91,7 @@ Things you may want to cover:
 |status|string|null: false|
 
 ### Association
-belongs_to :evaluation
+- belongs_to :evaluation
 
 ## pointテーブル
 |Column|Type|Options|
@@ -101,7 +101,7 @@ belongs_to :evaluation
 |user_id|integer|foreign_key: true|
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 ## ToDoテーブル
 
@@ -109,7 +109,7 @@ belongs_to :evaluation
 |user_id|integer|foreign_key: true|
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 ## prefectureテーブル
 |Column|Type|Options|
@@ -117,8 +117,8 @@ belongs_to :evaluation
 |name|string|null: false|
 
 ### Association
--belongs_to :address
--belongs_to :product
+- belongs_to :address
+- belongs_to :product
 
 ## productsテーブル
 |Column|Type|Options|
@@ -139,20 +139,20 @@ belongs_to :evaluation
 |user_id|integer|foreign_key: true |
 
 ### Association
--has_many :likes
--has_many :comments
--has_many :images
--has_one :category_first
--has_one :category_second
--has_one :category_third
--has_one :product_state
--has_one :burden
--has_one :prefecture
--has_one :how_long
--has_one :how_ship
--has_one :brand
--has_one :availability
--belongs_to :user
+- has_many :likes
+- has_many :comments
+- has_many :images
+- has_one :category_first
+- has_one :category_second
+- has_one :category_third
+- has_one :product_state
+- has_one :burden
+- has_one :prefecture
+- has_one :how_long
+- has_one :how_ship
+- has_one :brand
+- has_one :availability
+- belongs_to :user
 
 ## category_firstテーブル
 |Column|Type|Options|
@@ -160,7 +160,7 @@ belongs_to :evaluation
 |name|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 
@@ -170,7 +170,7 @@ belongs_to :evaluation
 |name|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 
@@ -180,7 +180,7 @@ belongs_to :evaluation
 |name|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 
@@ -190,7 +190,7 @@ belongs_to :evaluation
 |state|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 ## burdenテーブル
@@ -199,7 +199,7 @@ belongs_to :evaluation
 |burden|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 ## how_longテーブル
@@ -208,7 +208,7 @@ belongs_to :evaluation
 |how_long|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 ## how_shipテーブル
@@ -217,7 +217,7 @@ belongs_to :evaluation
 |how_ship|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 ## brandテーブル
@@ -226,7 +226,7 @@ belongs_to :evaluation
 |name|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 ## availabilityテーブル
@@ -235,7 +235,7 @@ belongs_to :evaluation
 |availability|string|null: false|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 ## likeテーブル
 |Column|Type|Options|
@@ -244,8 +244,8 @@ belongs_to :evaluation
 |user_id|integer|foreign_key: true |
 
 ### Association
--belongs_to :product
--belongs_to :user
+- belongs_to :product
+- belongs_to :user
 
 ## commentテーブル
 |Column|Type|Options|
@@ -255,8 +255,8 @@ belongs_to :evaluation
 |user_id|integer|foreign_key: true|
 
 ### Association
--belongs_to :product
--belongs_to :user
+- belongs_to :product
+- belongs_to :user
 
 ## imageテーブル
 |Column|Type|Options|
@@ -265,7 +265,7 @@ belongs_to :evaluation
 |product_id|integer|foreign_key:true|
 
 ### Association
--belongs_to :product
+- belongs_to :product
 
 
 
