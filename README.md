@@ -109,9 +109,9 @@ Things you may want to cover:
 |name|string|null: false, index: ture|
 |price|integer|null: false |
 |description|text||
-|category_first_id|integer|foreign_key: true |
-|category_second_id|integer|foreign_key: true |
-|category_third_id|integer|foreign_key: true |
+|category_ancestor_id|integer|foreign_key: true |
+|category_parent_id|integer|foreign_key: true |
+|category_child_id|integer|foreign_key: true |
 |product_state|string||
 |burden_id|integer|foreign_key: true|
 |size_id|integer|foreign_key: true|
@@ -133,7 +133,7 @@ Things you may want to cover:
 - has_one :brand
 - belongs_to :user
 
-## category_firstテーブル
+## category_ancestorテーブル
 |Column|Type|Options|
 |---------|-----|---------|
 |name|string|null: false|
@@ -142,8 +142,7 @@ Things you may want to cover:
 - belongs_to :product
 
 
-
-## category_secondテーブル
+## category_parentテーブル
 |Column|Type|Options|
 |---------|-----|---------|
 |name|string|null: false|
@@ -152,7 +151,7 @@ Things you may want to cover:
 - belongs_to :product
 
 
-## category_thirdテーブル
+## category_childテーブル
 |Column|Type|Options|
 |---------|-----|---------|
 |name|string|null: false|
