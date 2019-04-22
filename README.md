@@ -136,7 +136,7 @@ Things you may want to cover:
 |how_long|string||
 |how_ship|string||
 |brand_id|integer|foreign_key: true|
-|availability_id|integer|foreign_key: true|
+|availability|string||
 |user_id|integer|foreign_key: true|
 
 ### Association
@@ -150,7 +150,6 @@ Things you may want to cover:
 - has_one :burden
 - has_one :prefecture
 - has_one :brand
-- has_one :availability
 - belongs_to :user
 
 ## category_firstテーブル
@@ -207,14 +206,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :product
 
-
-## availabilityテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|availability|string|null: false|
-
-### Association
-- belongs_to :product
 
 ## likeテーブル
 |Column|Type|Options|
