@@ -62,7 +62,7 @@ Things you may want to cover:
 ## cardsテーブル
 |Column|Type|Options|
 |---------|-----|---------|
-|card_number|string|null: false |
+|number|string|null: false |
 |valid_month|string|null: false |
 |valid_year|string|null: false |
 |security_number|string|null: false |
