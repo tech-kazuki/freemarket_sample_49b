@@ -40,7 +40,7 @@ Things you may want to cover:
 
 ### Association
 - has_one :address
-- has_one :payment
+- has_one :card
 - has_many :evaluations
 - has_many :points
 - has_many :todos
@@ -60,7 +60,7 @@ Things you may want to cover:
 - has_one :prefecture
 - belongs_to :user
 
-## paymentテーブル
+## cardsテーブル
 |Column|Type|Options|
 |---------|-----|---------|
 |card_number|string|null: false |
@@ -131,12 +131,13 @@ Things you may want to cover:
 |category_third_id|integer|foreign_key: true |
 |product_state_id|integer|foreign_key: true |
 |burden_id|integer|foreign_key: true|
+|size_id|integer|foreign_key: true|
 |prefecture_id|integer|null: false, foreign_key: true|
-|how_long_id|integer|foreign_key: true |
-|how_ship_id|integer|foreign_key: true |
-|brand_id|integer|foreign_key: true |
-|availability_id|integer|foreign_key: true |
-|user_id|integer|foreign_key: true |
+|how_long|string||
+|how_ship|string||
+|brand_id|integer|foreign_key: true|
+|availability_id|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
 
 ### Association
 - has_many :likes
@@ -173,7 +174,6 @@ Things you may want to cover:
 - belongs_to :product
 
 
-
 ## category_thirdテーブル
 |Column|Type|Options|
 |---------|-----|---------|
@@ -181,7 +181,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :product
-
 
 
 ## product_stateテーブル
@@ -197,24 +196,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |---------|-----|---------|
 |burden|string|null: false|
-
-### Association
-- belongs_to :product
-
-
-## how_longテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|how_long|string|null: false|
-
-### Association
-- belongs_to :product
-
-
-## how_shipテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|how_ship|string|null: false|
 
 ### Association
 - belongs_to :product
