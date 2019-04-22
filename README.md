@@ -109,9 +109,7 @@ Things you may want to cover:
 |name|string|null: false, index: ture|
 |price|integer|null: false |
 |description|text||
-|category_ancestor_id|integer|foreign_key: true |
-|category_parent_id|integer|foreign_key: true |
-|category_child_id|integer|foreign_key: true |
+|category_id|integer|foreign_key: true |
 |product_state|string||
 |burden_id|integer|foreign_key: true|
 |size_id|integer|foreign_key: true|
@@ -126,17 +124,16 @@ Things you may want to cover:
 - has_many :likes
 - has_many :comments
 - has_many :images
-- has_one :category_ancestor
-- has_one :category_parent
-- has_one :category_child
+- has_one :category
 - has_one :burden
 - has_one :brand
 - belongs_to :user
 
-## category_ancestorテーブル
+## categorysテーブル
 |Column|Type|Options|
 |---------|-----|---------|
 |name|string|null: false|
+|ancestry|string||
 
 ### Association
 - belongs_to :product
