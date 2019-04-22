@@ -149,8 +149,6 @@ Things you may want to cover:
 - has_one :product_state
 - has_one :burden
 - has_one :prefecture
-- has_one :how_long
-- has_one :how_ship
 - has_one :brand
 - has_one :availability
 - belongs_to :user
