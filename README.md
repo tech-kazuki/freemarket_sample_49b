@@ -74,7 +74,7 @@ Things you may want to cover:
 ## evaluationテーブル
 |Column|Type|Options|
 |---------|-----|---------|
-|evaluation_status_id|integer|foreign_key: true|
+|evaluation_status|string||
 |comment|text||
 |user_id|integer|foreign_key: true|
 |product_id|integer|foreign_key: true|
@@ -82,15 +82,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belings_to :product
-- has_one :status
 
-## evaluation_statusテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|status|string|null: false|
-
-### Association
-- belongs_to :evaluation
 
 ## pointテーブル
 |Column|Type|Options|
@@ -120,7 +112,7 @@ Things you may want to cover:
 |category_first_id|integer|foreign_key: true |
 |category_second_id|integer|foreign_key: true |
 |category_third_id|integer|foreign_key: true |
-|product_state_id|integer|foreign_key: true |
+|product_state|string||
 |burden_id|integer|foreign_key: true|
 |size_id|integer|foreign_key: true|
 |prefecture|string|null: false|
@@ -137,7 +129,6 @@ Things you may want to cover:
 - has_one :category_first
 - has_one :category_second
 - has_one :category_third
-- has_one :product_state
 - has_one :burden
 - has_one :brand
 - belongs_to :user
@@ -165,15 +156,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |---------|-----|---------|
 |name|string|null: false|
-
-### Association
-- belongs_to :product
-
-
-## product_stateテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|state|string|null: false|
 
 ### Association
 - belongs_to :product
