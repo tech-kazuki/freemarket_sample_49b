@@ -126,9 +126,9 @@ Things you may want to cover:
 - has_many :likes
 - has_many :comments
 - has_many :images
-- has_one :category_first
-- has_one :category_second
-- has_one :category_third
+- has_one :category_ancestor
+- has_one :category_parent
+- has_one :category_child
 - has_one :burden
 - has_one :brand
 - belongs_to :user
