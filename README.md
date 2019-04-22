@@ -50,14 +50,13 @@ Things you may want to cover:
 |Column|Type|Options|
 |---------|-----|---------|
 |postal_code|string|null: false |
-|prefecture_id|integer|null: false, foreign_key: true|
+|prefecture|string|null: false, foreign_key: true|
 |city|string|null: false |
 |building|string||
 |phone_number|string||
 |user_id|integer|foreign_key: true|
 
 ### Association
-- has_one :prefecture
 - belongs_to :user
 
 ## cardsテーブル
@@ -111,14 +110,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## prefectureテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|name|string|null: false|
-
-### Association
-- belongs_to :address
-- belongs_to :product
 
 ## productsテーブル
 |Column|Type|Options|
@@ -132,7 +123,7 @@ Things you may want to cover:
 |product_state_id|integer|foreign_key: true |
 |burden_id|integer|foreign_key: true|
 |size_id|integer|foreign_key: true|
-|prefecture_id|integer|null: false, foreign_key: true|
+|prefecture|string|null: false|
 |how_long|string||
 |how_ship|string||
 |brand_id|integer|foreign_key: true|
@@ -148,7 +139,6 @@ Things you may want to cover:
 - has_one :category_third
 - has_one :product_state
 - has_one :burden
-- has_one :prefecture
 - has_one :brand
 - belongs_to :user
 
