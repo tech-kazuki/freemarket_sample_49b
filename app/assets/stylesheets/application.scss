@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+ @import 'config/reset';
+ @import 'config/swiper.min';
+ @import 'modules/products/index';
