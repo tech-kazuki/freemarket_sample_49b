@@ -8,7 +8,7 @@
       </h1>
       <form class="header__top__form">
         <input type="search" value placeholder="何かお探しですか？" class="header__top__form__search">
-        <i class="fas fa-search my-search"></i>
+        <i class="fas fa-search header__top__form__icon"></i>
       </form>
     </div>
     <div class="header__bottom">
@@ -19,6 +19,7 @@
               <span>カテゴリーから探す</span>
           </a>
         </h2>
+        <%# ↓renderで処理する %>
         <div class="accordion_list">
           <ul>
             <li>中身だよ！</li>
@@ -80,19 +81,19 @@
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
 </div>
-
+<%# ↓renderで処理する %>
 <section class="container">
   <h2 class="container__head">ピックアップカテゴリー</h2>
   <section class="container__items">
     <h3>
-      <a href="" class="container__items--link">レディース新着アイテム</a>
+      <a href="" class="container__items__link">レディース新着アイテム</a>
     </h3>
     <div class="container__items__content">
 
-      <section class="container__items__box">
+      <section class="container__items__content__box">
         <a href="">
           <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
-          <div class="container__items__box__body">
+          <div class="container__items__content__box__body">
             <h3>タイトル</h3>
             <div>
               <div class="price">1,200</div>
@@ -102,10 +103,10 @@
         </a>
       </section>
 
-      <section class="container__items__box">
+      <section class="container__items__content__box">
         <a href="">
           <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
-          <div class="container__items__box__body">
+          <div class="container__items__content__box__body">
             <h3>タイトル</h3>
             <div>
               <div class="price">¥1,200</div>
@@ -123,14 +124,14 @@
     <h2 class="container__head">ピックアップブランド</h2>
     <section class="container__items">
       <h3>
-        <a href="" class="container__items--link">シャネル新着アイテム</a>
+        <a href="" class="container__items__link">シャネル新着アイテム</a>
       </h3>
       <div class="container__items__content">
 
-        <section class="container__items__box">
+        <section class="container__items__content__box">
           <a href="">
             <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
-            <div class="container__items__box__body">
+            <div class="container__items__content__box__body">
               <h3>タイトル</h3>
               <div>
                 <div class="price">1,200</div>
@@ -140,10 +141,10 @@
           </a>
         </section>
 
-        <section class="container__items__box">
+        <section class="container__items__content__box">
           <a href="">
             <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
-            <div class="container__items__box__body">
+            <div class="container__items__content__box__body">
               <h3>タイトル</h3>
               <div>
                 <div class="price">¥1,200</div>
