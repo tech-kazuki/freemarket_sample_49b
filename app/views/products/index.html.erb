@@ -35,12 +35,13 @@
         </h2>
       </div>
       <div class="header__bottom__right">
-          <a href="" class="header__bottom__right__link">
-              <span class="span_right">ログイン</span>
-          </a>
-          <a href="" class="header__bottom__right__link">
-              <span class="span_right">新規会員</span>
-          </a>
+        <a href="" class="header__bottom__right__link">
+            <span class="span_right">ログイン</span>
+        </a>
+        <%= link_to '新規会員', new_user_registration_path, class: 'header__bottom__right__link' %>
+        <a href="" class="header__bottom__right__link">
+            <span class="span_right">新規会員</span>
+        </a>
         <a href="" class="header__bottom__right__link">
             <i class="far fa-bell header__bottom__right__icon"></i>
             <span class="span_right">お知らせ</span>
@@ -158,6 +159,6 @@
     </section>
   </section>
 
-<footer>
+<footer class="product_footer">
   <%= image_tag "4707dcfb8a2ec063cff172a0ba8cef4b.jpg" %>
 </footer>
