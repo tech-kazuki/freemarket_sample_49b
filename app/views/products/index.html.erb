@@ -1,1 +1,163 @@
-hello world
+<header class="header">
+  <div class="header__inner">
+    <div class="header__top">
+      <h1>
+        <a href="" class="header__top__image">
+          <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4093625870" class="header_title" width="134" height="36">
+        </a>
+      </h1>
+      <form class="header__top__form">
+        <input type="search" value placeholder="何かお探しですか？" class="header__top__form__search">
+        <i class="fas fa-search header__top__form__icon"></i>
+      </form>
+    </div>
+    <div class="header__bottom">
+      <div class="header__bottom__left">
+        <h2>
+          <a href="" class="header__bottom__left__link">
+              <i class="fas fa-list header__bottom__left__icon"></i>
+              <span>カテゴリーから探す</span>
+          </a>
+        </h2>
+        <%# ↓renderで処理する %>
+        <div class="accordion_list">
+          <ul>
+            <li>中身だよ！</li>
+            <li>中身だよ！</li>
+            <li>中身だよ！</li>
+          </ul>
+        </div>
+        <h2>
+          <a href="" class="header__bottom__left__link">
+            <i class="fas fa-tags header__bottom__left__icon"></i>
+            <span>ブランドから探す</span>
+          </a>
+        </h2>
+      </div>
+      <div class="header__bottom__right">
+          <a href="" class="header__bottom__right__link">
+              <span class="span_right">ログイン</span>
+          </a>
+          <a href="" class="header__bottom__right__link">
+              <span class="span_right">新規会員</span>
+          </a>
+        <a href="" class="header__bottom__right__link">
+            <i class="far fa-bell header__bottom__right__icon"></i>
+            <span class="span_right">お知らせ</span>
+        </a>
+        <a href="" class="header__bottom__right__link">
+            <i class="fas fa-check header__bottom__right__icon"></i>
+            <span class="span_right">やることリスト</span>
+        </a>
+        <a href="" class="header__bottom__right__link">
+          <img src="" class="avatar">
+          <span class="span_right">マイページ</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="icon">
+  <div class="icon__title">出品</div>
+  <i class="fas fa-camera fa-4x icon__camera"></i>
+</div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <%= image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1' %>
+      </div>
+      <div class="swiper-slide">
+        <%= image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1' %>
+      </div>
+      <div class="swiper-slide">
+        <%= image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1' %>
+      </div>
+      <div class="swiper-slide">
+        <%= image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1' %>
+      </div>
+  </div>
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+<%# ↓renderで処理する %>
+<section class="container">
+  <h2 class="container__head">ピックアップカテゴリー</h2>
+  <section class="container__items">
+    <h3>
+      <a href="" class="container__items__link">レディース新着アイテム</a>
+    </h3>
+    <div class="container__items__content">
+
+      <section class="container__items__content__box">
+        <a href="">
+          <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
+          <div class="container__items__content__box__body">
+            <h3>タイトル</h3>
+            <div>
+              <div class="price">1,200</div>
+            </div>
+          </div>
+          <p>(税込)</p>
+        </a>
+      </section>
+
+      <section class="container__items__content__box">
+        <a href="">
+          <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
+          <div class="container__items__content__box__body">
+            <h3>タイトル</h3>
+            <div>
+              <div class="price">¥1,200</div>
+            </div>
+          </div>
+          <p>(税込)</p>
+        </a>
+      </section>
+
+    </div>
+  </section>
+</section>
+
+<section class="container">
+    <h2 class="container__head">ピックアップブランド</h2>
+    <section class="container__items">
+      <h3>
+        <a href="" class="container__items__link">シャネル新着アイテム</a>
+      </h3>
+      <div class="container__items__content">
+
+        <section class="container__items__content__box">
+          <a href="">
+            <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
+            <div class="container__items__content__box__body">
+              <h3>タイトル</h3>
+              <div>
+                <div class="price">1,200</div>
+              </div>
+            </div>
+            <p>(税込)</p>
+          </a>
+        </section>
+
+        <section class="container__items__content__box">
+          <a href="">
+            <%= image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220' %>
+            <div class="container__items__content__box__body">
+              <h3>タイトル</h3>
+              <div>
+                <div class="price">¥1,200</div>
+              </div>
+            </div>
+            <p>(税込)</p>
+          </a>
+        </section>
+
+      </div>
+    </section>
+  </section>
+
+<footer>
+  <%= image_tag "4707dcfb8a2ec063cff172a0ba8cef4b.jpg" %>
+</footer>
