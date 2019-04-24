@@ -58,6 +58,29 @@
         padding: 0 10px;
         text-decoration: none;
         color: #000;
+        &--login {
+          background-color: #ea352d;
+          border-radius: 5px;
+          padding: 0 10px;
+          color: #fff;
+          line-height: 30px;
+          height: 30px;
+          margin: 0 5px;
+        }
+        &--sign_up {
+          border: 1px solid #0099e8;
+          border-radius: 5px;
+          padding: 0 10px;
+          color: #0099e8;
+          line-height: 30px;
+          height: 30px;
+          margin: 0 5px;
+        }
+        &--sign_up:hover {
+          background-color: #0099e8;
+          color: #fff;
+          transition: 0.4s;
+        }
       }
       &__icon {
         color: #ccc;

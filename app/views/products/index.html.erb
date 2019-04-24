@@ -29,25 +29,22 @@
       </div>
       <div class="header__bottom__right">
         <%= link_to 'ログアウト', destroy_user_session_path(current_user.id),{method: :delete, class: 'header__bottom__right__link'} if user_signed_in?%>
-        <a href="" class="header__bottom__right__link">
-            <span class="span_right">ログイン</span>
-        </a>
-        <%= link_to '新規会員', new_user_registration_path, class: 'header__bottom__right__link' %>
-        <a href="" class="header__bottom__right__link">
-            <span class="span_right">新規会員</span>
-        </a>
-        <a href="" class="header__bottom__right__link">
-            <i class="far fa-bell header__bottom__right__icon"></i>
-            <span class="span_right">お知らせ</span>
-        </a>
-        <a href="" class="header__bottom__right__link">
-            <i class="fas fa-check header__bottom__right__icon"></i>
-            <span class="span_right">やることリスト</span>
-        </a>
-        <a href="" class="header__bottom__right__link">
-          <img src="" class="avatar">
-          <span class="span_right">マイページ</span>
-        </a>
+        <%= link_to 'ログイン', '' ,class: 'header__bottom__right__link--login' unless user_signed_in? %>
+        <%= link_to '新規会員登録', new_user_registration_path, class: 'header__bottom__right__link--sign_up' unless user_signed_in? %>
+        <% if user_signed_in? %>
+          <a href="" class="header__bottom__right__link">
+              <i class="far fa-bell header__bottom__right__icon"></i>
+              <span class="span_right">お知らせ</span>
+          </a>
+          <a href="" class="header__bottom__right__link">
+              <i class="fas fa-check header__bottom__right__icon"></i>
+              <span class="span_right">やることリスト</span>
+          </a>
+          <a href="" class="header__bottom__right__link">
+            <img src="" class="avatar">
+            <span class="span_right">マイページ</span>
+          </a>
+        <% end %>
       </div>
     </div>
   </div>
