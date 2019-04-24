@@ -1,5 +1,7 @@
+@import 'config/color';
+
 .header {
-  background-color: #fff
+  background-color: $baseColor;
 }
 
 .header__inner {
@@ -52,7 +54,11 @@
         text-decoration: none;
         color: #000;
         &__icon {
-          color: #ea352d;
+          color: $mercariRed;
+        }
+        &__span {
+          font-size: 14px;
+          font-weight: bold;
         }
       }
     }
@@ -63,10 +69,10 @@
         text-decoration: none;
         color: #000;
         &--login {
-          background-color: #ea352d;
+          background-color: $mercariRed;
           border-radius: 5px;
           padding: 0 10px;
-          color: #fff;
+          color: $baseColor;
           line-height: 30px;
           height: 30px;
           margin: 0 5px;
@@ -82,8 +88,12 @@
         }
         &--sign_up:hover {
           background-color: #0099e8;
-          color: #fff;
+          color: $baseColor;
           transition: 0.4s;
+        }
+        .avatar {
+          width: 15px;
+          height: 15px;
         }
       }
       &__icon {

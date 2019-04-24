@@ -1,24 +1,6 @@
 @import 'config/color';
 
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-span {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.avatar {
-  width: 15px;
-  height: 15px;
-}
-.span_right {
-  font-weight: normal;
-}
-
-.icon {
+.floating_btn {
   display: block;
   width: 160px;
   height: 160px;
