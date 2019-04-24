@@ -41,7 +41,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-    padding-bottom: 10px;
     &__left {
       display: flex;
       &__link {
@@ -73,7 +72,7 @@
 }
 
 .header h2 {
-  height: 20px;
+  height: 40px;
 }
 
 a {

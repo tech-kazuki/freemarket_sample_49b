@@ -19,11 +19,11 @@ $(document).on('turbolinks:load', function(){
     list.style.display = 'none';
     }
   };
-  
+
   for (i = 0; i < 3; i++ ) {
     first_list[i].addEventListener('mouseover', openList(second_lists[i]), false);
     first_list[i].addEventListener('mouseleave', closeList(second_lists[i]), false);
-    };
+  };
 
   for (i = 0; i < 9; i++ ) {
     second_list[i].addEventListener('mouseover', openList(third_lists[i]), false);
@@ -34,4 +34,23 @@ $(document).on('turbolinks:load', function(){
     $('.accordion_list-1').css('display', 'none');
   });
 
+  $('.first_list_box').on('mouseover', function() {
+    $(this).css('background-color', '#ea352d');
+    $(this).children('.top_links').css('color', '#fff');
+  }).on('mouseout', function(){
+    $(this).css('background-color', '#fff');
+    $(this).children('.top_links').css('color', '#000');
+  })
+
+  $('.second_list_box').on('mouseover', function() {
+    $(this).css('background-color', '#f0f0f0');
+  }).on('mouseout', function(){
+    $(this).css('background-color', '#fff');
+  })
+
+  $('.more_links').on('mouseover', function() {
+    $(this).css('background-color', '#f0f0f0');
+  }).on('mouseout', function(){
+    $(this).css('background-color', '#fff');
+  })
 });
