@@ -1,3 +1,5 @@
+@import 'config/color';
+
 .registration_header {
   display: flex;
   justify-content: center;
@@ -7,7 +9,7 @@
 .devise-contents {
   width: 700px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: $baseColor;
   &__title {
     font-size: 24px;
     padding: 24px 8px;
@@ -27,11 +29,11 @@
           font-weight: 600;
         }
         span {
-          background: #ea352d;
+          background: $mercariRed;
           margin: 0 0 0 8px;
           padding: 2px 4px;
           border-radius: 2px;
-          color: #fff;
+          color: $baseColor;
           font-size: 12px;
           vertical-align: top;
         }
@@ -42,14 +44,14 @@
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: 1px solid #ccc;
-          background: #fff;
+          background: $baseColor;
           line-height: 1.5;
           font-size: 16px;
         }
         &__btn {
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
+          background: $mercariRed;
+          border: 1px solid $mercariRed;
+          color: $baseColor;
           display: block;
           width: 100%;
           line-height: 48px;
@@ -78,7 +80,7 @@
 
 select {
   height: 48px;
-  background-color: white;
+  background-color: $baseColor;
   width: 150px;
   margin: 5px 0;
 }
@@ -88,22 +90,22 @@ select {
   margin: 0 auto;
   text-align: center;
   padding: 30px 20px 40px;
-  .footer_top {
+  &__top {
     display: flex;
     justify-content: center;
-    .footer_link {
+    &__link {
       margin-left: 20px;
       font-size: 12px;
       text-decoration: none;
       color: #000;
     }
   }
-  .logo_link {
+  &__logo {
     display: block;
     text-decoration: none;
     margin-top: 30px;    
   }
-  .copy_wright {
+  &__copy_wright {
     font-size: 12px;
   }
 }

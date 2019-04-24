@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
   $(".header__bottom__left__h2" ).on('mouseenter', function(){
-    $('.accordion_list-1').css('display', 'block');
+    $(this).children('.accordion_list-1').css('display', 'block');
   });
 
   var first_list = document.getElementsByClassName('first_list');
@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function(){
   };
 
   $('.header__bottom__left__h2').on('mouseleave', function(){
-    $('.accordion_list-1').css('display', 'none');
+    $(this).children('.accordion_list-1').css('display', 'none');
   });
 
   $('.first_list_box').on('mouseover', function() {
