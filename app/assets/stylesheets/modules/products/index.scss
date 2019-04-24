@@ -5,7 +5,7 @@
 .header__inner {
   width: 60vw;
   margin: 0 auto;
-  padding: 10px 0;
+  padding-top: 10px;
   .header__top {
     display: flex;
     justify-content: center;
@@ -40,17 +40,17 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin-top: 10px;
+    padding-bottom: 10px;
     &__left {
       display: flex;
-      position: relative;
       &__link {
         padding: 0 10px;
         text-decoration: none;
         color: #000;
-      }
-      &__icon {
-        color: #ea352d;
+        &__icon {
+          color: #ea352d;
+        }
       }
     }
     &__right {
@@ -68,18 +68,12 @@
   }
 }
 
-
+.header__bottom__left__h2 {
+  position: relative;
+}
 
 .header h2 {
   height: 20px;
-}
-
-.accordion_list {
-  width: 200px;
-  position: absolute;
-  top: 50px;
-  z-index: 1000;
-  background-color: #fff;
 }
 
 a {

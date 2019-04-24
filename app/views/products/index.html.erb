@@ -13,28 +13,38 @@
     </div>
     <div class="header__bottom">
       <div class="header__bottom__left">
-        <h2>
+        <h2 class="header__bottom__left__h2">
           <a href="" class="header__bottom__left__link">
-              <i class="fas fa-list header__bottom__left__icon"></i>
-              <span>カテゴリーから探す</span>
+            <i class="fas fa-list header__bottom__left__link__icon"></i>
+            <span>カテゴリーから探す</span>
           </a>
-        </h2>
-        <%# ↓renderで処理する %>
-        <div class="accordion_list">
+          <div class="accordion_list--1">
           <ul>
             <li>中身だよ！</li>
             <li>中身だよ！</li>
             <li>中身だよ！</li>
           </ul>
+          <ul>
+            <li>中身だよ！2</li>
+            <li>中身だよ！2</li>
+            <li>中身だよ！2</li>
+          </ul>
+          <ul>
+            <li>中身だよ！3</li>
+            <li>中身だよ！3</li>
+            <li>中身だよ！3</li>
+          </ul>
         </div>
+        </h2>
         <h2>
           <a href="" class="header__bottom__left__link">
-            <i class="fas fa-tags header__bottom__left__icon"></i>
+            <i class="fas fa-tags header__bottom__left__link__icon"></i>
             <span>ブランドから探す</span>
           </a>
         </h2>
       </div>
       <div class="header__bottom__right">
+        <%= link_to 'ログアウト', destroy_user_session_path(current_user.id),{method: :delete, class: 'header__bottom__right__link'} if user_signed_in?%>
         <a href="" class="header__bottom__right__link">
             <span class="span_right">ログイン</span>
         </a>

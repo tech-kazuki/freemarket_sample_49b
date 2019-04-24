@@ -33,7 +33,7 @@
 .progressbar li:first-child:before {
   content: none;
 }
-.progressbar li.active {
+.progressbar li.now {
   color: #ea352d;
 }
 .progressbar li.active:before {
