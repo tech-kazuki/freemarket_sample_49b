@@ -1,0 +1,57 @@
+.progress_container {
+  width: 550px;
+  padding-left: 44px;
+}
+
+.progressbar {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  position: relative;
+  left: 10px;
+}
+.progressbar li {
+  width: 20%;
+  float: left;
+  font-size: 12px;
+  position: relative;
+  text-align: center;
+  color: #aaa;
+}
+
+.progressbar li:before {
+  width: 100%;
+  height: 2px;
+  content: '';
+  position: absolute;
+  background-color: #ccc;
+  top: 30px;
+  left: -50%;
+  z-index: -1;
+}
+
+.progressbar li:first-child:before {
+  content: none;
+}
+.progressbar li.now {
+  color: #ea352d;
+}
+.progressbar li.active:before {
+  background-color: #ea352d;
+}
+
+.progress-status {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.progress-status.active {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: #ea352d;
+  border-radius: 50%;
+}
