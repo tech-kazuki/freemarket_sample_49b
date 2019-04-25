@@ -19,6 +19,14 @@ describe User do
   end
 
   describe '#create' do
+    it "is invalid without right email" do
+      user = build(:user, email: "pppadress.com")
+      user.valid?
+      expect(user.errors[:email]).to include("正しいメールアドレスを入力してください")
+    end
+  end
+
+  describe '#create' do
     it "is invalid without a family_name" do
       user = build(:user, family_name: nil)
       user.valid?
@@ -27,10 +35,34 @@ describe User do
   end
 
   describe '#create' do
+    it "is invalid without a encrypted_password" do
+      user = build(:user, encrypted_password: nil)
+      user.valid?
+      expect(user.errors[:encrypted_password]).to include("can't be blank")
+    end
+  end
+
+  describe '#create' do
+    it "is invalid without family_name of zenkaku" do
+      user = build(:user, family_name: "ﾔﾏﾀﾞ")
+      user.valid?
+      expect(user.errors[:family_name]).to include("全角で入力してください")
+    end
+  end
+
+  describe '#create' do
     it "is invalid without a first_name" do
       user = build(:user, first_name: nil)
       user.valid?
       expect(user.errors[:first_name]).to include("can't be blank")
+    end
+  end
+
+  describe '#create' do
+    it "is invalid without first_name of katakana" do
+      user = build(:user, first_name: "ｱﾔ")
+      user.valid?
+      expect(user.errors[:first_name]).to include("全角で入力してください")
     end
   end
 
