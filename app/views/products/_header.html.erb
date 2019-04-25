@@ -29,21 +29,21 @@
       </div>
       <div class="header__bottom__right">
         <%= link_to 'ログアウト', destroy_user_session_path(current_user.id),{method: :delete, class: 'header__bottom__right__link'} if user_signed_in?%>
-        <%= link_to 'ログイン', '' ,class: 'header__bottom__right__link--login' unless user_signed_in? %>
+        <%= link_to 'ログイン', '#' ,class: 'header__bottom__right__link--login' unless user_signed_in? %>
         <%= link_to '新規会員登録', new_user_registration_path, class: 'header__bottom__right__link--sign_up' unless user_signed_in? %>
         <% if user_signed_in? %>
-          <a href="" class="header__bottom__right__link">
-              <i class="far fa-bell header__bottom__right__icon"></i>
-              <span class="header__bottom__right__link__span">お知らせ</span>
-          </a>
-          <a href="" class="header__bottom__right__link">
+          <%= link_to '#', class: 'header__bottom__right__link' do %>
+            <i class="far fa-bell header__bottom__right__icon"></i>
+            <span class="header__bottom__right__link__span">お知らせ</span>
+          <% end %>
+          <%= link_to '#', class: 'header__bottom__right__link' do %>
               <i class="fas fa-check header__bottom__right__icon"></i>
               <span class="header__bottom__right__link__span">やることリスト</span>
-          </a>
-          <a href="" class="header__bottom__right__link">
+          <% end %>
+          <%= link_to '#', class: 'header__bottom__right__link' do %>
             <img src="" class="avatar">
             <span class="header__bottom__right__link__span">マイページ</span>
-          </a>
+          <% end %>
         <% end %>
       </div>
     </div>
