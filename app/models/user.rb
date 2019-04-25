@@ -2,7 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable
+
+  
 
   validates :nickname,              presence: true
   validates :email,                 presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i , message: "正しいメールアドレスを入力してください" }
@@ -14,4 +16,6 @@ class User < ApplicationRecord
   validates :birthday_year,         presence: true
   validates :birthday_month,        presence: true
   validates :birthday_date,         presence: true
+  
+  
 end
