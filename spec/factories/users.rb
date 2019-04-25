@@ -7,7 +7,7 @@ FactoryBot.define do
     password_confirmation {Faker::Number.number(6)}
     family_name           {Faker::Name.last_name}
     first_name            {Faker::Name.first_name}
-    family_name_katakana  {"ヤマダ"}
+    family_name_katakana  {Faker::Name.name}
     first_name_katakana   {"アヤ"}
     birthday_year         {Faker::Number.number(4)}
     birthday_month        {Faker::Number.number}

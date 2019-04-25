@@ -73,4 +73,20 @@ describe User do
       expect(user.errors[:birthday_date]).to include("can't be blank")
     end
   end
+
+  describe '#create' do
+    it "is invalid without katakana of family_name_katakana" do
+      user = build(:user, family_name_katakana: "やまだ")
+      user.valid?
+      expect(user.errors[:family_name_katakana]).to include("全角カタカナで入力してください")
+    end
+  end
+
+  describe '#create' do
+    it "is invalid without katakana of first_name_katakana" do
+      user = build(:user, first_name_katakana: "あや")
+      user.valid?
+      expect(user.errors[:first_name_katakana]).to include("全角カタカナで入力してください")
+    end
+  end
 end
