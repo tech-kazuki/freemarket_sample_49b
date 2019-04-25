@@ -1,0 +1,42 @@
+@import 'config/mixin';
+
+.accordion_list-1 {
+  @include listSetting;
+  top: 40px;
+  font-size: 14px;
+}
+
+.top_list {
+  .first_list {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+.second_list,.third_lists li {
+  height: 30px;
+  line-height: 30px;
+}
+
+.second_lists,.third_lists{
+  @include listSetting;
+  height: 122px;
+  top: -1px;
+  left: 198px;
+}
+
+.top_links {
+  @include listLinks;
+  display: block;
+  padding-left: 20px;
+}
+
+.more_links,.more_link {
+  @include listLinks;
+  padding-left: 15px;
+  display: block;
+}
+
+.first_list_box,.second_list_box {
+  @include listLinks;
+}

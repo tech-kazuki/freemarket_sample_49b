@@ -1,0 +1,57 @@
+@import 'config/color';
+
+.progress_container {
+  width: 550px;
+  padding-left: 44px;
+}
+
+.progressbar {
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  position: relative;
+  left: 10px;
+  li {
+    width: 20%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    color: #aaa;
+  }
+  li:before {
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #ccc;
+    top: 30px;
+    left: -50%;
+    z-index: -1;
+  }
+  li:first-child:before {
+    content: none;
+  }
+  li.now {
+    color: $mercariRed;
+  }
+  li.active:before {
+    background-color: $mercariRed;
+  }
+}
+
+.progress-status {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.progress-status.active {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background: $mercariRed;
+  border-radius: 50%;
+}

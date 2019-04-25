@@ -1,0 +1,111 @@
+@import 'config/color';
+
+.registration_header {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.devise-contents {
+  width: 700px;
+  margin: 0 auto;
+  background-color: $baseColor;
+  &__title {
+    font-size: 24px;
+    padding: 24px 8px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .new_user {
+    padding: 0 64px 64px;
+    .form_box {
+      width: 320px;
+      margin: 0 auto;
+      .field {
+        margin: 40px 0 0;
+        label {
+          font-weight: 600;
+        }
+        span {
+          background: $mercariRed;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: $baseColor;
+          font-size: 12px;
+          vertical-align: top;
+        }
+        &__form {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: $baseColor;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        &__btn {
+          background: $mercariRed;
+          border: 1px solid $mercariRed;
+          color: $baseColor;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          text-align: center;
+        }
+        h3 {
+          font-size: 17px;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        p {
+          font-size: 14px;
+          padding-top: 5px;
+        }
+        .note {
+          color: #888;
+        }
+        .agreement {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+select {
+  height: 48px;
+  background-color: $baseColor;
+  width: 150px;
+  margin: 5px 0;
+}
+
+.registration_footer {
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 20px 40px;
+  &__top {
+    display: flex;
+    justify-content: center;
+    &__link {
+      margin-left: 20px;
+      font-size: 12px;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  &__logo {
+    display: block;
+    text-decoration: none;
+    margin-top: 30px;    
+  }
+  &__copy_wright {
+    font-size: 12px;
+  }
+}
