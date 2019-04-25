@@ -11,16 +11,19 @@
    <div class="main">
     <div class="account-button main__ele">
      <div class="mail">
-       <%= link_to "メールアドレスで登録", new_user_registration_path, class: "account-button__mail" %>
-       <i class="far fa-envelope fa-lg"></i>
+       <%= link_to new_user_registration_path, class: "account-button__mail" do %> 
+         <i class="far fa-envelope fa-lg"></i>メールアドレスで登録
+       <% end %>
      </div>
      <div class="facebook">
-       <%= link_to "facebookでログイン", user_facebook_omniauth_authorize_path, class: "account-button__facebook" %>
-       <i class="fab fa-facebook fa-2x"></i>
+       <%= link_to user_facebook_omniauth_authorize_path, class: "account-button__facebook" do %>
+        <i class="fab fa-facebook fa-2x"></i>facebookでログイン
+       <% end %>
       </div>
       <div class="google">
-       <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, class: "account-button__google" %>
-       <i class="fab fa-google"></i>
+       <%= link_to user_google_oauth2_omniauth_authorize_path, class: "account-button__google" do %>
+        <i class="fab fa-google"></i>Googleでログイン
+       <% end %>
       </div>
     </div>
    </div>
