@@ -1,0 +1,126 @@
+#degistration-index-container {
+  background_color: #f5f5f5;
+  height: 100%;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  .contents{
+    margin: 0 auto;
+    width: 700px;
+    .header{
+      background-color: #f5f5f5;
+      text-align: center;
+      height: 128px;
+      padding-top: 40px;
+    }
+    .sign_up{
+      background-color: white;
+      text-align: center;
+      padding: 32px 16px;
+      p{
+        color: #333;
+       font-size: 22px;
+       font-weight: bold;
+      }
+      &__ele{
+        display: block;
+        color: white;
+        line-height: 40px;
+        margin: 8px 0 0;
+        border: 1px solid #0099e8;  
+        background-color: #0099e8;
+      }
+     }
+    .main{
+      background-color: white;
+      border-top: 1px solid #eee;
+      padding: 64px;
+      &__ele{
+        text-align: center;
+      }
+      .account-button{
+        .mail{
+          position: relative;
+          .fa-envelope{
+            position: absolute;
+            top: 18px;
+            bottom: 0;
+            right: 270px;
+            left: 0;
+            color: #ccc;
+          }
+        }
+        .facebook{
+          position: relative;
+          .fa-facebook{
+            position: absolute;
+            top: 11px;
+            bottom: 0;
+            right: 270px;
+            left: 0;
+            color: white;
+          }
+        }
+        .google{
+          position: relative;
+          .fa-google{
+            position: absolute;
+            top: 18px;
+            bottom: 0;
+            right: 270px;
+            left: 0;
+          }
+        }
+        &__mail{
+          width: 320px;
+          margin: 0 auto;
+          display: block;
+          color: #000;
+          line-height: 48px;
+          border: 1px solid transparent;  
+          background-color: #eee;
+        }
+        &__facebook{
+          width: 320px;
+          display: block;
+          color: white;
+          margin: 16px auto 0;
+          line-height: 48px;
+          border: 1px solid transparent;  
+          background-color: #385185;
+        }
+        &__google{
+          width: 320px;
+          display: block;
+          margin: 16px auto 0;
+          line-height: 48px;
+          border: 1px solid #979797;  
+          background-color: #fff;
+          color: #333;
+        }
+      }
+    }
+    .footer{
+      height: 220px;
+      padding: 40px 0;
+      text-align: center;
+      .nav{
+        ul{
+          margin-left: -16px;
+          li{
+            display: inline;
+            font-size: 12px;
+            margin-left: 16px;
+            color: #333;
+          }
+        }
+      }
+      .logo{
+        margin-top: 40px;
+        p{
+          font-size: 13px;
+          color: #333;
+        }
+      }
+    }
+  }
+}
