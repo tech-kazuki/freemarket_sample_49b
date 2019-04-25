@@ -1,16 +1,19 @@
-<div id="session-new-container">
+<div id="degistration-index-container">
  <div class="contents">
    <div class="header">
     <%= image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", class: "image", size: "185x49")%>
    </div>
 
    <div class="sign_up">
-    <p>アカウントをお持ちでない方はこちら</p>
-    <%= link_to "新規会員登録", index_path ,class: "sign_up__ele"%>
+    <p>新規会員登録</p>
    </div>
 
    <div class="main">
     <div class="account-button main__ele">
+     <div class="mail">
+       <%= link_to "メールアドレスで登録", user_facebook_omniauth_authorize_path, class: "account-button__mail" %>
+       <i class="far fa-envelope fa-lg"></i>
+     </div>
      <div class="facebook">
        <%= link_to "facebookでログイン", user_facebook_omniauth_authorize_path, class: "account-button__facebook" %>
        <i class="fab fa-facebook fa-2x"></i>
@@ -20,29 +23,9 @@
        <i class="fab fa-google"></i>
       </div>
     </div>
-
-    <div class="form">
-      <div class="main__ele">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field email">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form__ele" %>
-        </div>
-
-        <div class="field password">
-          <%= f.password_field :password, autocomplete: "current-password",class: "form__ele" %>
-        </div>
-
-        <div class="foom__ele actions">
-          <%= f.submit "ログイン", class: "login"%>
-        </div>
-        <% end %>
-      </div>
-     <div class="forget-password">
-       <%= link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "forget-password" %>
-     </div>
-    </div>
-    <%= render "devise/shared/links" %>
    </div>
+
+   
    <div class="footer">
      <div class="nav">
        <ul>
