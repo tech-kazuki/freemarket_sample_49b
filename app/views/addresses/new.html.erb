@@ -1,0 +1,78 @@
+<header class="registration_header">
+  <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1073571291" width="185" height="49" class="">
+  <nav class="progress_container">
+    <ol class="progressbar">
+      <li class="active now">会員情報<div class="progress-status active"></div></li>
+      <li>電話番号認証<div class="progress-status"></div></li>
+      <li>お届け先住所入力<div class="progress-status"></div></li>
+      <li>支払い方法<div class="progress-status"></div></li>
+      <li>完了<div class="progress-status"></div></li>
+    </ol>
+  </nav>
+</header>
+<section class="devise-contents">
+  <h2 class="devise-contents__title">住所入力</h2>
+  <div class="new_user">
+    <div class="form_box">
+      <div class="field">
+        <label>お名前</label>
+        <span>必須</span><br />
+        <input type='text' placeholder='例）山田' class="field__form">
+        <input type='text' placeholder='例）彩' class="field__form">
+      </div>
+      <div class="field">
+        <label>お名前カナ</label>
+        <span>必須</span><br />
+        <input type='text' placeholder='例）ヤマダ' class="field__form">
+        <input type='text' placeholder='例）アヤ' class="field__form">
+      </div>
+      <div class="field">
+        <label>郵便番号</label>
+        <span>必須</span><br />
+        <input type='text' placeholder='例）123-4567' class="field__form">
+      </div>
+      <div class="field">
+        <label>都道府県</label>
+        <span>必須</span><br />
+        <p>
+        <%= render 'prefecture' %>
+      </div>
+      <div class="field">
+        <label>市区町村</label>
+        <span>必須</span><br />
+        <input type='text' placeholder='例）東京都渋谷区' class="field__form">
+      </div>
+      <div class="field">
+        <label>番地</label>
+        <span>必須</span><br />
+        <input type='text' placeholder='例）道玄坂1-1' class="field__form">
+      </div>
+      <div class="field">
+        <label>建物名</label>
+        <span class="ninni">任意</span><br />
+        <input type='text' placeholder='例）アジアビル' class="field__form">
+      </div>
+      <div class="field">
+        <label>電話</label>
+        <span class="ninni">任意</span><br />
+        <input type='text' placeholder='例）09012345678' class="field__form">
+      </div>
+      <div class="field">
+        <%= link_to card_path, class: 'phone_link' do %>
+          <input type='submit' value='次へ進む' class="field__btn">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="registration_footer">
+  <div class="footer_top">
+    <a href="" class="footer_link">プライバシーポリシー</a>
+    <a href="" class="footer_link">メルカリ利用規約</a>
+    <a href="" class="footer_link">特定商取引に関する表記</a>
+  </div>
+  <a href="" class="logo_link">
+    <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1602121636" width="80" height="65" class="link_logo">
+  </a>
+  <p class="copy_wright">@2019 Mercari</p>
+</footer>
