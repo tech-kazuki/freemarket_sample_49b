@@ -3,40 +3,30 @@
   <nav class="progress_container">
     <ol class="progressbar">
       <li class="active">会員情報<div class="progress-status active"></div></li>
-      <li class="active">電話番号認証<div class="progress-status active"></div></li>
-      <li class="active">お届け先住所入力<div class="progress-status active"></div></li>
-      <li class="active now">支払い方法<div class="progress-status active"></div></li>
+      <li class="active now">電話番号認証<div class="progress-status active"></div></li>
+      <li>お届け先住所入力<div class="progress-status"></div></li>
+      <li>支払い方法<div class="progress-status"></div></li>
       <li>完了<div class="progress-status"></div></li>
     </ol>
   </nav>
 </header>
 <section class="form-container">
-  <h2 class="form-container__title">住所入力</h2>
-  <%= form_for [@user, @card], url: user_card_path do |f| %>
+  <h2 class="form-container__title">電話番号の確認</h2>
+  <div class="new_user">
     <div class="form_box">
       <div class="field">
-        <%= f.label 'カード情報'%>
-        <span>必須</span><br />
-        <%= f.text_field :number, placeholder: '半角英数字のみ', class: "field__form" %>
+        <label>携帯電話の番号</label>
+        <input type='text' placeholder='携帯電話の番号を入力' class="field__form">
+        <p>本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。</p>
       </div>
       <div class="field">
-        <%= f.label '有効期限'%>
-        <span>必須</span><br />
-        <%= f.select :valid_month, (1..12).to_a %>　月<br />
-        <%= f.select :valid_year, (2019..2025).to_a %>　年
-      </div>
-      <div class="field">
-        <%= f.label 'セキュリティコード'%>
-        <span>必須</span><br />
-        <%= f.text_field :security_number, placeholder: 'カード背面4桁もしくは3桁', class: "field__form" %>
-      </div>
-      <div class="field">
-        <%= link_to complete_path, class: 'phone_link' do %>
-          <%= f.submit "登録する", class: 'field__btn' %>
+        <%= link_to new_user_address_path(current_user.id), class: 'phone_link' do %>
+          <input type='submit' value='SMSを送信する' class="field__btn">
         <% end %>
+        <p>※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。</p>
       </div>
     </div>
-  <% end %>
+  </div>
 </section>
 <footer class="registration_footer">
   <div class="registration_footer__top">

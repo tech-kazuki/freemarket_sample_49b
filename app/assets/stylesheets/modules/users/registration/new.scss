@@ -6,7 +6,7 @@
   padding: 40px 0;
 }
 
-.devise-contents {
+.form-container {
   width: 700px;
   margin: 0 auto;
   background-color: $baseColor;
@@ -18,7 +18,7 @@
     font-weight: bold;
     border-bottom: 1px solid #f5f5f5;
   }
-  .new_user {
+  .new_user,.new_address,.new_card {
     padding: 0 64px 64px;
     .form_box {
       width: 320px;

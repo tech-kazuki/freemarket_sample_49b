@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
+  devise_for :users, controllers: { 
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   root "products#index"
   resources :users, only: [:show] do
     resource :address, only: [:new, :create, :edit, :update, :destroy]
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
   end
   devise_scope :user do
     get 'index' => 'users/registrations#index'
+    get 'certification' => 'users/registrations#certification'
+    get 'complete' => 'users/registrations#complete'
   end
-
 end
