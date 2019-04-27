@@ -1,0 +1,136 @@
+@import 'config/color';
+
+.products_new_header {
+  margin: 0 auto;
+}
+
+.products_new_container {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  &__content {
+    width: 100%;
+    padding: 40px;
+    position: relative;
+    border: 1px solid #f5f5f5;
+    &__title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    &__form {
+      &__box {
+        width: 100%;
+        margin-bottom: 25px;
+        .text_field {
+          width: 100%;
+          padding: 10px;
+        }
+        .text_area {
+          width: 100%;
+          min-height: 104px;
+          padding: 10px;
+        }
+      }
+    }
+    &__select {
+      &__box {
+        width: 400px;
+        margin: 0 0 25px auto;
+        select {
+          width: 100%;
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+        }
+      }
+      &__memo {
+        position: absolute;
+      }
+    }
+    &__prices {
+      &__memo {
+        position: absolute;
+      }
+      &__box {
+        width: 400px;
+        margin: 0 0 0 auto;
+        display: flex;
+        line-height: 48px;
+        margin-top: 5px;
+        border-top: 1px solid #ccc;
+        &--none {
+          border-style: none;
+        }
+        .list_left {
+          width: 50%;
+          text-align: left;
+        }
+        .list_right {
+          width: 50%;
+          text-align: right;
+          position: relative;
+          .yen_icon {
+            position: absolute;
+            left: -15px;
+          }
+          .text_field {
+            height: 45px;
+            padding: 10px 10px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: right;
+          }
+        }
+      }
+    }
+    span {
+      background: $mercariRed;
+      margin: 0 0 0 8px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: $baseColor;
+      font-size: 12px;
+      vertical-align: top;
+    }
+    &__last {
+      &__text {
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+      .btm_create {
+        background: $mercariRed;
+        border: 1px solid $mercariRed;
+        color: $baseColor;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .btm_back {
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: $baseColor;
+        display: block;
+        width: 45%;
+        line-height: 48px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        margin: 0 auto;
+      }
+    }
+  }
+}
