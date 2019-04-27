@@ -5,8 +5,6 @@ class AddressesController < ApplicationController
   end
 
   def create
-    # address = Address.where(address_params)
-    # address.save
     redirect_to new_user_card_url(current_user.id)
   end
 
