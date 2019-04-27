@@ -1,0 +1,28 @@
+<header class="registration_header">
+  <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1073571291" width="185" height="49" class="">
+  <nav class="progress_container">
+    <ol class="progressbar">
+      <li class="active">会員情報<div class="progress-status active"></div></li>
+      <li class="active">電話番号認証<div class="progress-status active"></div></li>
+      <li class="active">お届け先住所入力<div class="progress-status active"></div></li>
+      <li class="active">支払い方法<div class="progress-status active"></div></li>
+      <li class="active now">完了<div class="progress-status active"></div></li>
+    </ol>
+  </nav>
+</header>
+<section class="form-container">
+  <h2 class="form-container__title">会員登録完了</h2>
+  <div class="new_user">
+    <div class="form_box">
+      <div class="field">
+        <p class="thanks_text">ありがとうございます。<br>会員登録が完了しました。</p>
+      </div>
+      <div class="field">
+        <%= link_to root_path, class: 'phone_link' do %>
+          <%= button_tag 'メルカリをはじめる', class: 'field__btn' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'registration_footer'%>
