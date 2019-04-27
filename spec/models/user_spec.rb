@@ -122,19 +122,5 @@ describe User do
     end
   end
 
-  describe '#create' do
-    it "is invalid without provider" do
-      user = User.new(provider: "")
-      user.valid?
-      expect(user.errors[:provider]).to include("can't be blank")
-    end
-  end
-
-  describe '#create' do
-    it "is invalid without uid" do
-      user = User.new(uid: "")
-      user.valid?
-      expect(user.errors[:uid]).to include("can't be blank")
-    end
-  end
+  
 end
