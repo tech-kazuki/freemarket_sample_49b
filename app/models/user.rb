@@ -17,6 +17,13 @@ class User < ApplicationRecord
   validates :birthday_year,         presence: true
   validates :birthday_month,        presence: true
   validates :birthday_date,         presence: true
-  
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.encrypted_password = Devise.friendly_token[0,20]
+      user.nickname = auth.info.name   
+    end
+  end
   
 end
