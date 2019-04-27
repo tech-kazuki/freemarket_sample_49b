@@ -42,8 +42,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
       sign_in_and_redirect @user, event: :authentication
     else
-      session["devise.#{provider}_data"] = request.env['omniauth.auth'].merge(id: @user.encrypted_password)
-      
+      session["devise.#{provider}_data"] = request.env['omniauth.auth'].merge(password: @user.encrypted_password)
 
       redirect_to facebook_path
     end

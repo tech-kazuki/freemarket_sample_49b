@@ -8,6 +8,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def facebook
+    information = session["devise.facebook_data"]
+    @user = information.info.name
+    @email = information.email
+    @password = information.password
   end
   
   def certification
