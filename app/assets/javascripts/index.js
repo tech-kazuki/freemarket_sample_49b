@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function(){
     list.style.display = 'none';
     }
   };
-
+  
   for (i = 0; i < 3; i++ ) {
     first_list[i].addEventListener('mouseover', openList(second_lists[i]), false);
     first_list[i].addEventListener('mouseleave', closeList(second_lists[i]), false);
