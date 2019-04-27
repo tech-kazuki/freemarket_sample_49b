@@ -7,6 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def index
   end
 
+  def facebook
+  end
+  
   def certification
   end
 
@@ -14,9 +17,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  #  def new
+    #  super
+  #  end
 
   # POST /resource
   # def create
