@@ -43,7 +43,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
     else
       session["devise.#{provider}_data"] = request.env['omniauth.auth'].merge(id: @user.encrypted_password)
-      binding.pry
+      
 
       redirect_to facebook_path
     end
