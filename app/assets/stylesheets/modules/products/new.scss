@@ -39,25 +39,21 @@ label {
         width: 100%;
         margin-bottom: 25px;
         .text_field {
+          @include formSetting;
           width: 100%;
           height: 48px;
           padding: 10px 16px 8px;
           border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
           font-size: 16px;
         }
         .text_area {
+          @include formSetting;
           display: block;
           width: 100%;
           max-width: 100%;
           min-height: 104px;
           padding: 10px;
-          border: 1px solid #ccc;
-          background: #fff;
           font-size: 16px;
-          line-height: 1.5;
         }
       }
     }
@@ -116,12 +112,10 @@ label {
             left: -15px;
           }
           .text_field {
+            @include formSetting;
             height: 45px;
             padding: 10px 10px 8px;
             border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
             font-size: 14px;
             text-align: right;
           }
@@ -143,15 +137,7 @@ label {
         margin-bottom: 40px;
       }
       .btm_create {
-        background: $mercariRed;
-        border: 1px solid $mercariRed;
-        color: $baseColor;
-        display: block;
-        width: 100%;
-        line-height: 48px;
-        font-size: 14px;
-        text-align: center;
-        cursor: pointer;
+        @include btnSetting;
       }
       .btm_back {
         background: #aaa;

@@ -14,5 +14,19 @@
 }
 
 @mixin formSetting {
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+}
 
+@mixin btnSetting {
+  background: $mercariRed;
+  border: 1px solid $mercariRed;
+  color: $baseColor;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
 }
