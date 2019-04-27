@@ -1,0 +1,30 @@
+#degistration-index-container
+  .contents
+    .header
+      = image_tag("logo.svg", class: "image", size: "185x49")
+    .sign_up
+      %p 新規会員登録
+    .main
+      .account-button.main__ele
+        .mail
+          = link_to new_user_registration_path, class: "account-button__mail" do
+            %i.far.fa-envelope.fa-lg>
+            メールアドレスで登録
+        .facebook
+          = link_to user_facebook_omniauth_authorize_path, class: "account-button__facebook" do
+            %i.fab.fa-facebook.fa-2x>
+            facebookでログイン
+        .google
+          = link_to user_google_oauth2_omniauth_authorize_path, class: "account-button__google" do
+            %i.fab.fa-google>
+            Googleでログイン
+    .footer
+      .nav
+        %ul
+          %li= link_to "プライバシーポリシー", root_path
+          %li= link_to "メルカリ利用規約", root_path
+          %li= link_to "特定商取引に関する表記", root_path
+      .logo
+        = image_tag("logo-gray.svg", size: "80x65")
+        %p
+          %small © 2019 Mercari

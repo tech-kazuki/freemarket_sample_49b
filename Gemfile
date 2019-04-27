@@ -84,3 +84,6 @@ gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 
 gem 'pry-rails'
+
+gem 'haml-rails'
+gem 'erb2haml'

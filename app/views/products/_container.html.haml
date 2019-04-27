@@ -1,0 +1,43 @@
+%section.container
+  %h2.container__head ピックアップカテゴリー
+  %section.container__items
+    %h3.container__items__h3
+      = link_to 'レディース新着アイテム', '#', class: "container__items__h3__link"
+    .container__items__content
+      %section.container__items__content__box
+        = link_to '#' do
+          = image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220'
+          .container__items__content__box__body
+            %h3.container__items__content__box__body__title タイトル
+            %div
+              .price 1,200
+          %p (税込)
+      %section.container__items__content__box
+        = link_to '#' do
+          = image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220'
+          .container__items__content__box__body
+            %h3.container__items__content__box__body__title タイトル
+            %div
+              .price ¥1,200
+          %p (税込)
+%section.container
+  %h2.container__head ピックアップブランド
+  %section.container__items
+    %h3.container__items__h3
+      = link_to 'シャネル新着アイテム', '#', class: "container__items__h3__link"
+    .container__items__content
+      %section.container__items__content__box
+        = link_to '#' do
+          = image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220'
+          .container__items__content__box__body
+            %h3.container__items__content__box__body__title タイトル
+            .price 1,200
+          %p (税込)
+      %section.container__items__content__box
+        = link_to '#' do
+          = image_tag "UNADJUSTEDNONRAW_thumb_111a.jpg", width: '213', height: '220'
+          .container__items__content__box__body
+            %h3.container__items__content__box__body__title タイトル
+            %div
+              .price ¥1,200
+          %p (税込)
