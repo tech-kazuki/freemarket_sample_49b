@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   end
   devise_scope :user do
     get 'index' => 'users/registrations#index'
-    get 'facebook' => 'users/registrations#facebook'
     get 'certification' => 'users/registrations#certification'
     get 'complete' => 'users/registrations#complete'
   end
