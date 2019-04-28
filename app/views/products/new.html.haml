@@ -9,7 +9,15 @@
       %span 必須
       %p.products_new_container__content__form__comment 最大10枚までアップロードできます
       %br
-      = file_field_tag ''
+      .drop_area
+        .drop_area__image_box
+          .drop_img
+          = link_to '削除', '#', class: 'delete_link'
+        #drop_box
+          ドラッグアンドドロップ
+          %br
+          またはクリックしてファイルをアップロード
+        = file_field_tag '', id: 'file_input'
   .products_new_container__content
     .products_new_container__content__form
       .products_new_container__content__form__box
