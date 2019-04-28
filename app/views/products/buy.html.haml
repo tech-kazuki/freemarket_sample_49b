@@ -6,7 +6,7 @@
     .items
       .items__top
         = image_tag 'UNADJUSTEDNONRAW_thumb_111a.jpg', width: '148', class: 'items__top__img'
-        .items__top__title タイトル
+        .items__top__title タイトルタイトルタイトルタイトルタイトルタイトルタイトル
         .items__top__price
           %ul.price__list
             %li.price__list__left ¥1,000
@@ -16,14 +16,21 @@
           %ul.check__list
             %li.check__list__left 支払い金額
             %li.check__list__right ¥1,000
-        = button_tag '戻る', class: 'items__top__btm'
+        = button_tag '購入する', class: 'items__top__btn'
+  .products_buy_container__content
+    .items
       .items__bottom
         .items__bottom__section
           %h3.items__bottom__section__h3 配送先
           %p.items__bottom__section__text 東京都渋谷区〜〜〜〜
-          = link_to 'editアクション', class: 'edit_link'
+          .items__bottom__section__link
+            = link_to 'editアクション　>', '', class: 'edit_link'
+  .products_buy_container__content
+    .items
+      .items__bottom
         .items__bottom__section
           %h3.items__bottom__section__h3 支払い方法
           %p.items__bottom__section__text ************0000
-          = link_to 'editアクション', class: 'edit_link'
+          .items__bottom__section__link
+            = link_to 'editアクション　>', '',  class: 'edit_link'
 = render 'footer.html.haml'
