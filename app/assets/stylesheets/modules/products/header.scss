@@ -4,101 +4,205 @@
   background-color: $baseColor;
 }
 
-.header__inner {
-  width: 60vw;
-  margin: 0 auto;
-  padding-top: 10px;
-  .header__top {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    &__form {
-      margin-left: 45px;
+@media screen and (min-width: 1065px) {
+  .header__inner {
+    width: 1020px;
+    margin: 0 auto;
+    padding-top: 10px;
+    .header__top {
+      display: flex;
+      justify-content: center;
       width: 100%;
-      flex: 1;
-      position: relative;
-      &__search {
-        -webkit-appearance: none;
+      &__form {
+        margin-left: 45px;
         width: 100%;
-        padding: 0 42px 0 10px;
-        height: 40px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: #f5f5f5;
+        flex: 1;
+        position: relative;
+        &__search {
+          -webkit-appearance: none;
+          width: 100%;
+          padding: 0 42px 0 10px;
+          height: 40px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #f5f5f5;
+        }
+        &__icon {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+        }
       }
-      &__icon {
-        position: absolute;
-        top: 0;
-        right: 0;
+    }
+    .header__bottom {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      &__left {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
+        &__h2 {
+          position: relative;
+          height: 40px;
+        }
+        &__link {
+          padding: 0 10px;
+          text-decoration: none;
+          color: #000;
+          &__icon {
+            color: $mercariRed;
+          }
+          &__span {
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+      &__right {
+        display: flex;
+        &__link {
+          padding: 0 10px;
+          text-decoration: none;
+          color: #000;
+          &--login {
+            background-color: $mercariRed;
+            border-radius: 5px;
+            padding: 0 10px;
+            color: $baseColor;
+            line-height: 30px;
+            height: 30px;
+            margin: 0 5px;
+          }
+          &--sign_up {
+            border: 1px solid #0099e8;
+            border-radius: 5px;
+            padding: 0 10px;
+            color: #0099e8;
+            line-height: 30px;
+            height: 30px;
+            margin: 0 5px;
+          }
+          &--sign_up:hover {
+            background-color: #0099e8;
+            color: $baseColor;
+            transition: 0.4s;
+          }
+          .avatar {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        &__icon {
+          color: #ccc;
+          font-size: 1.2em;
+        }
       }
     }
   }
-  .header__bottom {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    &__left {
+}
+
+@media screen and (max-width: 1065px) {
+  .header__inner {
+    width: 750px;
+    margin: 0 auto;
+    padding-top: 10px;
+    .header__top {
       display: flex;
-      &__h2 {
+      justify-content: center;
+      width: 100%;
+      &__form {
+        margin-left: 45px;
+        width: 100%;
+        flex: 1;
         position: relative;
-        height: 40px;
-      }
-      &__link {
-        padding: 0 10px;
-        text-decoration: none;
-        color: #000;
-        &__icon {
-          color: $mercariRed;
+        &__search {
+          -webkit-appearance: none;
+          width: 100%;
+          padding: 0 42px 0 10px;
+          height: 40px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #f5f5f5;
         }
-        &__span {
-          font-size: 14px;
-          font-weight: bold;
+        &__icon {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
         }
       }
     }
-    &__right {
+    .header__bottom {
+      width: 100%;
       display: flex;
-      &__link {
-        padding: 0 10px;
-        text-decoration: none;
-        color: #000;
-        &--login {
-          background-color: $mercariRed;
-          border-radius: 5px;
+      justify-content: space-between;
+      margin-top: 10px;
+      &__left {
+        display: flex;
+        &__h2 {
+          position: relative;
+          height: 40px;
+        }
+        &__link {
           padding: 0 10px;
-          color: $baseColor;
-          line-height: 30px;
-          height: 30px;
-          margin: 0 5px;
-        }
-        &--sign_up {
-          border: 1px solid #0099e8;
-          border-radius: 5px;
-          padding: 0 10px;
-          color: #0099e8;
-          line-height: 30px;
-          height: 30px;
-          margin: 0 5px;
-        }
-        &--sign_up:hover {
-          background-color: #0099e8;
-          color: $baseColor;
-          transition: 0.4s;
-        }
-        .avatar {
-          width: 15px;
-          height: 15px;
+          text-decoration: none;
+          color: #000;
+          &__icon {
+            color: $mercariRed;
+          }
+          &__span {
+            font-size: 14px;
+            font-weight: bold;
+          }
         }
       }
-      &__icon {
-        color: #ccc;
-        font-size: 1.2em;
+      &__right {
+        display: flex;
+        &__link {
+          padding: 0 10px;
+          text-decoration: none;
+          color: #000;
+          &--login {
+            background-color: $mercariRed;
+            border-radius: 5px;
+            padding: 0 10px;
+            color: $baseColor;
+            line-height: 30px;
+            height: 30px;
+            margin: 0 5px;
+          }
+          &--sign_up {
+            border: 1px solid #0099e8;
+            border-radius: 5px;
+            padding: 0 10px;
+            color: #0099e8;
+            line-height: 30px;
+            height: 30px;
+            margin: 0 5px;
+          }
+          &--sign_up:hover {
+            background-color: #0099e8;
+            color: $baseColor;
+            transition: 0.4s;
+          }
+          .avatar {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        &__icon {
+          color: #ccc;
+          font-size: 1.2em;
+        }
       }
     }
   }
