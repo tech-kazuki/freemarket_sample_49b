@@ -1,0 +1,138 @@
+
+
+
+//ルート
+
+.mypage_container {
+  margin: 40px auto 0;
+}
+
+
+
+//全体
+.mypage-body {
+  background-color:#f5f5f5;
+  height: 1300px;
+  width: 1020px;
+  margin: 40px 210px 40px 210px;
+  //右側大枠部分
+  .mypage_main__content {
+    float: right;
+    width: calc(100vw - 742px);
+    height: 100%;
+    // ユーザー名、評価表示部分
+    .mypage_user-information {
+      height: 160px;
+      width: 700px;
+      background-image: url("https://yukotabi.static.yukoyuko.net/import/images/l1a295dWtvZnVtdWZ1bXUyMDE3MDgzMDIwMTcwODMwMTA0NzM.jpg");
+      padding: 20px;
+      &__figure {
+        text-align: center;
+        height: 140px;
+          position: relative;
+          top: 20px;
+        &--icon {
+          border-radius: 50%;
+          width: 60px;
+        }
+      }
+          //ログインユーザーの名前
+        &__name {
+          font-size: 14px;
+          color: #333;
+        }
+          //評価(review)・出品(exhibit)
+        &__number {
+          height:16px;
+          font-size: 14px;
+          margin:0 auto;
+
+          color: #333;
+          width: 140px;
+          &--review {
+            float: left;
+          }
+          &--exhibit {
+            float: right;
+          }
+            span.bold {
+              font-size: 16px;
+            }
+        }
+    }
+  }
+
+
+
+    //タぶ
+    .mypage_tabs {
+      background-color: #eee;
+      width: 700px;
+    }
+
+      input[name="mypage_tab_item"] , input[name="mypage_tab_user"] {
+        display: none;
+      }
+    
+    /*タブのスタイル*/
+    .mypage_tab_item,.mypage_tab_user {
+      width: calc(100%/2);
+      height: 74px;
+      font-size: 16px;
+      line-height: 74px;
+      text-align: center;
+      color: #333;
+      display: block;
+      float: left;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+    /*タブ切り替えの中身のスタイル*/
+    .mypage_tab_content {
+      display: none;
+      background-color: #fff;
+      clear: both;
+      overflow: hidden;
+    }
+      //タブの切り替え、上の赤い線
+    .mypage_tabs input:checked + .mypage_tab_item , .mypage_tabs input:checked + .mypage_tab_user {
+      background-color: #fff;
+      border-top: 2px solid #ea352d;
+      } //タブ機能終わり
+    
+      //タブの下の中身
+      .mypage_tabcontent{
+        height: 280px;
+        width: 700px;
+        background-color: white;
+        background-repeat: no-repeat;
+        text-align: center;
+        margin-top: 70px;
+          &__name {
+            line-height: 48px;
+            text-decoration: none;
+            color:#BBBBBB;
+            padding-top: 10px;
+            font-weight: 600;
+          }
+          &__figure {
+            margin-top: 40px;
+        }
+      }
+
+      //購入した商品の上の文字とデザイン
+    .mypage_trade-information {
+      height: 382px;
+      margin-top: 40px;
+      &__tab {
+        padding: 0 16px;
+        background-color: #FAFAFA;
+        height: 72px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 72px;
+      }
+    }
+
+}  
+
