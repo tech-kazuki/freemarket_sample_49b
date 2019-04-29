@@ -6,6 +6,7 @@ class Product < ApplicationRecord
  has_one :category
  has_one :brand
  has_one :evalution
+ has_one :prefecture
  belongs_to :user
 
  validates :name,              presence: true
