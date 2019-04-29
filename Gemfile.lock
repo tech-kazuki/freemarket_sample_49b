@@ -123,11 +123,6 @@ GEM
       i18n (>= 0.7)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
-<<<<<<< HEAD
-    ffi (1.10.0)
-    font-awesome-sass (5.0.9)
-      sass (>= 3.2)
-=======
     ffi (1.9.25)
     fog-aws (3.5.0)
       fog-core (~> 2.1)
@@ -148,7 +143,6 @@ GEM
     font-awesome-sass (5.8.1)
       sassc (>= 1.11)
     formatador (0.2.5)
->>>>>>> 5b5b5d017026f416dd8063937c212469273cbbcf
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.0.4)

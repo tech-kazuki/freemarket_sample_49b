@@ -84,11 +84,6 @@ gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'haml-rails'
 gem 'erb2haml'
-<<<<<<< HEAD
-
-gem 'font-awesome-sass'
-=======
 gem "font-awesome-sass"
 gem 'carrierwave'
 gem 'fog-aws'
->>>>>>> 5b5b5d017026f416dd8063937c212469273cbbcf
