@@ -12,10 +12,15 @@ Rails.application.routes.draw do
     end
   end
 
+
   resources :users, only: [:show] do
     resource :address, only: [:new, :create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]
+    collection do
+      get 'logout'
+    end
   end
+
   devise_scope :user do
     get 'index' => 'users/registrations#index'
     get 'certification' => 'users/registrations#certification'
