@@ -366,10 +366,7 @@ DEPENDENCIES
   erb2haml
   factory_bot_rails
   faker
-<<<<<<< HEAD
-=======
   fog-aws
->>>>>>> 5b5b5d017026f416dd8063937c212469273cbbcf
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
