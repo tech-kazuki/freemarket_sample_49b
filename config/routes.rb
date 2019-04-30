@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   }
   
   root "products#index"
+  
+  # 商品情報が保存できるようになったら、データベースから引っ張るため、ネストする。
   resources :products, only: [:index] do
     collection do
       get 'buy'
