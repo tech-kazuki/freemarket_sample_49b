@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   root "products#index"
 
-  resources :products, only: [:index, :new] do
+  resources :products, only: [:index, :new, :show] do
     collection do
       get 'buy'
     end
