@@ -5,15 +5,14 @@ Rails.application.routes.draw do
   }
   
   root "products#index"
-
-  resources :products, only: [:index, :new, :create] do
+  resources :products, only: [:index] do
     collection do
       get 'buy'
     end
   end
 
-
   resources :users, only: [:show] do
+    resources :products, only: [:new, :create]
     resource :address, only: [:new, :create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]
     collection do

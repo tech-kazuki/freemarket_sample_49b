@@ -1,8 +1,9 @@
 = render 'header'
-= link_to new_product_path, class: 'product_link' do
-  .floating_btn
-    .floating_btn__title 出品
-    = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
+- if user_signed_in?
+  = link_to new_user_product_path(current_user.id), class: 'product_link' do
+    .floating_btn
+      .floating_btn__title 出品
+      = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
 .swiper-container
   .swiper-wrapper
     .swiper-slide

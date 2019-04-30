@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @user = User.find(current_user.id)
     @product.images.build
   end
   
