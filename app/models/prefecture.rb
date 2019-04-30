@@ -18,6 +18,4 @@ class Prefecture < ActiveHash::Base
       {id: 46, name: '鹿児島県'}, {id: 47, name: '沖縄県'}
   ]
 
-  belongs.to :address
-  belongs.to :product
 end
