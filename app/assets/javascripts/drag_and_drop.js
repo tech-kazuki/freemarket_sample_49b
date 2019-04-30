@@ -53,7 +53,6 @@ $(document).on('turbolinks:load', function() {
       e.preventDefault();
       var imgs = e.target.files;
       for (var j = 0; j < imgs.length; j++) {
-        textBox.value = imgs[j];
         var imgURL = URL.createObjectURL(imgs[j]);
         getImage(imgURL);
       }
