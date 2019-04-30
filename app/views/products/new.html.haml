@@ -11,13 +11,15 @@
       %br
       .drop_area
         .drop_area__image_box
-          .drop_img
-          = link_to '削除', '#', class: 'delete_link'
+          .drop_content
+            = image_tag 'UNADJUSTEDNONRAW_thumb_111a.jpg', class: 'drop_content__img'
+          .delete_link 削除
         #drop_box
           ドラッグアンドドロップ
           %br
           またはクリックしてファイルをアップロード
-        = file_field_tag '', id: 'file_input'
+        = file_field_tag '', id: 'file_input', multiple: true
+        = text_field '', '', type: 'hidden', id: 'text_field'
   .products_new_container__content
     .products_new_container__content__form
       .products_new_container__content__form__box
