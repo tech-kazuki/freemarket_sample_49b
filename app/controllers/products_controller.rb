@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
   def index
   end
 
+  def show
+  end
+ 
   def new
     @product = Product.new
     @user = User.find(current_user.id)
@@ -16,7 +19,7 @@ class ProductsController < ApplicationController
 
   def buy
   end
-  
+
   private
   
   def product_params

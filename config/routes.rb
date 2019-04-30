@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show] do
-    resources :products, only: [:new, :create]
+    resources :products, only: [:new, :create, :show]
     resource :address, only: [:new, :create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]
     collection do
