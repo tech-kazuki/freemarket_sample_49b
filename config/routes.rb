@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   
   root "products#index"
+  get "products/show" => "products#show"
   resources :users, only: [:show] do
     resource :address, only: [:new, :create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]
