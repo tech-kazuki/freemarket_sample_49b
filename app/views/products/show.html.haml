@@ -3,9 +3,9 @@
   %section.item-box-container.single-container-section
     %h1.item-name ドクターマーチン Dr.Martens 1460Z 8 EYE BOOT(8ホールブーツ) 10072004 （ブラック）ドクターマーチン
     .item-main-content.clearfix
-      .item-main-content-photo
+      .item-main-content__photo
         = image_tag "boots.jpg", width: '300', height: '375'
-      %table.item-main-content-detail-table
+      %table.item-main-content__detail-table
         %tbody
           %tr
             %th 出品者
@@ -57,14 +57,14 @@
             %td 1~2日で発送
 
     .item-price-box
-      %span.item-price-box-price ¥ 8,000
-      %span.item-price-box-tax (税込)
-      %span.item-price-box-shipping-fee 送料込み
+      %span.item-price-box__price ¥ 8,000
+      %span.item-price-box__tax (税込)
+      %span.item-price-box__shipping-fee 送料込み
       
     =link_to "購入画面に進む", "", class: "btn-default btn-red"
 
     .item-description
-      %p.item-description-inner
+      %p.item-description__inner
         [値下げ交渉可]
         %br
         付属品はありません。
@@ -74,25 +74,25 @@
         中古品ですので、気になるかたはご遠慮下さいませ。
 
     .item-button-container
-      .item-button-container-left
-        .item-button-container-left-like
+      .item-button-container__left
+        .item-button-container__left__like
           =link_to "#" do
             %i.fas.fa-heart
             %span いいね！
             %span 1
-        .item-button-container-left-report
+        .item-button-container__left__report
           =link_to "#" do
             %i.fa.fa-flag
             %span 不適切な商品の報告
-      .item-button-container-right
+      .item-button-container__right
         =link_to "#" do
           %i.fa.fa-lock
           %span あんしん・あんぜんの取り組み
 
   .item-detail-comment
-    .item-detail-comment-container
-      .item-detail-comment-content
-        %form.item-detail-comment-form
+    .item-detail-comment__container
+      .item-detail-comment__content
+        %form.item-detail-comment__form
           %p
             相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
           %textarea.textarea-default
@@ -101,5 +101,3 @@
 
 %footer.product_footer
   = image_tag "4707dcfb8a2ec063cff172a0ba8cef4b.jpg", class: 'product_footer__img'
-
-  
