@@ -19,6 +19,10 @@
         min-width: 300px;
         max-width: 300px;
         min-height: 375px;
+        &__image{
+          width: 300px;
+          height: 375px;
+        }
       }
       &__detail-table {
         width: 100%;
@@ -150,32 +154,32 @@
         background: #fff6de;
       }
 
-    .textarea-default{
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      min-height: 104px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      background: #fff;
-      font-size: 16px;
-      line-height: 1.5;
+      .textarea-default{
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-height: 104px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 16px;
+        line-height: 1.5;
       }
 
-    .comment-submit {
-      margin-top:8px;
-      display: block; 
-      width: 100%;
-      line-height: 48px;
-      font-size: 14px;
-      border: 1px solid transparent;
-      -webkit-transition: all ease-out .3s;
-      transition: all ease-out .3s;
-      cursor: pointer;
-      text-align: center;
-      background: #aaa;
-      border: 1px solid #aaa;
-      color: #fff;
+      .comment-submit {
+        margin-top:8px;
+        display: block; 
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
       }
     }
   }
