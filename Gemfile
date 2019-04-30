@@ -77,14 +77,14 @@ gem 'pry-rails'
 gem 'jquery-rails'
 gem 'sass'
 gem 'devise'
-
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
-
 gem 'pry-rails'
-
 gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-sass"
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'active_hash'

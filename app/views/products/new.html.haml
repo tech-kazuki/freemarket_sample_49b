@@ -1,0 +1,118 @@
+%header.products_header
+  = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336', height: '49', width: '185', class: 'products_header__img'
+.products_new_container
+  .products_new_container__content
+    %p.products_new_container__content__title 商品の情報を入力
+  .products_new_container__content
+    .products_new_container__content__form
+      = label '', '出品画像', class: 'products_new_container__content__form__title'
+      %span 必須
+      %p.products_new_container__content__form__comment 最大10枚までアップロードできます
+      %br
+      .drop_area
+        .drop_area__image_box
+          .drop_content
+            = image_tag 'UNADJUSTEDNONRAW_thumb_111a.jpg', class: 'drop_content__img'
+          .delete_link 削除
+        #drop_box
+          ドラッグアンドドロップ
+          %br
+          またはクリックしてファイルをアップロード
+        = file_field_tag '', id: 'file_input', multiple: true
+        = text_field '', '', type: 'hidden', id: 'text_field'
+  .products_new_container__content
+    .products_new_container__content__form
+      .products_new_container__content__form__box
+        = label '', '商品名'
+        %span 必須
+        %br
+        = text_field '', '',class: 'text_field', placeholder: '商品名（必須40文字まで）'
+      .products_new_container__content__form__box
+        = label '', '商品の説明'
+        %span 必須
+        %br
+        = text_area '', '', class: 'text_area', placeholder: '商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです'
+  .products_new_container__content
+    .products_new_container__content__select
+      %p.products_new_container__content__select__memo 商品の詳細
+      .products_new_container__content__select__box
+        = label '', 'カテゴリー'
+        %span 必須
+        %br
+        = select_tag (1..3).to_a
+        %br
+        = select_tag (1..3).to_a
+        %br
+        = select_tag (1..3).to_a
+        %br
+      .products_new_container__content__select__box
+        = label '', 'サイズ'
+        %span 必須
+        %br
+        = select_tag (1..3).to_a
+        %br
+      .products_new_container__content__select__box
+        = label '', 'ブランド'
+        %span 任意
+        %br
+        = select_tag (1..3).to_a
+        %br
+      .products_new_container__content__select__box
+        = label '', '商品の状態'
+        %span 必須
+        %br
+        = select_tag (1..3).to_a
+        %br
+  .products_new_container__content
+    .products_new_container__content__select
+      %p.products_new_container__content__select__memo 配送について
+      .products_new_container__content__select__box
+        = label '', '配送料の負担'
+        %span 必須
+        %br
+        = select_tag (1..3).to_a
+        %br
+      .products_new_container__content__select__box
+        = label '', '配送元の地域'
+        %span 必須
+        %br
+        = select_tag (1..3).to_a
+        %br
+      .products_new_container__content__select__box
+        = label '', '発送までの日数'
+        %span 必須
+        %br
+        = select_tag (1..3).to_a
+        %br
+  .products_new_container__content
+    .products_new_container__content__prices
+      %p.products_new_container__content__prices__memo 販売価格(300~9,999,999)
+      .products_new_container__content__prices__box.products_new_container__content__prices__box--none
+        .list_left
+          価格
+          %span 必須
+        .list_right
+          %p.yen_icon ¥
+          = text_field '', '',class: 'text_field', placeholder: '例）300'
+      .products_new_container__content__prices__box
+        .list_left
+          販売手数料(10%)
+        .list_right
+          ¥100
+      .products_new_container__content__prices__box
+        .list_left
+          販売利益
+        .list_right
+          ¥900
+  .products_new_container__content
+    .products_new_container__content__last
+      %p.products_new_container__content__last__text
+        禁止されている出品、行為を必ずご確認ください。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+        %br
+        また、出品をもちまして加盟店規約に同意したことになります。
+      = button_tag '出品する', class: 'btm_create'
+      %br
+      = button_tag '戻る', class: 'btm_back'
+= render 'footer.html.haml'
