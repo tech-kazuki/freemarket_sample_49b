@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(){
   var second_lists = document.getElementsByClassName('second_lists');
   var second_list = document.getElementsByClassName('second_list');
   var third_lists = document.getElementsByClassName('third_lists');
-
+  
   function openList(list) {
     return function (){
     list.style.display = 'block';
@@ -40,17 +40,17 @@ $(document).on('turbolinks:load', function(){
   }).on('mouseout', function(){
     $(this).css('background-color', '#fff');
     $(this).children('.top_links').css('color', '#000');
-  })
+  });
 
   $('.second_list_box').on('mouseover', function() {
     $(this).css('background-color', '#f0f0f0');
   }).on('mouseout', function(){
     $(this).css('background-color', '#fff');
-  })
+  });
 
   $('.more_links').on('mouseover', function() {
     $(this).css('background-color', '#f0f0f0');
   }).on('mouseout', function(){
     $(this).css('background-color', '#fff');
-  })
+  });
 });

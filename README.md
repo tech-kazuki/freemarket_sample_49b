@@ -97,7 +97,8 @@ Things you may want to cover:
 - belongs_to :user
 
 ## ToDoテーブル
-
+|Column|Type|Options|
+|---------|-----|---------|
 |todo|text|null: false |
 |user_id|integer|foreign_key: true|
 
@@ -113,8 +114,8 @@ Things you may want to cover:
 |description|text||
 |category_id|integer|foreign_key: true |
 |product_state|string||
-|burden_id|integer|foreign_key: true|
-|size_id|integer|foreign_key: true|
+|burden|string||
+|size|string||
 |prefecture|string|null: false|
 |how_long|string||
 |how_ship|string||
@@ -129,6 +130,7 @@ Things you may want to cover:
 - has_one :category
 - has_one :burden
 - has_one :brand
+- has_one :evaluation
 - belongs_to :user
 
 ## categorysテーブル
@@ -140,32 +142,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :product
 
-
-## category_parentテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|name|string|null: false|
-
-### Association
-- belongs_to :product
-
-
-## category_childテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|name|string|null: false|
-
-### Association
-- belongs_to :product
-
-
-## burdenテーブル
-|Column|Type|Options|
-|---------|-----|---------|
-|burden|string|null: false|
-
-### Association
-- belongs_to :product
 
 
 ## brandテーブル
