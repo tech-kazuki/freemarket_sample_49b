@@ -5,14 +5,24 @@ Rails.application.routes.draw do
   }
   
   root "products#index"
-  get "products/show" => "products#show"
+
+  resources :products, only: [:index, :new, :show] do
+    collection do
+      get 'buy'
+    end
+  end
+
+
   resources :users, only: [:show] do
     resource :address, only: [:new, :create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]
+    collection do
+      get 'logout'
+    end
   end
+
   devise_scope :user do
     get 'index' => 'users/registrations#index'
-    get 'facebook' => 'users/registrations#facebook'
     get 'certification' => 'users/registrations#certification'
     get 'complete' => 'users/registrations#complete'
   end

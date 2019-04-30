@@ -1,4 +1,5 @@
 @import 'config/color';
+@import 'config/mixin';
 
 .registration_header {
   display: flex;
@@ -49,15 +50,7 @@
           font-size: 16px;
         }
         &__btn {
-          background: $mercariRed;
-          border: 1px solid $mercariRed;
-          color: $baseColor;
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          text-align: center;
-          cursor: pointer;
+          @include btnSetting;
         }
         h3 {
           font-size: 17px;

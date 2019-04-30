@@ -1,20 +1,22 @@
 = render 'header'
-.floating_btn
-  .floating_btn__title 出品
-  %i.fas.fa-camera.fa-4x.floating_btn__camera
+= link_to new_product_path, class: 'product_link' do
+  .floating_btn
+    .floating_btn__title 出品
+    = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
 .swiper-container
   .swiper-wrapper
     .swiper-slide
-      = image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1'
+      .swiper-slide1
     .swiper-slide
-      = image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1'
+      .swiper-slide2
     .swiper-slide
-      = image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1'
+      .swiper-slide3
     .swiper-slide
-      = image_tag "ed49d3c91eb36c8f59528fe99cfb7c43.jpg", class: 'swiper-slide1'
+      .swiper-slide4
   .swiper-pagination
   .swiper-button-prev
   .swiper-button-next
 = render 'container'
 %footer.product_footer
-  = image_tag "4707dcfb8a2ec063cff172a0ba8cef4b.jpg", class: 'product_footer__img'
+  .product_footer__top
+  = link_to 'ログアウト', destroy_user_session_path(current_user.id), { method: :delete, style: 'color: white;'} if user_signed_in?
