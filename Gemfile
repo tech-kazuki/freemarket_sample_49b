@@ -88,3 +88,4 @@ gem "font-awesome-sass"
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash'
+gem 'ancestry'
