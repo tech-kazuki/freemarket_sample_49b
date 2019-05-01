@@ -1,22 +1,22 @@
 //サイドバー
 .side__content {
-    height: 100%;
-    width:  282px;
-    float:left;
-    margin-right: 40px;
+  height: 100%;
+  width:  282px;
+  float:left;
+  margin-right: 40px;
     //サイドメニュー項目
     .mypage-nav {
       &__head {
-        font-size: 16px;
-        margin: 40px 0 8px 0;
-        font-weight:  bold;
+      font-size: 16px;
+      margin: 40px 0 8px 0;
+      font-weight:  bold;
       }
     //サイドメニュー内容
       &__list {
-          & a {
-          text-decoration: none;
-          color: #333;
-          }
+        & a {
+        text-decoration: none;
+        color: #333;
+        }
         &--item {
           height: 50px;
           font-size: 14px;
@@ -54,11 +54,11 @@
           }
         }
         &--arrow {
-            float: right;
-            line-height: 16px;
-            font-size: 26px;
-            opacity: 0.2;
-            color: #333;
+          float: right;
+          line-height: 16px;
+          font-size: 26px;
+          opacity: 0.2;
+          color: #333;
         }
       }
     }
