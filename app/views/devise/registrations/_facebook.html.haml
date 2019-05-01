@@ -77,4 +77,4 @@
         %p.agreement
           「次へ進む」のボタンを押すことにより、#{link_to '利用規約', '#'}に同意したものとみなします
       .field
-        = f.submit "次へ進む", class: 'field__btn'
+        = button_tag "次へ進む", class: 'field__btn', id: 'user_btn', type: 'button'
