@@ -19,7 +19,7 @@ $(function(){
     };
     
     $.ajax({
-      url: '/products/new',
+      url: '/users/1/products/new',
       type: "GET",
       data:{category: category},
       dataType: 'json'
@@ -51,7 +51,7 @@ $(function(){
     };
     
     $.ajax({
-      url: '/products/new',
+      url: '/users/1/products/new',
       type: "GET",
       data:{category_a: category_a},
       dataType: 'json'
