@@ -1,0 +1,88 @@
+@import "config/color";
+
+ //全体
+ .users_credit_container {
+        margin: 40px auto 0;
+    }
+  
+  
+
+  //中身
+  .users_credit-body {
+    background-color:#f5f5f5;
+    height: 1400px;
+    width: 1020px;
+    margin: 40px 210px 40px 210px;
+    //creditボタンのヘッダー
+    .users_credit_header{
+        float: right;
+        width: calc(100vw - 742px);
+        height: 50px;
+        background-color: #fff;
+        border-bottom: solid 2px #EEEEEE;
+        &--text{
+            padding: 8px 24px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 23px;
+        }
+    }
+    //creditの中身大部分
+    .users_credit_main__content {
+        float: right;
+        background-color: #fff;
+        width: calc(100vw - 742px);
+        height: 300px;
+        position: relative;
+        &--link{
+            position: absolute;
+            right: 90px;
+            top: 220px;
+            padding: 8px 24px;
+            text-align: center;
+            font-size: 14px;
+            color: #6495ED;
+            &--arrow {
+                float: right;
+                line-height: 19px;
+                padding-left: 10px;
+            }
+        }
+        //ボタンとその周り
+        .users_credit_button__content{
+            position: relative;
+            width: 520px;
+            height: 150px;
+            margin: 52px;
+            border-bottom: solid 1px #EEEEEE;
+            &--text{
+                position: absolute;
+                left: 150px;
+                top: 20px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 15px;
+            }
+            &--button {
+                height: 50px;
+                width: 300px;
+                display: block;
+                position: absolute;
+                top: 65px;
+                left: 150px;
+                right: 200px;
+                bottom: 65px;
+                background-color: $mercariRed;
+                &--content {
+                    line-height: 50px;
+                    text-align: center;
+                    font-size: 13px;
+                    color: #fff;
+                    &--credit {
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }   
+}

@@ -1,0 +1,19 @@
+.users_credit_container
+  = render '/products/header'
+  .users_credit-body
+    = render '/users/user-side'
+    .users_credit_header
+      .users_credit_header--text 
+        支払い方法
+    .users_credit_main__content
+      .users_credit_main__content--link
+        お支払い方法について
+        %i.fas.fa-chevron-right.users_credit_main__content--link--arrow
+      .users_credit_button__content
+        .users_credit_button__content--text
+          クレジットカード一覧           
+        .users_credit_button__content--button
+          .users_credit_button__content--button--content
+            %i.fas.fa-credit-card.users_credit_button__content--button--content--credit
+            クレジットカードを追加する
+  = render '/products/footer'
