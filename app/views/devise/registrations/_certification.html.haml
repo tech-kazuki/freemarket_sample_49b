@@ -1,0 +1,9 @@
+%h2.form-container__title 電話番号の確認
+.form_box
+  .field
+    %label 携帯電話の番号
+    %input.field__form{:placeholder => "携帯電話の番号を入力", :type => "text"}/
+    %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+  .field
+    %input.field__btn{:type => "submit", :value => "SMSを送信する"}/
+    %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。

@@ -7,24 +7,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def index
   end
   
-  def certification
-  end
+  # def certification
+  # end
 
-  def complete
-  end
+  # def complete
+  # end
 
-  # GET /resource/sign_up
-    def new
-      unless session["devise.facebook_data"].nil?
-        information = session["devise.facebook_data"]
-        @name = information["info"]["name"]
-        @email = information["info"]["email"]
-        @password = information["password"]
-        @provider = information["provider"]
-        @uid = information["uid"]
-      end
-      super
+  def new
+    unless session["devise.facebook_data"].nil?
+      information = session["devise.facebook_data"]
+      @name = information["info"]["name"]
+      @email = information["info"]["email"]
+      @password = information["password"]
+      @provider = information["provider"]
+      @uid = information["uid"]
     end
+    super
+  end
 
   # POST /resource
   # def create
@@ -68,13 +67,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    certification_path
-  end
+  # def after_sign_up_path_for(resource)
+  #   certification_path
+  # end
 
   # The path used after sign up for inactive accounts.
-  def after_inactive_sign_up_path_for(resource)
-    certification_path
-  end
+  # def after_inactive_sign_up_path_for(resource)
+  #   certification_path
+  # end
 
 end

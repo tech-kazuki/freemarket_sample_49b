@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one :address
   has_one :card
+  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :card
 
   validates :nickname,              presence: true
   validates :email,                 presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i , message: "正しいメールアドレスを入力してください" }
