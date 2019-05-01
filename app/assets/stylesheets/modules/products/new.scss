@@ -105,6 +105,14 @@ label {
       &__box {
         width: 400px;
         margin: 0 0 25px auto;
+        .text_field {
+          @include formSetting;
+          width: 100%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          font-size: 16px;
+        }
         select {
           width: 100%;
           position: relative;
