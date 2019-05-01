@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'index' => 'users/registrations#index'
-    get 'certification' => 'users/registrations#certification'
     get 'complete' => 'users/registrations#complete'
   end
 end
