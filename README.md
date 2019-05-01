@@ -52,7 +52,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |---------|-----|---------|
 |postal_code|string|null: false |
-|prefecture|string|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
 |city|string|null: false |
 |building|string||
 |phone_number|string||
@@ -60,6 +60,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+- belongs_to_active_hash :prefecture
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -127,7 +128,7 @@ Things you may want to cover:
 - has_many :likes
 - has_many :comments
 - has_many :images
-- has_one :category
+- belongs_to :category
 - has_one :burden
 - has_one :brand
 - has_one :evaluation
@@ -140,7 +141,7 @@ Things you may want to cover:
 |ancestry|string||
 
 ### Association
-- belongs_to :product
+- has_many :products
 
 
 
