@@ -6,6 +6,27 @@ class ProductsController < ApplicationController
   end
  
   def new
+    parents = Category.roots
+    @parents = parents.map{|parent| parent.name}
+
+    unless params[:category].nil?
+      category = params[:category]
+      parents = Category.find_by(name: category)
+      @children = parents.children
+      respond_to do |format|
+        format.json
+      end
+    end
+
+    unless params[:category_a].nil?
+      category = params[:category_a]
+      parents = Category.find_by(id: category)
+      @children = parents.children
+      respond_to do |format|
+        format.json
+      end
+     end
+   
     @product = Product.new
     @user = User.find(current_user.id)
     @product.images.build

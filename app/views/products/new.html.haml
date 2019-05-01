@@ -37,27 +37,25 @@
       .products_new_container__content__select
         %p.products_new_container__content__select__memo 商品の詳細
         .products_new_container__content__select__box
-          = f.label '', 'カテゴリー'
+          = label '', 'カテゴリー'
           %span 必須
-          %br
-          = select_tag (1..3).to_a
-          %br
-          = select_tag (1..3).to_a
-          %br
-          = select_tag (1..3).to_a
-          %br
+          .products_new_container__content__select__box__category
+            %br
+            = select_tag "range", options_for_select(@parents), include_blank: true
         .products_new_container__content__select__box
-          = f.label '', 'サイズ'
-          %span 必須
-          %br
-          = f.select :size, (1..3).to_a
-          %br
+          .products_new_container__content__select__box__size
+            = label '', 'サイズ'
+            %span 必須
+            %br
+            = select_tag (1..3).to_a
+            %br
         .products_new_container__content__select__box
-          = label '', 'ブランド'
-          %span 任意
-          %br
-          = text_field '', '', class: 'text_field', placeholder: '例）ナイキ'
-          %br
+          .products_new_container__content__select__box__brand
+            = label '', 'ブランド'
+            %span 任意
+            %br
+            = select_tag (1..3).to_a
+            %br
         .products_new_container__content__select__box
           = label '', '商品の状態'
           %span 必須
