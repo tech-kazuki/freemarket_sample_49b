@@ -19,15 +19,6 @@ class User < ApplicationRecord
   validates :birthday_year,         presence: true
   validates :birthday_month,        presence: true
   validates :birthday_date,         presence: true
-  
-  validates :postal_code,           presence: true
-  validates :prefecture_id,         presence: true
-  validates :city,                  presence: true
-  
-  validates :number,                presence: true
-  validates :valid_manth,           presence: true
-  validates :valid_year,            presence: true
-  validates :security_number,       presence: true
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
