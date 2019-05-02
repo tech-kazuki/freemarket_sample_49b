@@ -1,50 +1,24 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   def index
   end
-  
-  def certification
-  end
 
   def complete
   end
 
-  # GET /resource/sign_up
-    def new
-      unless session["devise.facebook_data"].nil?
-        information = session["devise.facebook_data"]
-        @name = information["info"]["name"]
-        @email = information["info"]["email"]
-        @password = information["password"]
-        @provider = information["provider"]
-        @uid = information["uid"]
-      end
-      super
+  def new
+    unless session["devise.facebook_data"].nil?
+      information = session["devise.facebook_data"]
+      @name = information["info"]["name"]
+      @email = information["info"]["email"]
+      @password = information["password"]
+      @provider = information["provider"]
+      @uid = information["uid"]
     end
-
-  # POST /resource
-  # def create
-  #   super
-  # end
-
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
-  #   super
-  # end
-
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
+    super
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -55,7 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -67,14 +41,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end
 
-  # The path used after sign up.
   def after_sign_up_path_for(resource)
-    certification_path
+    complete_path
   end
 
-  # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
-    certification_path
+    complete_path
   end
 
 end

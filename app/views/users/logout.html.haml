@@ -3,7 +3,7 @@
   .logout-body
     = render '/users/user-side'
     .logout_main__content
-      .logout_main__content--button
-        ログアウト
-  = render '/products/footer'
-        
+      = link_to destroy_user_session_path, { method: :delete } do
+        .logout_main__content--button
+          ログアウト
+  = render '/products/global_footer'

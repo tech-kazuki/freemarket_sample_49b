@@ -1,11 +1,13 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  extend ActiveHash::Associations::ActiveRecordExtensions
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
   has_one :address
   has_one :card
+  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :card
+  belongs_to_active_hash :prefecture
 
   validates :nickname,              presence: true
   validates :email,                 presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i , message: "正しいメールアドレスを入力してください" }
@@ -17,6 +19,15 @@ class User < ApplicationRecord
   validates :birthday_year,         presence: true
   validates :birthday_month,        presence: true
   validates :birthday_date,         presence: true
+  
+  validates :postal_code,           presence: true, format: { with: /\d{3}-\d{4}/ }
+  validates :prefecture_id,         presence: true
+  validates :city,                  presence: true
+  
+  validates :number,                presence: true
+  validates :valid_manth,           presence: true
+  validates :valid_year,            presence: true
+  validates :security_number,       presence: true
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

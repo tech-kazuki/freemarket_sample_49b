@@ -16,19 +16,15 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get 'credit'
-    end
-    resources :products, only: [:new, :create, :show]
-    resource :address, only: [:new, :create, :edit, :update, :destroy]
-    resource :card, only: [:new, :create, :edit, :update, :destroy]
-    resource :users, only: [:edit]
-    collection do
       get 'logout'
     end
+    resources :products, only: [:new, :create, :show]
+    resource :address, only: [:create, :edit, :update, :destroy]
+    resource :card, only: [:create, :edit, :update, :destroy]
   end
 
   devise_scope :user do
     get 'index' => 'users/registrations#index'
-    get 'certification' => 'users/registrations#certification'
     get 'complete' => 'users/registrations#complete'
   end
 end

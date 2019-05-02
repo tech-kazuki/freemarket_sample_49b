@@ -1,0 +1,48 @@
+%h2.form-container__title 住所入力
+= f.fields_for :address, Address.new do |ff|
+  .form_box
+    .field
+      = ff.label 'お名前'
+      %span 必須
+      %br/
+      = ff.text_field :family_name, placeholder: '例）山田', class: "field__form"
+      = ff.text_field :first_name, placeholder: '例）彩', class: "field__form"
+    .field
+      = ff.label 'お名前カナ'
+      %span 必須
+      %br/
+      = ff.text_field :family_name_katakana, placeholder: '例）ヤマダ', class: "field__form"
+      = ff.text_field :first_name_katakana, placeholder: '例）アヤ', class: "field__form"
+    .field
+      = ff.label '郵便番号'
+      %span 必須
+      %br/
+      = ff.text_field :postal_code, placeholder: '例）123-4567', class: "field__form"
+    .field
+      = ff.label '都道府県'
+      %span 必須
+      %br/
+      %p
+        = ff.collection_select :prefecture_id, Prefecture.all, :id, :name
+    .field
+      = ff.label '市区町村'
+      %span 必須
+      %br/
+      = ff.text_field :city, placeholder: '例）東京都渋谷区', class: "field__form"
+    .field
+      = ff.label '番地'
+      %span 必須
+      %br/
+      = ff.text_field :block_number, placeholder: '例）道玄坂1-1', class: "field__form"
+    .field
+      = ff.label '建物名'
+      %span.ninni 任意
+      %br/
+      = ff.text_field :building, placeholder: '例）アジアビル', class: "field__form"
+    .field
+      = ff.label '電話'
+      %span.ninni 任意
+      %br/
+      = ff.text_field :phone_number, placeholder: '例）09012345678', class: "field__form"
+    .field
+      = button_tag "次へ進む", class: 'field__btn', id: 'address_btn', type: 'button'
