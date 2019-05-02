@@ -25,15 +25,13 @@
     .users_credit_main__content {
       background-color: #fff;
       height: 300px;
-      position: relative;
       &__link{
-        position: absolute;
-        right: 90px;
-        top: 220px;
         padding: 8px 24px;
-        text-align: center;
         font-size: 14px;
         color: #6495ED;
+        margin-top: 40px;
+        margin-right: 50px;
+        text-align: right;
         &__arrow {
           line-height: 19px;
           padding-left: 10px;
@@ -46,7 +44,7 @@
         border-bottom: solid 1px #EEEEEE;
         margin: 0 auto;
         &__text{
-          padding-top: 30px;
+          padding-top: 40px;
           font-weight: bold;
           font-size: 15px;
           margin-left: 100px;
