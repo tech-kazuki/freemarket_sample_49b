@@ -1,22 +1,16 @@
 @import "config/color";
- //全体
-.users_edit_container {
-    margin: 40px auto 0;
-}
   //全体
 .users_edit_body {
   background-color:#f5f5f5;
-  height: 1400px;
   width: 1020px;
-  margin: 40px 210px 40px 210px;
+  margin: 40px auto;
+  display: flex;
   //右側
   .users_edit_main_content{
-    float: right;
-    width: calc(100vw - 742px);
-    height: 400px;
+    width: 700px;
     //ヘッダー
     .users_edit_header{
-      width: calc(100vw - 742px);
+      width: 100%;
       height: 50px;
       background-color: #fff;
       border-bottom: solid 2px #EEEEEE;
@@ -29,48 +23,47 @@
     }
     //ユーザー編集の名前部分
     .users_edit_up_content {
-      position: relative;
       height: 156px;
-      background-size:  cover;
+      padding: 60px 0 15px;
+      background-size: cover;
       background-image: url("https://yukotabi.static.yukoyuko.net/import/images/l1a295dWtvZnVtdWZ1bXUyMDE3MDgzMDIwMTcwODMwMTA0NzM.jpg");
-      &__figure {
-        position: absolute;
-        background-image: url("https://smallbusiness.co.jp/wp-content/uploads/2018/04/img_5ac32787dcbf5.png");
-        background-repeat: no-repeat;
-        background-size:cover;
+      &__profile {
+        display: flex;
+        justify-content: space-between;
         text-align: center;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        top: 70px;
-        left: 200px;
-       }
-      &__form{
-        position: absolute;
-        top: 80px;
-        left: 280px;
-        height: 47px;
+        width: 280px;
+        margin: 0 auto;
+        &__figure {
+          background-image: url("https://smallbusiness.co.jp/wp-content/uploads/2018/04/img_5ac32787dcbf5.png");
+          background-repeat: no-repeat;
+          background-size:cover;
+          text-align: center;
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+        }
+        &__form{
+          height: 47px;
+          margin: 11px 0;
+        }
       }
     } 
     //ユーサー編集のform部分
     .users_form_content{
-      height: 360px;
+      padding: 40px 0;
       background-color: #fff;
-      position: relative;
       &__form{
-        position: absolute;
-        top: 40px;
-        left: 20px;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
         height: 220px;
         width: 620px;
       }
       &__button {
         height: 50px;
         width: 620px;
-        left: 20px;
+        margin: 20px auto 0;
         display: block;
-        position: absolute;
-        bottom: 30px;
         background-color: $mercariRed;
         &__content {
           line-height: 50px;
@@ -80,6 +73,5 @@
         }
       }
     }
-
   } 
 }
