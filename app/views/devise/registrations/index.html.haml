@@ -1,7 +1,8 @@
 #degistration-index-container
   .contents
     .header
-      = image_tag("logo.svg", class: "image", size: "185x49")
+      = link_to root_path do
+        = image_tag("logo.svg", class: "image", size: "185x49")
     .sign_up
       %p 新規会員登録
     .main
