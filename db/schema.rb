@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_063424) do
+ActiveRecord::Schema.define(version: 2019_04_30_043911) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name", null: false
@@ -28,12 +28,6 @@ ActiveRecord::Schema.define(version: 2019_04_29_063424) do
     t.bigint "prefecture_id"
     t.index ["prefecture_id"], name: "index_addresses_on_prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
-
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -91,13 +85,12 @@ ActiveRecord::Schema.define(version: 2019_04_29_063424) do
     t.string "size"
     t.string "how_long"
     t.string "how_ship"
-    t.bigint "brand_id"
     t.string "availability"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "prefecture_id"
-    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.string "brand"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["name"], name: "index_products_on_name"
     t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
@@ -135,7 +128,6 @@ ActiveRecord::Schema.define(version: 2019_04_29_063424) do
   add_foreign_key "images", "products"
   add_foreign_key "likes", "products"
   add_foreign_key "likes", "users"
-  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
 end

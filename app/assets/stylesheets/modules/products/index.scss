@@ -73,17 +73,6 @@
       }
     }
   }
-  .product_footer {
-    background-color: #000;
-    height: 600px;
-    &__top {
-      background-image: image-url('4707dcfb8a2ec063cff172a0ba8cef4b.jpg');
-      background-size: auto 320px;
-      background-position: center;
-      width: 100vw;
-      height: 320px;
-    }
-  }
 }
 
 @media screen and (max-width: 1065px) {
@@ -157,17 +146,6 @@
           }
         }
       }
-    }
-  }
-  .product_footer {
-    background-color: #000;
-    height: 600px;
-    &__top {
-      background-image: image-url('4707dcfb8a2ec063cff172a0ba8cef4b.jpg');
-      background-size: auto 280px;
-      background-position: center;
-      width: 100vw;
-      height: 280px;
     }
   }
 }
