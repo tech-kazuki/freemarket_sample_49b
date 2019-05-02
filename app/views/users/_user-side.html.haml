@@ -74,11 +74,11 @@
                 .mypage-nav__list--item
                     プロフィール
                     %i.fas.fa-chevron-right.mypage-nav__list--arrow
-            = link_to "" do
+            = link_to edit_user_address_path(current_user.id) do
                 .mypage-nav__list--item
                     住所変更
                     %i.fas.fa-chevron-right.mypage-nav__list--arrow
-            = link_to "" do
+            = link_to credit_users_path do
                 .mypage-nav__list--item
                     支払い方法
                     %i.fas.fa-chevron-right.mypage-nav__list--arrow
