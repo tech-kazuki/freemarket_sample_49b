@@ -18,6 +18,4 @@
   .swiper-button-prev
   .swiper-button-next
 = render 'container'
-%footer.product_footer
-  .product_footer__top
-  = link_to 'ログアウト', destroy_user_session_path(current_user.id), { method: :delete, style: 'color: white;'} if user_signed_in?
+= render 'global_footer'

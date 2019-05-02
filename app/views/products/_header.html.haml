@@ -1,34 +1,33 @@
-%body
-  %header.header
-    .header__inner
-      .header__top
-        %h1
-          = link_to '#', class: 'header__top__image' do
-            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4093625870", class: "header_title", width: "134", height: "36"
-        %form.header__top__form
-          %input.header__top__form__search{:placeholder => "何かお探しですか？", :type => "search", :value => ""}/
-          = icon 'fas', 'search', class: 'header__top__form__icon'
-      .header__bottom
-        .header__bottom__left
-          %h2.header__bottom__left__h2
-            = link_to '#', class: 'header__bottom__left__link' do
-              = icon 'fas', 'list', class: 'header__bottom__left__link__icon'
-              %span.header__bottom__left__link__span カテゴリーから探す
-            = render '/products/lists'
-          %h2.header__bottom__left__h2
-            = link_to '#', class: 'header__bottom__left__link' do
-              = icon 'fas', 'tags', class: 'header__bottom__left__link__icon'
-              %span.header__bottom__left__link__span ブランドから探す
-        .header__bottom__right
-          = link_to 'ログイン', new_user_session_path, class: 'header__bottom__right__link--login' unless user_signed_in?
-          = link_to '新規会員登録', index_path, class: 'header__bottom__right__link--sign_up' unless user_signed_in?
-          - if user_signed_in?
-            = link_to '#', class: 'header__bottom__right__link' do
-              = icon 'fas', 'bell', class: 'header__bottom__right__icon'
-              %span.header__bottom__right__link__span お知らせ
-            = link_to '#', class: 'header__bottom__right__link' do
-              = icon 'fas', 'check', class: 'header__bottom__right__icon'
-              %span.header__bottom__right__link__span やることリスト
-            = link_to '#', class: 'header__bottom__right__link' do
-              %img.avatar{:src => ""}/
-              %span.header__bottom__right__link__span マイページ
+%header.header
+  .header__inner
+    .header__top
+      %h1
+        = link_to '#', class: 'header__top__image' do
+          = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4093625870", class: "header_title", width: "134", height: "36"
+      %form.header__top__form
+        %input.header__top__form__search{:placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+        = icon 'fas', 'search', class: 'header__top__form__icon'
+    .header__bottom
+      .header__bottom__left
+        %h2.header__bottom__left__h2
+          = link_to '#', class: 'header__bottom__left__link' do
+            = icon 'fas', 'list', class: 'header__bottom__left__link__icon'
+            %span.header__bottom__left__link__span カテゴリーから探す
+          = render '/products/lists'
+        %h2.header__bottom__left__h2
+          = link_to '#', class: 'header__bottom__left__link' do
+            = icon 'fas', 'tags', class: 'header__bottom__left__link__icon'
+            %span.header__bottom__left__link__span ブランドから探す
+      .header__bottom__right
+        = link_to 'ログイン', new_user_session_path, class: 'header__bottom__right__link--login' unless user_signed_in?
+        = link_to '新規会員登録', index_path, class: 'header__bottom__right__link--sign_up' unless user_signed_in?
+        - if user_signed_in?
+          = link_to '#', class: 'header__bottom__right__link' do
+            = icon 'fas', 'bell', class: 'header__bottom__right__icon'
+            %span.header__bottom__right__link__span お知らせ
+          = link_to '#', class: 'header__bottom__right__link' do
+            = icon 'fas', 'check', class: 'header__bottom__right__icon'
+            %span.header__bottom__right__link__span やることリスト
+          = link_to user_path(current_user), class: 'header__bottom__right__link' do
+            = image_tag '', class: 'avatar'
+            %span.header__bottom__right__link__span マイページ
