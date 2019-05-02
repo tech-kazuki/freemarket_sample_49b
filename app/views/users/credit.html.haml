@@ -2,19 +2,20 @@
   = render '/products/header'
   .users_credit-body
     = render '/users/user-side'
-    .users_credit_header
-      .users_credit_header__text 
-        支払い方法
-    .users_credit_main__content
-      .users_credit_main__content__link
-        お支払い方法について
-        %i.fas.fa-chevron-right.users_credit_main__content__link__arrow
-      .users_credit_button__content
-        .users_credit_button__content__text
-          クレジットカード一覧           
-        .users_credit_button__content__button
-          .users_credit_button__content__button__content
-            %i.fas.fa-credit-card.users_credit_button__content__button__content__credit
-            クレジットカードを追加する
+    .users_credit_main_content
+      .users_credit_header
+        .users_credit_header__text 
+          支払い方法
+      .users_credit_main__content
+        .users_credit_button__content
+          .users_credit_button__content__text
+            クレジットカード一覧           
+            .users_credit_button__content__text__button
+              .users_credit_button__content__text__button__content
+                %i.fas.fa-credit-card.users_credit_button__content__text__button__content__credit
+                クレジットカードを追加する
+        .users_credit_main__content__link
+          お支払い方法について
+          %i.fas.fa-chevron-right.users_credit_main__content__link__arrow
             
   = render '/products/footer'
