@@ -8,6 +8,9 @@ class AddressesController < ApplicationController
     redirect_to new_user_card_url(current_user.id)
   end
 
+  def edit
+  end
+  
   private
 
   def address_params
