@@ -6,7 +6,6 @@ class Product < ApplicationRecord
  has_many :images
  belongs_to :category
  accepts_nested_attributes_for :images
- has_one :brand
  has_one :evalution
  belongs_to :user
  belongs_to_active_hash :prefecture

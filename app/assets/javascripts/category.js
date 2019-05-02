@@ -63,12 +63,13 @@ $(function(){
       .fail(function(){
         alert('error');
       })
-  }
- );
+  });
 
   $(document).one('change', "#range-third", function(){
     $(".products_new_container__content__select__box__size").show();
     $(".products_new_container__content__select__box__brand").show();
+    var category = $("#range-third").val();
+    $(".category").val(category);
   })
 
 });

@@ -30,3 +30,4 @@
 
 config/secrets.yml
 config/deploy.rb
+public/uproads/tmp
