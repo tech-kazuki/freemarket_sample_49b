@@ -86,6 +86,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-sass"
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'ancestry'
