@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
     product = Product.new(product_params)
     product.user = current_user
     product.save
+    redirect_to root_path
   end
 
   def buy
