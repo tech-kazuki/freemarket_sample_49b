@@ -28,6 +28,6 @@
           = link_to '#', class: 'header__bottom__right__link' do
             = icon 'fas', 'check', class: 'header__bottom__right__icon'
             %span.header__bottom__right__link__span やることリスト
-          = link_to '#', class: 'header__bottom__right__link' do
+          = link_to user_path(current_user), class: 'header__bottom__right__link' do
             = image_tag '', class: 'avatar'
             %span.header__bottom__right__link__span マイページ
