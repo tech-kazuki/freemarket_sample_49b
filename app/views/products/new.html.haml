@@ -41,26 +41,27 @@
           %span 必須
           .products_new_container__content__select__box__category
             %br
-            = select_tag "range", options_for_select(@parents), include_blank: true
+            = select_tag "range", options_for_select(@parents), include_blank: '---'
+            = f.hidden_field :category_id, value: "", class: "category"
         .products_new_container__content__select__box
           .products_new_container__content__select__box__size
             = label '', 'サイズ'
             %span 必須
             %br
-            = select_tag (1..3).to_a
+            = f.select :size, [["XXS以下"], ["XS(SS)"], ["S"], ["M"], ["L"], ["FREE SIZE"]], include_blank: '---'
             %br
         .products_new_container__content__select__box
           .products_new_container__content__select__box__brand
             = label '', 'ブランド'
             %span 任意
             %br
-            = select_tag (1..3).to_a
+            = f.text_field :brand,class: 'text_field'
             %br
         .products_new_container__content__select__box
           = label '', '商品の状態'
           %span 必須
           %br
-          = f.select :product_state, (1..3).to_a
+          = f.select :product_state, [["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], include_blank: '---'
           %br
     .products_new_container__content
       .products_new_container__content__select
@@ -69,19 +70,19 @@
           = f.label '', '配送料の負担'
           %span 必須
           %br
-          = f.select :burden, (1..3).to_a
+          = f.select :burden, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], include_blank: '---'
           %br
         .products_new_container__content__select__box
           = label '', '配送元の地域'
           %span 必須
           %br
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '---'
           %br
         .products_new_container__content__select__box
           = label '', '発送までの日数'
           %span 必須
           %br
-          = f.select :how_long, (1..3).to_a
+          = f.select :how_long, [["1〜2日で発送"], ["2〜3日で発送"], ["4〜7日で発送"]], include_blank: '---'
           %br
     .products_new_container__content
       .products_new_container__content__prices
