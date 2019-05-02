@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :birthday_month,        presence: true
   validates :birthday_date,         presence: true
   
-  validates :postal_code,           presence: true, format: { with: /\d{3}-\d{4}/ }
+  validates :postal_code,           presence: true
   validates :prefecture_id,         presence: true
   validates :city,                  presence: true
   
