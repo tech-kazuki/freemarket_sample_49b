@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :products, only: [:new, :create, :show]
     resource :address, only: [:new, :create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]
+    resource :users, only: [:edit]
     collection do
       get 'logout'
     end

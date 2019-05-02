@@ -1,0 +1,18 @@
+.users_edit_container
+  = render '/products/header'
+  .users_edit_body
+    = render 'users/user-side'
+    .users_edit_main_content
+      .users_edit_header
+        .users_edit_header__text
+          プロフィール
+      .users_edit_up_content
+        .users_edit_up_content__figure
+        %input.users_edit_up_content__form{placeholder:"username"}
+      .users_form_content
+        %textarea.users_form_content__form{placeholder:"example"}
+        .users_form_content__button
+          .users_form_content__button__content
+            変更する
+      
+  = render '/products/footer'
