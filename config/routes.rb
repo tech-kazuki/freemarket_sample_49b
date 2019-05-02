@@ -16,13 +16,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get 'credit'
+      get 'logout'
     end
     resources :products, only: [:new, :create, :show]
     resource :address, only: [:create, :edit, :update, :destroy]
     resource :card, only: [:create, :edit, :update, :destroy]
-    collection do
-      get 'logout'
-    end
   end
 
   devise_scope :user do
