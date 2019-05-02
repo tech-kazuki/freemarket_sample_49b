@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
   var dropBox = document.getElementById('drop_box');
-  var input = document.getElementById('file_input');
-  var textBox = document.getElementById('text_field');
   
   if (dropBox) {
     
@@ -10,7 +8,6 @@ $(document).on('turbolinks:load', function() {
       var file;
       for (var i = 0; i < length; i++) {
         file = files[i];
-          
         outputImage(file);
       }
     }

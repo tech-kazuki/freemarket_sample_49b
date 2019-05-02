@@ -1,5 +1,6 @@
 %header.products_header
-  = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336', height: '49', width: '185', class: 'products_header__img'
+  = link_to root_path do
+    = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336', height: '49', width: '185', class: 'products_header__img'
 .products_new_container
   = form_for [@user, @product] do |f|
     .products_new_container__content
@@ -11,10 +12,6 @@
         %p.products_new_container__content__form__comment 最大10枚までアップロードできます
         %br
         .drop_area
-          .drop_area__image_box
-            .drop_content
-              = image_tag 'UNADJUSTEDNONRAW_thumb_111a.jpg', class: 'drop_content__img'
-            .delete_link 削除
           #drop_box
             ドラッグアンドドロップ
             %br
