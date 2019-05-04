@@ -13,12 +13,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :categories, only: [:index, :show]
+
   resources :users, only: [:show, :edit] do
     collection do
       get 'credit'
       get 'logout'
     end
     resources :products, only: [:new, :create, :show]
+
     resource :address, only: [:create, :edit, :update, :destroy]
     resource :card, only: [:create, :edit, :update, :destroy]
   end

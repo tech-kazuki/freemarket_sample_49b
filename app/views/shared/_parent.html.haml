@@ -1,0 +1,7 @@
+%li.second_list
+  .second_list_box
+    %a.more_link{:href => ""} #{parent.name}
+    %ul.third_lists
+      - parent.children.each do |child|
+        %li= link_to child.name, '#', class: 'more_links'
+      

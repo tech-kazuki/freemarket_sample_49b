@@ -13,7 +13,11 @@
           = link_to '#', class: 'header__bottom__left__link' do
             = icon 'fas', 'list', class: 'header__bottom__left__link__icon'
             %span.header__bottom__left__link__span カテゴリーから探す
-          = render '/products/lists'
+          .accordion_list-1
+            %ul.top_list
+              = render partial: "shared/grandparent", collection: @grandparents
+            .cate_index
+              = link_to "カテゴリー一覧", categories_path, class: "category_index"
         %h2.header__bottom__left__h2
           = link_to '#', class: 'header__bottom__left__link' do
             = icon 'fas', 'tags', class: 'header__bottom__left__link__icon'
