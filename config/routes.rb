@@ -5,13 +5,6 @@ Rails.application.routes.draw do
   }
   
   root "products#index"
-  
-  # 商品情報が保存できるようになったら、データベースから引っ張るため、ネストする。
-  resources :products, only: [:index] do
-    collection do
-      get 'buy'
-    end
-  end
 
   resources :categories, only: [:index, :show]
 
@@ -20,10 +13,17 @@ Rails.application.routes.draw do
       get 'credit'
       get 'logout'
     end
+
     resources :products, only: [:new, :create, :show]
 
+    resources :products, only: [:new, :create, :show] do
+      member do
+        get 'buy'
+        post 'pay'
+      end
+    end
     resource :address, only: [:create, :edit, :update, :destroy]
-    resource :card, only: [:create, :edit, :update, :destroy]
+    resource :card, only: [:new, :create, :edit, :update, :destroy]
   end
 
   devise_scope :user do
