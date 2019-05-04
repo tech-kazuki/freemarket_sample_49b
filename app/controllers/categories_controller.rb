@@ -5,14 +5,19 @@ class CategoriesController < ApplicationController
 
   def show
     @category= Category.find(params[:id])
-    categoryIds = Category.find(params[:id]).indirect_ids
-    if categoryIds.empty?
-      categoryIds = Category.find(params[:id]).children
-      if categoryIds.empty?
-        categoryIds = Category.find(params[:id])
-      end
-    end
+    categoryIds = get_category(@category)
     @products = Product.where(category_id: categoryIds)
   end
 
+  private
+  def get_category(category)
+    if category.indirect_ids.present?
+      categoryIds = category.indirect_ids
+    elsif category.children.present?
+      categoryIds = category.children
+    else
+      categoryIds = category
+    end
+    return categoryIds
+  end
 end
