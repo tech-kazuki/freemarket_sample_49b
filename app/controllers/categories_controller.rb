@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   def show
     @category= Category.find(params[:id])
     categoryIds = get_category(@category)
-    @products = Product.where(category_id: categoryIds)
+    @products = Product.where(category_id: categoryIds).includes(:images)
   end
 
   private
