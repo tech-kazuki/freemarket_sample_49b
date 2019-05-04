@@ -42,11 +42,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for(resource)
-    complete_path
+    new_user_card_path(current_user)
   end
 
   def after_inactive_sign_up_path_for(resource)
-    complete_path
+    new_user_card_path(current_user)
   end
 
 end
