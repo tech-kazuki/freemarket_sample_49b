@@ -7,6 +7,8 @@ $(document).on('turbolinks:load', function(){
   var second_lists = document.getElementsByClassName('second_lists');
   var second_list = document.getElementsByClassName('second_list');
   var third_lists = document.getElementsByClassName('third_lists');
+  var grandLength = first_list.length
+  var parentLength = second_list.length
   
   if (first_list[0]) {
   
@@ -22,12 +24,12 @@ $(document).on('turbolinks:load', function(){
       }
     };
     
-    for (i = 0; i < 3; i++ ) {
+    for (i = 0; i < grandLength; i++ ) {
       first_list[i].addEventListener('mouseover', openList(second_lists[i]), false);
       first_list[i].addEventListener('mouseleave', closeList(second_lists[i]), false);
     };
 
-    for (i = 0; i < 9; i++ ) {
+    for (i = 0; i < parentLength; i++ ) {
       second_list[i].addEventListener('mouseover', openList(third_lists[i]), false);
       second_list[i].addEventListener('mouseleave', closeList(third_lists[i]), false);
     };
@@ -55,5 +57,22 @@ $(document).on('turbolinks:load', function(){
     }).on('mouseout', function(){
       $(this).css('background-color', '#fff');
     });
+
+    $('.cate_index').on('mouseover', function() {
+      $(this).css('background-color', '#ea352d');
+      $(this).children('.category_index').css('color', '#fff');
+    }).on('mouseout', function(){
+      $(this).css('background-color', '#fff');
+      $(this).children('.category_index').css('color', '#000');
+    });
+    
+    $('.grandparent-name').on('mouseover', function() {
+      $(this).css('background-color', '#ea352d');
+      $(this).children('.name').css('color', '#fff');
+    }).on('mouseout', function(){
+      $(this).css('background-color', '#fff');
+      $(this).children('.name').css('color', '#000');
+    });
   }
 });
+

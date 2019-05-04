@@ -4,24 +4,19 @@
     .floating_btn
       .floating_btn__title 出品
       = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
-- else 
+- else
   = link_to user_session_path, data: {"turbolinks": false}, class: 'product_link' do
     .floating_btn
       .floating_btn__title 出品
       = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
-.swiper-container
-  .swiper-wrapper
-    .swiper-slide
-      .swiper-slide1
-    .swiper-slide
-      .swiper-slide2
-    .swiper-slide
-      .swiper-slide3
-    .swiper-slide
-      .swiper-slide4
-  .swiper-pagination
-  .swiper-button-prev
-  .swiper-button-next
-= render 'container'
-= render 'global_footer'
-
+#product-category-contents
+  .head-contents
+    %h3
+      カテゴリー一覧
+    .category-index
+      - @grandparents.each do |grandparent|
+        .grandparent-name
+          = link_to "#{grandparent.name}", root_path, class: "name"
+  .category-element
+    = render partial: "indexparent", collection: @grandparents
+= render 'shared/footer'

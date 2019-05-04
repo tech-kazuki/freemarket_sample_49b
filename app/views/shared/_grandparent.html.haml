@@ -1,0 +1,6 @@
+%li.first_list
+  .first_list_box
+    %a.top_links{:href => ""} #{grandparent.name}
+    %ul.second_lists
+      = render partial: "shared/parent", collection: grandparent.children
+      

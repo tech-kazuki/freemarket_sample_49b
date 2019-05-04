@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Product do
   describe "#create" do
-    it "is invalid with a name" do
+    it "is invalid without a name" do
       product = build(:product, name: nil)
       product.valid?
       expect(product.errors[:name]).to include("can't be blank")
