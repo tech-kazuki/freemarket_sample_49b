@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  require 'payjp'
+  
   def index
   end
 
@@ -36,9 +38,20 @@ class ProductsController < ApplicationController
     product = Product.new(product_params)
     product.user = current_user
     product.save
+    redirect_to root_path
   end
 
   def buy
+  end
+  
+  def pay
+    Payjp.api_key = #ここに秘密鍵
+    Payjp::Charge.create(
+      amount:   3000,
+      customer: current_user.id,
+      currency: 'jpy'
+    )
+    redirect_to root_path
   end
 
   private

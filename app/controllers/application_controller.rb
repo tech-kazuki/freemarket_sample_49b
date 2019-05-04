@@ -8,8 +8,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up,
       keys: [:nickname, :family_name, :first_name, :family_name_katakana, :first_name_katakana, :birthday_year, :birthday_month, :birthday_date, :image, :profile, :provider, :uid,
-            address_attributes: [:family_name, :first_name, :family_name_katakana, :first_name_katakana, :postal_code, :prefecture_id, :city, :block_number, :building, :phone_number],
-            card_attributes:    [:number, :valid_month, :valid_year, :security_number] ])
+            address_attributes: [:family_name, :first_name, :family_name_katakana, :first_name_katakana, :postal_code, :prefecture_id, :city, :block_number, :building, :phone_number]])
   end
 
   def production?

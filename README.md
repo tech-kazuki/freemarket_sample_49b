@@ -65,10 +65,7 @@ Things you may want to cover:
 ## cardsテーブル
 |Column|Type|Options|
 |---------|-----|---------|
-|number|string|null: false |
-|valid_month|string|null: false |
-|valid_year|string|null: false |
-|security_number|string|null: false |
+|customer|string|null: false |
 |user_id|integer|foreign_key: true|
 
 ### Association
