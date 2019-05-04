@@ -1,0 +1,31 @@
+= render 'shared/header'
+- if user_signed_in?
+  = link_to new_user_product_path(current_user.id), data: {"turbolinks": false}, class: 'product_link' do
+    .floating_btn
+      .floating_btn__title 出品
+      = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
+- else
+  = link_to user_session_path, data: {"turbolinks": false}, class: 'product_link' do
+    .floating_btn
+      .floating_btn__title 出品
+      = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
+#category-show-contents
+  .children-list
+    %ol
+      - @category.children.each do |child|
+        %li
+          = link_to child.name, category_path(child), class: "list"
+  .products-box
+    .products-box__title
+      = "#{@category.name}の商品一覧"
+    .products-box__products
+      - @products.each do |product|
+        .products-box__products__ele
+          = image_tag ("#{product.images.first.image}"), size: "188x188"
+          .products-box__products__ele__body
+            .products-box__products__ele__body__name
+              = product.name
+            .products-box__products__ele__body__price
+              = "¥#{product.price}"
+              %p (税込)
+= render 'shared/footer'
