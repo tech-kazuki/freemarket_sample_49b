@@ -16,7 +16,8 @@
     .category-index
       - @grandparents.each do |grandparent|
         .grandparent-name
-          = link_to "#{grandparent.name}", root_path, class: "name"
+          %p.name
+            = grandparent.name
   .category-element
     = render partial: "indexparent", collection: @grandparents
 = render 'shared/footer'
