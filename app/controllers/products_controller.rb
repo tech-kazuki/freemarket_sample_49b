@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @image = Image.find_by(id: params[:id])
-    @product = Product.find_by(id: params[:id])
+    @image = Image.find(params[:id])
+    @product = Product.find(params[:id])
     @category = @product.category.parent
   end
  
