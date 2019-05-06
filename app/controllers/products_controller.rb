@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @image = Image.find(params[:id])
+    @product = Product.find(params[:id])
+    @category = @product.category.parent
   end
  
   def new
