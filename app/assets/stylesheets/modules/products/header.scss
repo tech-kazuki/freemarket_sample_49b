@@ -61,6 +61,9 @@
             font-size: 14px;
             font-weight: bold;
           }
+          &__span:hover {
+            color: #0099e8;
+          }
         }
       }
       &__right {
@@ -69,6 +72,9 @@
           padding: 0 10px;
           text-decoration: none;
           color: #000;
+          &__span:hover {
+            color: #0099e8;
+          }
           &--login {
             background-color: $mercariRed;
             border-radius: 5px;
@@ -192,6 +198,9 @@
             font-size: 14px;
             font-weight: bold;
           }
+          &__span:hover {
+            color: #0099e8;
+          }
         }
       }
       &__right {
@@ -200,6 +209,9 @@
           padding: 0 10px;
           text-decoration: none;
           color: #000;
+          &__span:hover {
+            color: #0099e8;
+          }
           &--login {
             background-color: $mercariRed;
             border-radius: 5px;

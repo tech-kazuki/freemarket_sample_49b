@@ -6,24 +6,31 @@
   .products_buy_container__content
     .items
       .items__top
-        = image_tag 'UNADJUSTEDNONRAW_thumb_111a.jpg', width: '148', class: 'items__top__img'
+        = image_tag "#{@image.image}", class: 'items__top__img'
         .items__top__title タイトルタイトルタイトルタイトルタイトルタイトルタイトル
         .items__top__price
           %ul.price__list
-            %li.price__list__left ¥1,000
+            %li.price__list__left ¥#{@product.price}
             %li.price__list__right 送料込み
         .items__top__point ポイント導入なしなら消す
         .items__top__chack
           %ul.check__list
             %li.check__list__left 支払い金額
-            %li.check__list__right ¥1,000
-        = button_tag '購入する', class: 'items__top__btn'
+            %li.check__list__right ¥#{@product.price}
+        = form_with url: pay_user_product_path(current_user, @product) do |f|
+          = f.text_field :price, type: 'hidden', value: "#{@product.price}"
+          = f.submit '購入する', class: 'items__top__btn'
   .products_buy_container__content
     .items
       .items__bottom
         .items__bottom__section
           %h3.items__bottom__section__h3 配送先
-          %p.items__bottom__section__text 東京都渋谷区〜〜〜〜
+          %p.items__bottom__section__text
+            〒#{@address.postal_code}
+            %br
+            #{@address.prefecture.name + @address.city + @address.block_number + @address.building}
+            %br
+            #{@address.family_name}#{@address.first_name}
           .items__bottom__section__link
             = link_to 'editアクション　>', '', class: 'edit_link'
   .products_buy_container__content
@@ -31,7 +38,12 @@
       .items__bottom
         .items__bottom__section
           %h3.items__bottom__section__h3 支払い方法
-          %p.items__bottom__section__text ************0000
+          %p.items__bottom__section__text
+            ************#{@card.last4}
+            %br
+            #{@card.exp_month}/#{@card.exp_year}
+            %br
+            #{@card.brand}
           .items__bottom__section__link
             = link_to 'editアクション　>', '',  class: 'edit_link'
 = render 'shared/footer'
