@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_one :address
   has_one :card
+  has_many :products
   accepts_nested_attributes_for :address
   belongs_to_active_hash :prefecture
 
