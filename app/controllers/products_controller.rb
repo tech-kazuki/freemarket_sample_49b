@@ -1,10 +1,13 @@
 class ProductsController < ApplicationController
-  require 'payjp'
+  # require 'payjp'
   
   def index
   end
 
   def show
+    @image = Image.find(params[:id])
+    @product = Product.find(params[:id])
+    @category = @product.category.parent
   end
  
   def new
@@ -27,8 +30,8 @@ class ProductsController < ApplicationController
       respond_to do |format|
         format.json
       end
-     end
-   
+    end
+
     @product = Product.new
     @user = User.find(current_user.id)
     @product.images.build

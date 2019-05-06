@@ -1,0 +1,12 @@
+.category-element__ele
+  .title
+    = indexparent.name
+  .element
+    = link_to "すべて", category_path(indexparent), class: "all"
+    - indexparent.children.each do |child|
+      .element__parent
+        = "#{child.name}"
+      .element__child
+        = link_to "すべて", category_path(child), class: "child-all"
+        -child.children.each do |grandchild|
+          = link_to "#{grandchild.name}", category_path(grandchild), class: "child-all"

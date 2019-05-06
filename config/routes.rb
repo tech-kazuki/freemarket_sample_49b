@@ -6,11 +6,16 @@ Rails.application.routes.draw do
   
   root "products#index"
 
+  resources :categories, only: [:index, :show]
+
   resources :users, only: [:show, :edit] do
     collection do
       get 'credit'
       get 'logout'
     end
+
+    resources :products, only: [:new, :create, :show]
+
     resources :products, only: [:new, :create, :show] do
       member do
         get 'buy'

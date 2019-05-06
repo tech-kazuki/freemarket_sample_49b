@@ -16,7 +16,7 @@
             %br
             またはクリックしてファイルをアップロード
           = f.fields_for :images do |i|
-            = i.file_field :image, id: 'file_input'
+            = i.file_field :image, id: 'file_input', class: 'file_input'
     .products_new_container__content
       .products_new_container__content__form
         .products_new_container__content__form__box
@@ -111,4 +111,4 @@
         = f.submit '出品する', class: 'btm_create'
         %br
         = button_tag '戻る', class: 'btm_back'
-= render 'footer.html.haml'
+= render 'shared/footer'
