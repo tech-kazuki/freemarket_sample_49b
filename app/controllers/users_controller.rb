@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user
+
   def credit
   end
 
@@ -9,6 +11,11 @@ class UsersController < ApplicationController
   end
     
   def logout
+  end
+
+  private
+  def set_user
+    @user = current_user
   end
 
 end

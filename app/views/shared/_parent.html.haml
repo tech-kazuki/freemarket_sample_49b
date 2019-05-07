@@ -1,0 +1,7 @@
+%li.second_list
+  .second_list_box
+    = link_to "#{parent.name}", category_path(parent), class: "more_link"
+    %ul.third_lists
+      - parent.children.each do |child|
+        %li= link_to child.name, category_path(child), class: 'more_links'
+      

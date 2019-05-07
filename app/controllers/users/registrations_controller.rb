@@ -1,6 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :check_captcha, only: [:create]
 
   def index
   end
@@ -19,17 +18,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     super
   end
-
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
+  
+  def create
+    super
+  end
 
   protected
+  
+  def check_captcha
+    self.resource = resource_class.new sign_up_params
+    resource.validate
+    unless verify_recaptcha(model: resource)
+      respond_with_navigational(resource) { render :new }
+    end
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -42,11 +44,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for(resource)
-    complete_path
+    new_user_card_path(current_user)
   end
 
   def after_inactive_sign_up_path_for(resource)
-    complete_path
+    new_user_card_path(current_user)
   end
 
 end
