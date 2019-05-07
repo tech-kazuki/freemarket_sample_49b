@@ -14,7 +14,9 @@ Rails.application.routes.draw do
       get 'logout'
     end
 
-    resources :products, only: [:new, :create, :show]
+    resources :products, only: [:new, :create, :show] do
+      resources :likes, only: [:create, :destroy]
+    end
 
     resources :products, only: [:new, :create, :show] do
       member do
