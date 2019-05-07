@@ -2,11 +2,12 @@ class ProductsController < ApplicationController
   def index
     @category1 = Category.find_by(name: "レディース")
     categoryLadys = @category1.indirects
-    @Ladys = Product.all.where(category_id: categoryLadys).order('created_at DESC').limit(4)
+    @ladys = Product.where(category_id: categoryLadys).order('created_at DESC').limit(4)
+
 
     @category2 = Category.find_by(name: "メンズ")
     categoryMens = @category2.indirects
-    @Mens = Product.all.where(category_id: categoryMens).order('created_at DESC').limit(4)
+    @mens = Product.where(category_id: categoryMens).order('created_at DESC').limit(4)
 
   end
 
