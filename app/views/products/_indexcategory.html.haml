@@ -1,0 +1,26 @@
+%h3.container__items__h3
+  = link_to "#{@category1.name} 新着アイテム", '#', class: "container__items__h3__link"
+.container__items__content
+  - @Ladys.each do |lady|
+    %section.container__items__content__box
+      = link_to user_product_path(1, 1) do
+        = image_tag "#{lady.images.first.image}", width: '213', height: '220'
+        .container__items__content__box__body
+          %h3.container__items__content__box__body__title
+            = "#{lady.name}"
+          %div.price
+            = "¥#{lady.price}"
+        %p (税込)
+%h3.container__items__h3
+  = link_to "#{@category2.name} 新着アイテム", '#', class: "container__items__h3__link"
+.container__items__content
+  - @Mens.each do |men|
+    %section.container__items__content__box
+      = link_to user_product_path(1, 1) do
+        = image_tag "#{men.images.first.image}", width: '213', height: '220'
+        .container__items__content__box__body
+          %h3.container__items__content__box__body__title
+            = "#{men.name}"
+          %div.price
+            = "¥#{men.price}"
+        %p (税込)
