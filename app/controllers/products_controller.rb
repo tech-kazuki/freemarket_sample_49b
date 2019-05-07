@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  # require 'payjp'
+  
   def index
     @category1 = Category.find_by(name: "レディース")
     categoryLadys = @category1.indirects
@@ -12,6 +14,10 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @image = Image.find(params[:id])
+    @product = Product.find(params[:id])
+    @category = @product.category.parent
+    @like = @product.likes
   end
  
   def new
@@ -34,8 +40,8 @@ class ProductsController < ApplicationController
       respond_to do |format|
         format.json
       end
-     end
-   
+    end
+
     @product = Product.new
     @user = User.find(current_user.id)
     @product.images.build
@@ -49,6 +55,16 @@ class ProductsController < ApplicationController
   end
 
   def buy
+  end
+  
+  def pay
+    Payjp.api_key = #ここに秘密鍵
+    Payjp::Charge.create(
+      amount:   3000,
+      customer: current_user.id,
+      currency: 'jpy'
+    )
+    redirect_to root_path
   end
 
   private
