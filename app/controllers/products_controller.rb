@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     @image = Image.find(params[:id])
     @product = Product.find(params[:id])
     @category = @product.category.parent
+    @like = @product.likes
   end
  
   def new

@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :comments
   has_many :images
   belongs_to :category
@@ -17,5 +17,9 @@ class Product < ApplicationRecord
   validates :product_state, presence: true
   validates :size,          presence: true
   validates :how_long,      presence: true
+  
+ def like_user(user_id)
+  likes.find_by(user_id: user_id)
+ end
  
 end
