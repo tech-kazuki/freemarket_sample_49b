@@ -2,6 +2,15 @@ class ProductsController < ApplicationController
   # require 'payjp'
   
   def index
+    @category1 = Category.find_by(name: "レディース")
+    categoryLadys = @category1.indirects
+    @ladys = Product.where(category_id: categoryLadys).order('created_at DESC').limit(4)
+
+
+    @category2 = Category.find_by(name: "メンズ")
+    categoryMens = @category2.indirects
+    @mens = Product.where(category_id: categoryMens).order('created_at DESC').limit(4)
+
   end
 
   def show
