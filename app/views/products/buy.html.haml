@@ -10,13 +10,13 @@
         .items__top__title タイトルタイトルタイトルタイトルタイトルタイトルタイトル
         .items__top__price
           %ul.price__list
-            %li.price__list__left ¥#{@product.price}
+            %li.price__list__left ¥#{@product.price.to_s(:delimited)}
             %li.price__list__right 送料込み
-        .items__top__point ポイント導入なしなら消す
+        .items__top__point ポイントを利用する
         .items__top__chack
           %ul.check__list
             %li.check__list__left 支払い金額
-            %li.check__list__right ¥#{@product.price}
+            %li.check__list__right ¥#{@product.price.to_s(:delimited)}
         = form_with url: pay_user_product_path(current_user, @product) do |f|
           = f.text_field :price, type: 'hidden', value: "#{@product.price}"
           = f.submit '購入する', class: 'items__top__btn'

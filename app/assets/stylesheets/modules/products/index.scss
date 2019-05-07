@@ -124,6 +124,89 @@
           font-weight: bold;
           font-size: 22px;
         }
+        &__link:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+      &__content {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        &__box {
+          margin-left: 20px;
+          background-color: $baseColor;
+          position: relative;
+          &__body {
+            padding: 11px;
+            &__title {
+              text-align: left;
+            }
+            .price {
+              font-size: 15px;
+            }
+          }
+          p {
+            font-size: 10px;
+            position: absolute;
+            left: 12px;
+            bottom: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .floating_btn {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: $mercariRed;
+    color: $baseColor;
+    border-radius: 50%;
+    padding-top: 23px;
+    text-align: center;
+    z-index: 1000;
+    position: fixed;
+    right: -10px;
+    bottom: -10px;
+    &__title {
+      font-size: 15px;
+    }
+    &__camera {
+      color: $baseColor;
+      font-size: 2.5em;
+    }
+  }
+  .swiper-slide1,.swiper-slide2,.swiper-slide3,.swiper-slide4 {
+    background-image: image-url('ed49d3c91eb36c8f59528fe99cfb7c43.jpg');
+    background-size: auto 200px;
+    background-position: center;
+    width: 100vw;
+    height: 200px;
+  }
+  .container {
+    padding: 40px 0;
+    &__head {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    &__items {
+      &__h3{
+        text-align: center;
+        margin: 26px 11px;
+        &__link{
+          color: #0099e8;
+          font-weight: bold;
+          font-size: 22px;
+        }
+        &__link:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
       }
       &__content {
         display: flex;
