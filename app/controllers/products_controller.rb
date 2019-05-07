@@ -30,8 +30,8 @@ class ProductsController < ApplicationController
       respond_to do |format|
         format.json
       end
-     end
-   
+    end
+
     @product = Product.new
     @user = User.find(current_user.id)
     @product.images.build
