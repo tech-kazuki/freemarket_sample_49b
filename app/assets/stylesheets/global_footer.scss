@@ -77,9 +77,9 @@
     width: 100vw;
     &__top {
       background-image: image-url('4707dcfb8a2ec063cff172a0ba8cef4b.jpg');
-      background-size: auto 280px;
+      background-size: auto 250px;
       background-position: center;
-      height: 280px;
+      height: 250px;
     }
     &__menu {
       width: 700px;
@@ -136,6 +136,79 @@
       }
       &__copy {
         width: 425px;
+        display: inline-block;
+        text-align: center;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .global_footer {
+    background-color: #000;
+    padding-bottom: 20px;
+    width: 100vw;
+    &__top {
+      background-image: image-url('4707dcfb8a2ec063cff172a0ba8cef4b.jpg');
+      background-size: auto 150px;
+      background-position: center;
+      height: 150px;
+    }
+    &__menu {
+      width: 350px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      &__cell {
+        margin-top: 20px;
+        padding-right: 20px;
+        color: #fff;
+        &--full {
+          display: flex;
+          &__left {
+            padding-right: 20px;
+            width: 220px;
+          }
+        }
+        &__h2 {
+          font-size: 16px;
+          font-weight: 100;
+        }
+        ul {
+          font-size: 12px;
+          li {
+            line-height: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            margin-top: 16px;
+          }
+          li:hover {
+            text-decoration: underline;
+          }
+        }
+        .sns_icons {
+          color: #fff;
+          font-size: 2em;
+          margin-top: 16px;
+          &__twitter,&__facebook {
+            margin-right: 10px;
+            cursor: pointer;
+          }
+          &__twitter:hover,&__facebook:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    &__bottom {
+      width: 90vw;
+      margin: 30px auto 20px;
+      &__link {
+        display: inline-block;
+      }
+      &__copy {
+        width: 50vw;
         display: inline-block;
         text-align: center;
         color: #fff;

@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments
   has_many :images
-  belongs_to :category
+  belongs_to :category, optional: true
   accepts_nested_attributes_for :images
   has_one :evalution
   belongs_to :user

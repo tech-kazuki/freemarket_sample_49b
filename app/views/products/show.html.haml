@@ -66,11 +66,11 @@
               =link_to "#{@product.how_long}", "" 
 
     .item-price-box
-      %span.item-price-box__price ¥ #{@product.price}
+      %span.item-price-box__price ¥ #{@product.price.to_s(:delimited)}
       %span.item-price-box__tax (税込)
       %span.item-price-box__shipping-fee 送料込み
-      
-      -# =link_to "購入画面に進む", buy_products_path, class: "btn-default btn-red"
+
+    =link_to "購入画面に進む", buy_user_product_path(@product.user, @product), class: "btn-default btn-red"
 
     .item-description
       %p.item-description__inner
