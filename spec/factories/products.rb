@@ -1,18 +1,16 @@
 FactoryBot.define do
   factory :product do
     name          {Faker::Name.name}
-    price         {Faker::Number.number(10)}
+    price         {Faker::Number.number(5)}
     description   {Faker::Lorem.sentence}
-    category_id   {Faker::Number.number(1)}
+    category_id   {22}
     product_state {Faker::Lorem.word}
     burden        {Faker::Lorem.word}
     size          {Faker::Lorem.word}
     prefecture_id {Faker::Number.number(1)}
     how_long      {Faker::Lorem.word}
     how_ship      {Faker::Lorem.word}
-    brand         {Faker::Number.number(1)}
+    brand         {Faker::Lorem.word}
     availability  {Faker::Lorem.word}
-    user_id       {Faker::Number.number(1)}
   end
 end
-
