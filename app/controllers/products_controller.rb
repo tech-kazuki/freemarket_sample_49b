@@ -60,13 +60,13 @@ class ProductsController < ApplicationController
     @image = Image.find_by(product_id: params[:id])
     @address = current_user.address
     
-    Payjp.api_key = #秘密鍵
+    Payjp.api_key = ENV["PAYJP_API_KEY"]
     customer = Payjp::Customer.retrieve(current_user.id.to_s)
     @card = customer.cards.retrieve(customer.default_card)
   end
   
   def pay
-    Payjp.api_key = #秘密鍵
+    Payjp.api_key = ENV["PAYJP_API_KEY"]
     Payjp::Charge.create(
       amount:   params[:price],
       customer: current_user.id,
