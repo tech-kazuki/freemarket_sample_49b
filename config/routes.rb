@@ -13,13 +13,14 @@ Rails.application.routes.draw do
       get 'credit'
       get 'logout'
     end
-
+    
     resources :products, only: [:new, :create, :show] do
       member do
         get 'buy'
         post 'pay'
         get 'pay_after'
       end
+      resources :likes, only: [:create, :destroy]
     end
     resource :address, only: [:create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]

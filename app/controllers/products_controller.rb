@@ -3,12 +3,22 @@ class ProductsController < ApplicationController
   require 'json'
   
   def index
+    @category1 = Category.find_by(name: "レディース")
+    categoryLadys = @category1.indirects
+    @ladys = Product.where(category_id: categoryLadys).order('created_at DESC').limit(4)
+
+
+    @category2 = Category.find_by(name: "メンズ")
+    categoryMens = @category2.indirects
+    @mens = Product.where(category_id: categoryMens).order('created_at DESC').limit(4)
+
   end
 
   def show
     @image = Image.find_by(product_id: params[:id])
     @product = Product.find(params[:id])
     @category = @product.category.parent
+    @like = @product.likes
   end
  
   def new
@@ -50,13 +60,13 @@ class ProductsController < ApplicationController
     @image = Image.find_by(product_id: params[:id])
     @address = current_user.address
     
-    Payjp.api_key = 'sk_test_6230d595e2d1fba0881aeaf6'
+    Payjp.api_key = #秘密鍵
     customer = Payjp::Customer.retrieve(current_user.id.to_s)
     @card = customer.cards.retrieve(customer.default_card)
   end
   
   def pay
-    Payjp.api_key = 'sk_test_6230d595e2d1fba0881aeaf6'
+    Payjp.api_key = #秘密鍵
     Payjp::Charge.create(
       amount:   params[:price],
       customer: current_user.id,

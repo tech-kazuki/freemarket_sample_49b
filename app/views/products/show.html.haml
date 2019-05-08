@@ -66,10 +66,10 @@
               =link_to "#{@product.how_long}", "" 
 
     .item-price-box
-      %span.item-price-box__price ¥ #{@product.price}
+      %span.item-price-box__price ¥ #{@product.price.to_s(:delimited)}
       %span.item-price-box__tax (税込)
       %span.item-price-box__shipping-fee 送料込み
-      
+
     =link_to "購入画面に進む", buy_user_product_path(@product.user, @product), class: "btn-default btn-red"
 
     .item-description
@@ -84,15 +84,11 @@
 
     .item-button-container
       .item-button-container__left
-        .item-button-container__left__like
-          =link_to "#" do
-            %i.fas.fa-heart
-            %span いいね！
-            %span 1
-        .item-button-container__left__report
-          =link_to "#" do
-            %i.fa.fa-flag
-            %span 不適切な商品の報告
+        = render partial: 'likes/like', locals: { product: @product, products: @products, likes: @likes, like: @like}
+      .item-button-container__left__report
+        =link_to "#" do
+          %i.fa.fa-flag
+          %span 不適切な商品の報告
       .item-button-container__right
         =link_to "#" do
           %i.fa.fa-lock
