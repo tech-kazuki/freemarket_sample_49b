@@ -17,7 +17,7 @@
             %ul.top_list
               = render partial: "shared/grandparent", collection: @grandparents
             .cate_index
-              = link_to "カテゴリー一覧", categories_path, class: "category_index"
+              = link_to "カテゴリー一覧", categories_path, class: "category_index", data: {"turbolinks": false}
         %h2.header__bottom__left__h2
           = link_to '#', class: 'header__bottom__left__link' do
             = icon 'fas', 'tags', class: 'header__bottom__left__link__icon'
