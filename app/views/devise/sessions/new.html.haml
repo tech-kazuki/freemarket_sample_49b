@@ -22,7 +22,9 @@
             .field.email
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__ele"
             .field.password
-              = f.password_field :password, autocomplete: "current-password",class: "form__ele"
+              = f.password_field :password, autocomplete: "current-password", class: "form__ele"
+            .field.recaptcha
+              = recaptcha_tags
             .foom__ele.actions
               = f.submit "ログイン", class: "login"
         .forget-password
