@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   def index
     prm = search_params(params)
     @search = Product.ransack(prm)
-    @category = Category.all
+    @categories = Category.all
     if params[:q] == nil || @search.result.empty?
       @products = Product.where('name LIKE(?) OR description LIKE(?) OR brand LIKE(?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%", "%#{params[:keyword]}%").limit(20)
       @keyword = params[:keyword]

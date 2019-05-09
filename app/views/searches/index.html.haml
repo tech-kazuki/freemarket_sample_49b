@@ -18,7 +18,7 @@
         = f.text_field :name_or_description_or_brand_cont, placeholder: '例）値下げしました', class: 'search_text_field'
       .search_bar__field
         .search_bar__field__name カテゴリーを選択する
-        = f.collection_select :category_id_eq, @category, :id, :name, {include_blank: true}, {class: 'search_select'}
+        = f.collection_select :category_id_eq, @categories, :id, :name, {include_blank: true}, {class: 'search_select'}
       .search_bar__field
         .search_bar__field__name ブランド名から探す
         = f.text_field :brand_cont, placeholder: '例）ナイキ', class: 'search_text_field'
