@@ -27,6 +27,11 @@
       padding: 60px 0 15px;
       background-size: cover;
       background-image: url("https://yukotabi.static.yukoyuko.net/import/images/l1a295dWtvZnVtdWZ1bXUyMDE3MDgzMDIwMTcwODMwMTA0NzM.jpg");
+      &__flash{
+        color :red;
+        text-align: center;
+        line-height: 1px;
+      }
       &__profile {
         display: flex;
         justify-content: space-between;

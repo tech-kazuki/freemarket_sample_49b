@@ -8,6 +8,8 @@
           .users_edit_header__text
             プロフィール
         .users_edit_up_content
+          .users_edit_up_content__flash
+            = flash[:alert]
           .users_edit_up_content__profile
             .users_edit_up_content__profile__figure
             = f.text_field :nickname, class: "users_edit_up_content__profile__form", value: @user.nickname

@@ -14,11 +14,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find(set_user.id)
     @user.update(user_params)
-    redirect_to edit_user_path
+      if @user.update(user_params)
+        redirect_to edit_user_path
+      else
+        flash.now[:alert] = "入力してください"
+        render :edit
+      end
+
   end
-    
+
   def logout
   end
 
