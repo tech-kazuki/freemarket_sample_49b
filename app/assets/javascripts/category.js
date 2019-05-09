@@ -85,11 +85,13 @@ $(function(){
 
   $("#product_price").on("keyup", function(){
     var val = $(this).val();
-    if(val >= 300){
+    if(val >= 300 && isFinite(val)){
       $(".list_right_tax").text("");
       $(".list_right_price").text("");
       var tax = val * 0.1
       var price = val * 0.9
+      var tax = Math.floor(tax)
+      var price = Math.floor(price)
       $(".list_right_tax").append("¥" + tax);
       $(".list_right_price").append("¥" + price);
     }else{
