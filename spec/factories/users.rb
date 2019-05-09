@@ -13,5 +13,4 @@ FactoryBot.define do
     birthday_month        {'8'}
     birthday_date         {'2'}
   end
-
 end

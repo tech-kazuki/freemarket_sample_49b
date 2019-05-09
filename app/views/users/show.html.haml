@@ -6,8 +6,8 @@
       .mypage_user-information
         .mypage_user-information__figure
           = image_tag 'https://smallbusiness.co.jp/wp-content/uploads/2018/04/img_5ac32787dcbf5.png', size: "60" , class: "mypage_user-information__figure--icon"
-          .mypage_user-information__name
-            username
+          .mypage_user-information__name 
+            = @user.nickname
           .mypage_user-information__number
             .mypage_user-information__number--review
               評価
@@ -16,7 +16,7 @@
             .mypage_user-information__number--exhibit
               出品数
               %span.bold
-                20
+                = @products_count
       .mypage_user-information__tab
         .mypage_tabs
           %input#notice{checked: "checked", name: "mypage_tab_user", type: "radio"}/

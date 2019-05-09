@@ -7,19 +7,24 @@ Rails.application.routes.draw do
   root "products#index"
 
   resources :categories, only: [:index, :show]
+  
+  resources :searches, only: [:index]
 
-  resources :users, only: [:show, :edit] do
+  resources :categories, only: [:index, :show]
+
+  resources :users, only: [:show, :edit, :update] do
     collection do
       get 'credit'
       get 'logout'
     end
-    
+
     resources :products, only: [:new, :create, :show] do
       member do
         get 'buy'
         post 'pay'
         get 'pay_after'
       end
+    
       resources :likes, only: [:create, :destroy]
     end
     resource :address, only: [:create, :edit, :update, :destroy]
