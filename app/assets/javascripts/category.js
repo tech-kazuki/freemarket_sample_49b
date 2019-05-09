@@ -89,7 +89,7 @@ $(function(){
       $(".list_right_tax").text("");
       $(".list_right_price").text("");
       var tax = val * 0.1
-      var price = val * 0.
+      var price = val * 0.9
       $(".list_right_tax").append("¥" + tax);
       $(".list_right_price").append("¥" + price);
     }else{
