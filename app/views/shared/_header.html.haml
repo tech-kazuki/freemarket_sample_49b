@@ -4,9 +4,10 @@
       %h1
         = link_to root_path, class: 'header__top__image' do
           = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4093625870", class: "header_title", width: "134", height: "36"
-      %form.header__top__form
-        %input.header__top__form__search{:placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+      = form_with( url: searches_path, method: 'get', class: 'header__top__form', id: 'search_form', local: true) do |f|
+        = f.text_field :keyword, class: 'header__top__form__search', placeholder: "何かお探しですか？"
         = icon 'fas', 'search', class: 'header__top__form__icon'
+        = f.submit class: 'search_submit'
     .header__bottom
       .header__bottom__left
         %h2.header__bottom__left__h2
@@ -125,3 +126,9 @@
             = icon 'fas', 'chevron-right'
           %li
             %p.last ログアウト
+        - if @path.is('searches#index')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last
+              = "#{@keyword}"

@@ -1,0 +1,70 @@
+= render 'shared/header'
+- if user_signed_in?
+  = link_to new_user_product_path(current_user.id), data: {"turbolinks": false}, class: 'product_link' do
+    .floating_btn
+      .floating_btn__title 出品
+      = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
+- else
+  = link_to user_session_path, data: {"turbolinks": false}, class: 'product_link' do
+    .floating_btn
+      .floating_btn__title 出品
+      = icon 'fas', 'camera', class: 'fa-4x floating_btn__camera'
+.search_container
+  .search_bar
+    = search_form_for( @search, url: searches_path )do |f|
+      .search_bar__field
+        .search_bar__field__title 詳細検索
+        .search_bar__field__name キーワードを追加する
+        = f.text_field :name_or_description_or_brand_cont, class: 'search_text_field'
+      .search_bar__field
+        .search_bar__field__name カテゴリーを選択する
+        = f.collection_select :category_id_eq, @category, :id, :name, {include_blank: true}, {class: 'search_select'}
+      .search_bar__field
+        .search_bar__field__name ブランド名から探す
+        = f.text_field :brand_cont, class: 'search_text_field'
+      .search_bar__field
+        .search_bar__field__name サイズを指定する
+        = f.select :size_eq, [["XXS以下"], ["XS(SS)"], ["S"], ["M"], ["L"], ["FREE SIZE"]], {include_blank: true}, {class: 'search_select'}
+      .search_bar__field
+        .search_bar__field__name 価格
+        .search_bar__field__between
+          = f.text_field :price_gteq, class: 'price_field'
+          %p ~
+          = f.text_field :price_lteq, class: 'price_field'
+      .search_bar__field
+        .search_bar__field__name 商品の状態
+        .search_check
+          = f.check_box :product_state_eq_any, { multiple: true }, '新品、未使用'
+          新品、未使用
+        .search_check
+          = f.check_box :product_state_eq_any, { multiple: true }, '未使用に近い'
+          未使用に近い
+        .search_check
+          = f.check_box :product_state_eq_any, { multiple: true }, '目立った傷や汚れなし'
+          目立った傷や汚れなし
+        .search_check
+          = f.check_box :product_state_eq_any, { multiple: true }, 'やや傷や汚れあり'
+          やや傷や汚れあり
+        .search_check
+          = f.check_box :product_state_eq_any, { multiple: true }, '傷や汚れあり'
+          傷や汚れあり
+        .search_check
+          = f.check_box :product_state_eq_any, { multiple: true }, '全体的に状態が悪い'
+          全体的に状態が悪い
+      .search_bar__field
+        = f.submit class: 'search_btn', value: '検索する'
+  .search_products
+    .search_products__box
+      .search_products__box__title 検索結果
+      .product_box
+        - @products.each do |product|
+          = link_to user_product_path(product.user, product) do
+            .product_card
+              = image_tag ("#{product.images.first.image}"), class: 'product_card__img'
+              .product_card__body
+                .product_card__body__name
+                  = product.name
+                .product_card__body__price
+                  = "¥#{product.price.to_s(:delimited)}"
+                  %p.product_card__body__price__taxin (税込)
+= render 'products/global_footer'

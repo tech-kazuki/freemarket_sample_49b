@@ -33,3 +33,5 @@ config/deploy.rb
 public/uproads/tmp
 
 
+
+public/uploads/image/*

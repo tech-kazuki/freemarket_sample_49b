@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root "products#index"
 
   resources :categories, only: [:index, :show]
+  
+  resources :searches, only: [:index]
 
   resources :users, only: [:show, :edit] do
     collection do
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
         post 'pay'
         get 'pay_after'
       end
+    
       resources :likes, only: [:create, :destroy]
     end
     resource :address, only: [:create, :edit, :update, :destroy]

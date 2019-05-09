@@ -73,6 +73,10 @@ $(document).on('turbolinks:load', function(){
       $(this).css('background-color', '#fff');
       $(this).children('.name').css('color', '#000');
     });
+    
+    $('.header__top__form__icon').on('click', function(){
+      $('#search_form').submit();
+    });
   }
 });
 
