@@ -72,4 +72,32 @@ $(function(){
     $(".category").val(category);
   })
 
+  $(".products_new_container__content__select__box__burden").on("change", function(){
+    var val = $("#product_burden").val();
+    if(val == "送料込み(出品者負担)"){
+      $(".products_new_container__content__select__box__buyer").hide();
+      $(".products_new_container__content__select__box__exhibitor").show();
+    }else{
+      $(".products_new_container__content__select__box__exhibitor").hide();
+      $(".products_new_container__content__select__box__buyer").show();
+    };
+  });
+
+  $("#product_price").on("keyup", function(){
+    var val = $(this).val();
+    if(val >= 300){
+      $(".list_right_tax").text("");
+      $(".list_right_price").text("");
+      var tax = val * 0.1
+      var price = val * 0.9
+      $(".list_right_tax").append("¥" + tax);
+      $(".list_right_price").append("¥" + price);
+    }else{
+      $(".list_right_tax").text("");
+      $(".list_right_price").text("");
+      $(".list_right_tax").append("-");
+      $(".list_right_price").append("-");
+      }
+  });
 });
+
