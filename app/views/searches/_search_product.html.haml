@@ -5,5 +5,5 @@
       .product_card__body__name
         = search_product.name
       .product_card__body__price
-        = "¥#{search_product.price.to_s(:delimited)}"
+        = "#{get_price(search_product)}"
         %p.product_card__body__price__taxin (税込)
