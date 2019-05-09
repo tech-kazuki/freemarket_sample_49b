@@ -3,17 +3,15 @@
   .users_edit_body
     = render 'users/user-side'
     .users_edit_main_content
-      .users_edit_header
-        .users_edit_header__text
-          プロフィール
-      .users_edit_up_content
-        .users_edit_up_content__profile
-          .users_edit_up_content__profile__figure
-          %input.users_edit_up_content__profile__form{placeholder:"username"}
-      .users_form_content
-        %textarea.users_form_content__form{placeholder:"example"}
-        .users_form_content__button
-          .users_form_content__button__content
-            変更する
-      
+      = form_for(@user) do |f|
+        .users_edit_header
+          .users_edit_header__text
+            プロフィール
+        .users_edit_up_content
+          .users_edit_up_content__profile
+            .users_edit_up_content__profile__figure
+            = f.text_field :nickname, class: "users_edit_up_content__profile__form", value: @user.nickname
+        .users_form_content
+          = f.text_area :profile, class: "users_form_content__form", value: @user.profile
+          = f.submit "変更する", class: "users_form_content__button"
   = render '/products/global_footer'

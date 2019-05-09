@@ -65,12 +65,10 @@
         margin: 20px auto 0;
         display: block;
         background-color: $mercariRed;
-        &__content {
-          line-height: 50px;
-          text-align: center;
-          font-size: 13px;
-          color: #fff;
-        }
+        line-height: 50px;
+        text-align: center;
+        font-size: 13px;
+        color: #fff;
       }
     }
   } 
