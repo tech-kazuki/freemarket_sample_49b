@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @image = Image.find_by(product_id: params[:id])
+    @image = Image.find(params[:id])
     @product = Product.find(params[:id])
     @category = @product.category.parent
     @like = @product.likes
@@ -73,6 +73,16 @@ class ProductsController < ApplicationController
       currency: 'jpy'
     )
     redirect_to pay_after_user_product_path(current_user, params[:id])
+  end
+  
+  def pay
+    Payjp.api_key = #ここに秘密鍵
+    Payjp::Charge.create(
+      amount:   3000,
+      customer: current_user.id,
+      currency: 'jpy'
+    )
+    redirect_to root_path
   end
 
   private
