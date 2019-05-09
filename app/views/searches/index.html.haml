@@ -57,14 +57,5 @@
     .search_products__box
       .search_products__box__title 検索結果
       .product_box
-        - @products.each do |product|
-          = link_to user_product_path(product.user, product) do
-            .product_card
-              = image_tag ("#{product.images.first.image}"), class: 'product_card__img'
-              .product_card__body
-                .product_card__body__name
-                  = product.name
-                .product_card__body__price
-                  = "¥#{product.price.to_s(:delimited)}"
-                  %p.product_card__body__price__taxin (税込)
+        = render partial: 'search_product', collection: @products
 = render 'products/global_footer'
