@@ -15,22 +15,22 @@
       .search_bar__field
         .search_bar__field__title 詳細検索
         .search_bar__field__name キーワードを追加する
-        = f.text_field :name_or_description_or_brand_cont, class: 'search_text_field'
+        = f.text_field :name_or_description_or_brand_cont, placeholder: '例）値下げしました', class: 'search_text_field'
       .search_bar__field
         .search_bar__field__name カテゴリーを選択する
         = f.collection_select :category_id_eq, @category, :id, :name, {include_blank: true}, {class: 'search_select'}
       .search_bar__field
         .search_bar__field__name ブランド名から探す
-        = f.text_field :brand_cont, class: 'search_text_field'
+        = f.text_field :brand_cont, placeholder: '例）ナイキ', class: 'search_text_field'
       .search_bar__field
         .search_bar__field__name サイズを指定する
         = f.select :size_eq, [["XXS以下"], ["XS(SS)"], ["S"], ["M"], ["L"], ["FREE SIZE"]], {include_blank: true}, {class: 'search_select'}
       .search_bar__field
         .search_bar__field__name 価格
         .search_bar__field__between
-          = f.text_field :price_gteq, class: 'price_field'
+          = f.text_field :price_gteq, placeholder: '¥ max', class: 'price_field'
           %p ~
-          = f.text_field :price_lteq, class: 'price_field'
+          = f.text_field :price_lteq, placeholder: '¥ min', class: 'price_field'
       .search_bar__field
         .search_bar__field__name 商品の状態
         .search_check
