@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @products = Product.count(params[:id])
+    @products_count = Product.count(params[:id])
   end
 
   def edit
