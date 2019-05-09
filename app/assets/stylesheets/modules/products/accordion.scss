@@ -20,7 +20,7 @@
 
 .second_lists,.third_lists{
   @include listSetting;
-  height: 122px;
+  height: 100%;
   top: -1px;
   left: 198px;
 }
