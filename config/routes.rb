@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show]
 
+  resources :categories, only: [:index, :show]
+
   resources :users, only: [:show, :edit, :update] do
     collection do
       get 'credit'
@@ -15,14 +17,12 @@ Rails.application.routes.draw do
     end
 
     resources :products, only: [:new, :create, :show] do
-      resources :likes, only: [:create, :destroy]
-    end
-
-    resources :products, only: [:new, :create, :show] do
       member do
         get 'buy'
         post 'pay'
+        get 'pay_after'
       end
+      resources :likes, only: [:create, :destroy]
     end
     resource :address, only: [:create, :edit, :update, :destroy]
     resource :card, only: [:new, :create, :edit, :update, :destroy]
