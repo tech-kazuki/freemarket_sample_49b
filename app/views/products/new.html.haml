@@ -63,11 +63,26 @@
       .products_new_container__content__select
         %p.products_new_container__content__select__memo 配送について
         .products_new_container__content__select__box
-          = f.label '', '配送料の負担'
-          %span 必須
-          %br
-          = f.select :burden, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], include_blank: '---'
-          %br
+          .products_new_container__content__select__box__burden
+            = f.label '', '配送料の負担'
+            %span 必須
+            %br
+            = f.select :burden, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], include_blank: '---'
+            %br
+        .products_new_container__content__select__box
+          .products_new_container__content__select__box__exhibitor{style: "display: none;"}
+            = f.label '', '配送の方法'
+            %span 必須
+            %br
+            = f.select :how_ship, [["未定"], ["らくらくメルカリ"]], include_blank: '---'
+            %br
+        .products_new_container__content__select__box
+          .products_new_container__content__select__box__buyer{style: "display: none;"}
+            = f.label '', '配送の方法'
+            %span 必須
+            %br
+            = f.select :how_ship, [["未定"], ["クロネコヤマト"]], include_blank: '---'
+            %br
         .products_new_container__content__select__box
           = label '', '配送元の地域'
           %span 必須
@@ -93,13 +108,13 @@
         .products_new_container__content__prices__box
           .list_left
             販売手数料(10%)
-          .list_right
-            ¥100
+          .list_right_tax
+            
         .products_new_container__content__prices__box
           .list_left
             販売利益
-          .list_right
-            ¥900
+          .list_right_price
+            
     .products_new_container__content
       .products_new_container__content__last
         %p.products_new_container__content__last__text
