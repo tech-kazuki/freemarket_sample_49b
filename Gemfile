@@ -95,4 +95,4 @@ gem 'capistrano-rails-console'
 gem 'payjp'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'unf_ext', '~> 0.0.7.6'
-
+gem 'ransack'
