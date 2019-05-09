@@ -14,3 +14,4 @@ FactoryBot.define do
     availability  {Faker::Lorem.word}
   end
 end
+
