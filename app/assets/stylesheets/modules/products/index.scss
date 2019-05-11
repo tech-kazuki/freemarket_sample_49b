@@ -31,6 +31,8 @@
   }
   .container {
     padding: 40px 0;
+    width: 940px;
+    margin: 0 auto;
     &__head {
       text-align: center;
       font-size: 28px;
@@ -110,6 +112,8 @@
   }
   .container {
     padding: 40px 0;
+    width: 600px;
+    margin: 0 auto;
     &__head {
       text-align: center;
       font-size: 28px;
@@ -131,10 +135,11 @@
       }
       &__content {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         width: auto;
         &__box {
-          margin-left: 20px;
+          margin: 0 40px 20px;
           background-color: $baseColor;
           position: relative;
           &__body {
@@ -189,6 +194,8 @@
   }
   .container {
     padding: 40px 0;
+    width: 80vw;
+    min-width: 480px;
     &__head {
       text-align: center;
       font-size: 28px;
@@ -213,7 +220,7 @@
         justify-content: center;
         width: auto;
         &__box {
-          margin-left: 20px;
+          margin: 0 10px 10px;
           background-color: $baseColor;
           position: relative;
           &__body {
