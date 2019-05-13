@@ -1,0 +1,20 @@
+.users_like_container
+  = render 'shared/header'
+  .users_like-body
+    = render '/users/user-side'
+    .users_like_main_content
+      .users_like_header
+        .users_like_header__text 
+          いいね!一覧
+        - @products.each do |product|
+          = link_to user_product_path(current_user, product) do
+            .users_like_content
+              .users_like_content__figure
+                = image_tag "#{product.images.first.image}", width: '50', height: '50'
+              .users_like_content__title
+                = product.name
+                .users_like_content__price
+                = "¥#{product.price}"
+              %i.fas.fa-chevron-right.users_like_content__arrow
+
+  = render 'shared/footer'
