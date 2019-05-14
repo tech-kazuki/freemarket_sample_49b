@@ -1,5 +1,13 @@
 class LikesController < ApplicationController
 
+  def index
+    @products = []
+    @likes = Like.where(user_id: current_user.id).order('created_at DESC')
+    @likes.each do |like|
+      @products << Product.find(like.product_id)
+    end
+  end
+
   def create
     @like = Like.create(user_id: current_user.id, product_id: params[:product_id])
     @likes = Like.where(product_id: params[:product_id])
