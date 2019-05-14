@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function() {
       $('#file_input').remove();
       $('.drop_area__image_box').remove();
       $('.drop_area').append(`<input id="file_input" class="file_input" type="file" name="product[images_attributes][0][image]">`);
-    })
+    });
     
     $('.products_new_container__content__title').on('click', function(){
     });

@@ -1,6 +1,6 @@
 @import 'config/color';
 
-@media screen and (min-width: 1065px) {
+@media screen and (min-width: 960px) {
 
   .floating_btn {
     display: block;
@@ -81,7 +81,7 @@
   }
 }
 
-@media screen and (max-width: 1065px) {
+@media screen and (max-width: 960px) {
 
   .floating_btn {
     display: block;
@@ -163,7 +163,7 @@
   }
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 500px) {
   .floating_btn {
     display: block;
     width: 120px;
@@ -202,6 +202,7 @@
       font-weight: bold;
     }
     &__items {
+      width: 100vw;
       &__h3{
         text-align: center;
         margin: 26px 11px;
@@ -218,7 +219,7 @@
       &__content {
         display: flex;
         justify-content: center;
-        width: auto;
+        width: 100vw;
         &__box {
           margin: 0 10px 10px;
           background-color: $baseColor;

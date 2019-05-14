@@ -12,7 +12,7 @@
           %ul.price__list
             %li.price__list__left ¥#{@product.price.to_s(:delimited)}
             %li.price__list__right 送料込み
-        .items__top__point ポイントを利用する
+        .items__top__point ポイントを利用できません
         .items__top__chack
           %ul.check__list
             %li.check__list__left 支払い金額
@@ -32,7 +32,7 @@
             %br
             #{@address.family_name}#{@address.first_name}
           .items__bottom__section__link
-            = link_to 'editアクション　>', '', class: 'edit_link'
+            = link_to '住所変更　>', '', class: 'edit_link'
   .products_buy_container__content
     .items
       .items__bottom
@@ -45,5 +45,5 @@
             %br
             #{@card.brand}
           .items__bottom__section__link
-            = link_to 'editアクション　>', '',  class: 'edit_link'
+            = link_to 'カード情報変更　>', '',  class: 'edit_link'
 = render 'shared/footer'

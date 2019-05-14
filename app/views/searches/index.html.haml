@@ -28,9 +28,9 @@
       .search_bar__field
         .search_bar__field__name 価格
         .search_bar__field__between
-          = f.text_field :price_gteq, placeholder: '¥ max', class: 'price_field'
+          = f.text_field :price_gteq, placeholder: '¥ min', class: 'price_field'
           %p ~
-          = f.text_field :price_lteq, placeholder: '¥ min', class: 'price_field'
+          = f.text_field :price_lteq, placeholder: '¥ max', class: 'price_field'
       .search_bar__field
         .search_bar__field__name 商品の状態
         .search_check
