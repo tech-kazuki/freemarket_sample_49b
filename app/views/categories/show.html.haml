@@ -20,12 +20,13 @@
       = "#{@category.name}の商品一覧"
     .products-box__products
       - @products.each do |product|
-        .products-box__products__ele
-          = image_tag ("#{product.images.first.image}"), size: "188x188"
-          .products-box__products__ele__body
-            .products-box__products__ele__body__name
-              = product.name
-            .products-box__products__ele__body__price
-              = "¥#{product.price}"
-              %p (税込)
-= render 'shared/footer'
+        = link_to user_product_path(product.user, product) do
+          .products-box__products__ele
+            = image_tag ("#{product.images.first.image}"), size: "188x188"
+            .products-box__products__ele__body
+              .products-box__products__ele__body__name
+                = product.name
+              .products-box__products__ele__body__price
+                = get_price(product)
+                %p (税込)
+= render 'products/global_footer'

@@ -4,9 +4,10 @@
       %h1
         = link_to root_path, class: 'header__top__image' do
           = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4093625870", class: "header_title", width: "134", height: "36"
-      %form.header__top__form
-        %input.header__top__form__search{:placeholder => "何かお探しですか？", :type => "search", :value => ""}/
+      = form_with( url: searches_path, method: 'get', class: 'header__top__form', id: 'search_form', local: true) do |f|
+        = f.text_field :keyword, class: 'header__top__form__search', placeholder: "何かお探しですか？"
         = icon 'fas', 'search', class: 'header__top__form__icon'
+        = f.submit class: 'search_submit'
     .header__bottom
       .header__bottom__left
         %h2.header__bottom__left__h2
@@ -17,7 +18,7 @@
             %ul.top_list
               = render partial: "shared/grandparent", collection: @grandparents
             .cate_index
-              = link_to "カテゴリー一覧", categories_path, class: "category_index"
+              = link_to "カテゴリー一覧", categories_path, class: "category_index", data: {"turbolinks": false}
         %h2.header__bottom__left__h2
           = link_to '#', class: 'header__bottom__left__link' do
             = icon 'fas', 'tags', class: 'header__bottom__left__link__icon'
@@ -35,3 +36,99 @@
           = link_to user_path(current_user), class: 'header__bottom__right__link' do
             = image_tag '', class: 'avatar'
             %span.header__bottom__right__link__span マイページ
+  - unless @path.is('products#index')
+    .breadcrumbs
+      %ul
+        %li
+          = link_to "メルカリ", root_path
+        - if @path.is('categories#index')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last カテゴリー一覧
+        - if @path.is('categories#show') && @category.indirect_ids.present?
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "カテゴリー一覧", categories_path, data: {"turbolinks": false}
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last #{@category.name}
+        - if @path.is('categories#show') && @category.indirect_ids.empty? && @category.children.present?
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "カテゴリー一覧", categories_path
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "#{@category.parent.name}", category_path(@category.parent)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last #{@category.name}
+        - if @path.is('categories#show') && @category.children.empty?
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "カテゴリー一覧", categories_path
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "#{@category.parent.parent.name}", category_path(@category.parent.parent)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "#{@category.parent.name}", category_path(@category.parent)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last #{@category.name}
+        - if @path.is('users#show')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last マイページ
+        - if @path.is('users#edit')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "マイページ", user_path(@user)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last プロフィール
+        - if @path.is('addresses#edit')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "マイページ", user_path(@user)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last 住所変更
+        - if @path.is('users#credit')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "マイページ", user_path(@user)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last 支払い方法
+        - if @path.is('users#logout')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            = link_to "マイページ", user_path(@user)
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last ログアウト
+        - if @path.is('searches#index')
+          %li
+            = icon 'fas', 'chevron-right'
+          %li
+            %p.last
+              = "#{@keyword}"

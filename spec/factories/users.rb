@@ -1,16 +1,16 @@
 FactoryBot.define do
 
   factory :user do
-    nickname              {Faker::Name.name}
+    nickname              {'kazuki'}
     email                 {Faker::Internet.email}
-    encrypted_password    {Faker::Number.number(6)}
-    family_name           {Faker::Name.last_name}
-    first_name            {Faker::Name.first_name}
-    family_name_katakana  {Faker::Name.name}
-    first_name_katakana   {Faker::Name.name}
-    birthday_year         {Faker::Number.number(4)}
-    birthday_month        {Faker::Number.number}
-    birthday_date         {Faker::Number.number}
+    password              {'000000'}
+    encrypted_password    {'000000'}
+    family_name           {'佐藤'}
+    first_name            {'太郎'}
+    family_name_katakana  {'サトウ'}
+    first_name_katakana   {'タロウ'}
+    birthday_year         {'1990'}
+    birthday_month        {'8'}
+    birthday_date         {'2'}
   end
-
 end

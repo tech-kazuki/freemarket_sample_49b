@@ -1,0 +1,9 @@
+%section.container__items__content__box
+  = link_to user_product_path(item.user, item) do
+    = image_tag "#{item.images.first.image}", width: '213', height: '220'
+    .container__items__content__box__body
+      %h3.container__items__content__box__body__title
+        = "#{item.name}"
+      %div.price
+        = get_price(item)
+      %p (税込)

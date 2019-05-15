@@ -17,9 +17,11 @@ $(function(){
 
       return html;
     };
+
+    var user_id = $('.current_user_id').val();
     
     $.ajax({
-      url: '/users/1/products/new',
+      url: '/users/${user_id}/products/new',
       type: "GET",
       data:{category: category},
       dataType: 'json'
@@ -49,9 +51,10 @@ $(function(){
                    </select>`
       return html;
     };
+
     
     $.ajax({
-      url: '/users/1/products/new',
+      url: '/users/${user_id}/products/new',
       type: "GET",
       data:{category_a: category_a},
       dataType: 'json'
@@ -111,40 +114,34 @@ $(function(){
       })
   });
 
- $(document).on('change', "#range_1-second", function(){
-    $("#range_1-third").remove();
-    var category_a = $('#range_1-second option:selected').val();
-
-    function buildHTML(children){
-      var option = ``
-      children.forEach(function(child){
-        option += `<option value="${child.id}">${child.name}</option>`
-      });
-
-      var html = `<select name="range_1-third" id="range_1-third">
-                    <option value label=" "></option>
-                    ${option}
-                   </select>`
-      return html;
+  $(".products_new_container__content__select__box__burden").on("change", function(){
+    var val = $("#product_burden").val();
+    if(val == "送料込み(出品者負担)"){
+      $(".products_new_container__content__select__box__buyer").hide();
+      $(".products_new_container__content__select__box__exhibitor").show();
+    }else{
+      $(".products_new_container__content__select__box__exhibitor").hide();
+      $(".products_new_container__content__select__box__buyer").show();
     };
-    
-    $.ajax({
-      url: `/users/${current_user}/products/${product_id}/edit`,
-      type: "GET",
-      data:{category_a: category_a},
-      dataType: 'json'
-      })
-      .done(function(data){
-        var html = buildHTML(data);
-        $(".products_new_container__content__select__box__category-edit").append(html);
-      })
-      .fail(function(){
-        alert('error');
-      })
   });
 
-  $(document).one('change', "#range_1-third", function(){
-    var category = $("#range_1-third").val();
-    $(".category").val(category);
-  })
+  $("#product_price").on("keyup", function(){
+    var val = $(this).val();
+    if(val >= 300 && isFinite(val)){
+      $(".list_right_tax").text("");
+      $(".list_right_price").text("");
+      var tax = val * 0.1
+      var price = val * 0.9
+      var tax = Math.floor(tax)
+      var price = Math.floor(price)
+      $(".list_right_tax").append("¥" + tax);
+      $(".list_right_price").append("¥" + price);
+    }else{
+      $(".list_right_tax").text("");
+      $(".list_right_price").text("");
+      $(".list_right_tax").append("-");
+      $(".list_right_price").append("-");
+      }
+  });
 });
+

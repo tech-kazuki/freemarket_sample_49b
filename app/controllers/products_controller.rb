@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
 
   def show
     @product, @image = get_product
-    # @like = @product.likes
+    @like = @product.likes
   end
  
   def new
@@ -58,8 +58,7 @@ class ProductsController < ApplicationController
       respond_to do |format|
         format.json
       end
-     end
-   
+    end
     @user = User.find(current_user.id)
   end
 
@@ -72,14 +71,13 @@ class ProductsController < ApplicationController
   def buy
     @product, @image = get_product
     @address = current_user.address
-    
-    # Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = ENV["PAYJP_API_KEY"]
     customer = Payjp::Customer.retrieve(current_user.id.to_s)
     @card = customer.cards.retrieve(customer.default_card)
   end
   
   def pay
-    # Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = ENV["PAYJP_API_KEY"]
     Payjp::Charge.create(
       amount:   params[:price],
       customer: current_user.id,

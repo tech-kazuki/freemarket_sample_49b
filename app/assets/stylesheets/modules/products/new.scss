@@ -96,7 +96,7 @@ label {
           cursor: pointer;
           flex: 1;
         }
-        #file_input {
+        #file_input,.file_input {
           display: none;
         }
       }
@@ -162,7 +162,7 @@ label {
           width: 50%;
           text-align: left;
         }
-        .list_right {
+        .list_right,.list_right_tax,.list_right_price{
           width: 50%;
           text-align: right;
           position: relative;
