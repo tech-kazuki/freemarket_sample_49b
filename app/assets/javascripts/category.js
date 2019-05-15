@@ -17,9 +17,11 @@ $(function(){
 
       return html;
     };
+
+    var user_id = $('.current_user_id').val();
     
     $.ajax({
-      url: '/users/1/products/new',
+      url: '/users/${user_id}/products/new',
       type: "GET",
       data:{category: category},
       dataType: 'json'
@@ -49,9 +51,10 @@ $(function(){
                    </select>`
       return html;
     };
+
     
     $.ajax({
-      url: '/users/1/products/new',
+      url: '/users/${user_id}/products/new',
       type: "GET",
       data:{category_a: category_a},
       dataType: 'json'

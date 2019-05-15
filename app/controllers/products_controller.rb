@@ -15,8 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @image = Image.find_by(product_id: params[:id])
-    @product = Product.find(params[:id])
+    @product, @image = get_product
     @category = @product.category.parent
     @like = @product.likes
   end
@@ -24,25 +23,8 @@ class ProductsController < ApplicationController
   def new
     parents = Category.roots
     @parents = parents.map{|parent| parent.name}
-
-    unless params[:category].nil?
-      category = params[:category]
-      parents = Category.find_by(name: category)
-      @children = parents.children
-      respond_to do |format|
-        format.json
-      end
-    end
-
-    unless params[:category_a].nil?
-      category = params[:category_a]
-      parents = Category.find_by(id: category)
-      @children = parents.children
-      respond_to do |format|
-        format.json
-      end
-    end
-
+    get_category_children unless params[:category].nil?
+    get_category_grandchildren unless params[:category_a].nil?
     @product = Product.new
     @user = User.find(current_user.id)
     @product.images.build
@@ -56,8 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    @product = Product.find(params[:id])
-    @image = Image.find_by(product_id: params[:id])
+    @product, @image = get_product
     @address = current_user.address
     
     Payjp.api_key = ENV["PAYJP_API_KEY"]
@@ -80,4 +61,29 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :price, :description, :category_id, :product_state, :burden, :size, :prefecture_id, :how_long, :how_ship, :brand, :availability, images_attributes: [:image])
   end
+
+  def get_product
+    product = Product.find(params[:id])
+    image = Image.find_by(product_id: params[:id])
+    return product, image
+  end
+
+  def get_category_children
+    category = params[:category]
+    parents = Category.find_by(name: category)
+    @children = parents.children
+    respond_to do |format|
+      format.json
+    end
+  end
+
+  def get_category_grandchildren
+    category = params[:category_a]
+    parents = Category.find_by(id: category)
+    @children = parents.children
+    respond_to do |format|
+      format.json
+    end
+  end
+
 end

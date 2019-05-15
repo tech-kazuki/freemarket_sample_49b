@@ -27,6 +27,6 @@
               .products-box__products__ele__body__name
                 = product.name
               .products-box__products__ele__body__price
-                = "¥#{product.price}"
+                = get_price(product)
                 %p (税込)
 = render 'products/global_footer'
