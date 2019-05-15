@@ -28,11 +28,11 @@
             %td
               =link_to "#" do
                 .name
-                  = @category.root.name
+                  = @product.category.root.name
               =link_to "#" do
                 .sub-name
                   %i.fa.fa-chevron-right
-                  = @category.name
+                  = @product.category.parent.name
               =link_to "#" do
                 .sub-sub-name
                   %i.fa.fa-chevron-right
@@ -64,24 +64,13 @@
             %th 発送日の目安
             %td
               =link_to "#{@product.how_long}", "" 
-
     .item-price-box
       %span.item-price-box__price ¥ #{@product.price}
       %span.item-price-box__tax (税込)
-      %span.item-price-box__shipping-fee 送料込み
-      
-    =link_to "購入画面に進む", buy_products_path, class: "btn-default btn-red"
-
+      %span.item-price-box__shipping-fee 送料込み   
+    =link_to "購入画面に進む", buy_user_product_path, class: "btn-default btn-red"
     .item-description
-      %p.item-description__inner
-        [値下げ交渉可]
-        %br
-        付属品はありません。
-        %br
-        こちらのみを箱に入れて配送致します。
-        %br
-        中古品ですので、気になるかたはご遠慮下さいませ。
-
+      = @product.description
     .item-button-container
       .item-button-container__left
         .item-button-container__left__like
@@ -96,8 +85,12 @@
       .item-button-container__right
         =link_to "#" do
           %i.fa.fa-lock
-          %span あんしん・あんぜんの取り組み
-
+          %span あんしん・あんぜんの取り組み  
+  .item-edit-content
+    - if (user_signed_in?) && (@product.user_id == current_user.id)
+      .item-edit-content__box
+        .item-edit-content__box__red-btn
+          = link_to "商品を編集", "/users/#{@product.user.id}/products/#{@product.id}/edit", data: {"turbolinks": false}
   .item-detail-comment
     .item-detail-comment__container
       .item-detail-comment__content
@@ -107,5 +100,4 @@
           %textarea.textarea-default
           %button.comment-submit.btn-default
             %span コメントする
-
 = render "shared/footer"

@@ -1,0 +1,120 @@
+%header.products_header
+  = image_tag 'https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?4194600336', height: '49', width: '185', class: 'products_header__img'
+.products_edit_container
+  .products_new_container
+    = form_for [@user, @product] do |f|
+      .products_new_container__content
+        %p.products_new_container__content__title 商品の情報を入力
+      .products_new_container__content
+        .products_new_container__content__form
+          = f.label '', '出品画像', class: 'products_new_container__content__form__title'
+          %span 必須
+          %p.products_new_container__content__form__comment 最大10枚までアップロードできます
+          %br
+          .drop_area
+            = image_tag "#{@image.image}", class: 'products_edit_container__image'
+            #drop_box
+              ドラッグアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード
+      .products_new_container__content
+        .products_new_container__content__form
+          .products_new_container__content__form__box
+            = f.label '', '商品名' , include_blank: '---'
+            %span 必須
+            %br
+            = f.text_field :name ,class: 'text_field', placeholder: '商品名（必須40文字まで）'
+            = label '', '商品の説明'
+            %span 必須
+            %br
+            = f.text_area :description, class: 'text_area', placeholder: '商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです'
+      .products_new_container__content
+        .products_new_container__content__select
+          %p.products_new_container__content__select__memo 商品の詳細
+          .products_new_container__content__select__box
+            = label '', 'カテゴリー'
+            %span 必須
+            .products_new_container__content__select__box__category-edit
+              %br
+              = select_tag "range_1", options_for_select(@parents ,selected: @product.category.root.name)
+              = select_tag "range_2", options_for_select(""), include_blank: "#{@product.category.parent.name}"
+              = select_tag "range_3", options_for_select(""), include_blank: "#{@product.category.name}"
+              = f.hidden_field :category_id, class: "category"
+
+          .products_new_container__content__select__box
+            .products_new_container__content__select__box__size-edit
+              = label '', 'サイズ'
+              %span 必須
+              %br
+              = f.select :size, [["XXS以下"], ["XS(SS)"], ["S"], ["M"], ["L"], ["FREE SIZE"]], include_blank: '---'
+              %br
+          .products_new_container__content__select__box
+            .products_new_container__content__select__box__brand-edit
+              = label '', 'ブランド'
+              %span 任意
+              %br
+              = f.text_field :brand, class: 'text_field'
+              %br
+          .products_new_container__content__select__box
+            = label '', '商品の状態'
+            %span 必須
+            %br
+            = f.select :product_state, [["新品、未使用"], ["未使用に近い"], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], include_blank: '---'
+            %br
+      .products_new_container__content
+        .products_new_container__content__select
+          %p.products_new_container__content__select__memo 配送について
+          .products_new_container__content__select__box
+            = f.label '', '配送料の負担'
+            %span 必須
+            %br
+            = f.select :burden, [["送料込み(出品者負担)"], ["着払い(購入者負担)"]], include_blank: '---'
+            %br
+          .products_new_container__content__select__box
+            = label '', '配送元の地域'
+            %span 必須
+            %br
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '---'
+            %br
+          .products_new_container__content__select__box
+            = label '', '発送までの日数'
+            %span 必須
+            %br
+            = f.select :how_long, [["1〜2日で発送"], ["2〜3日で発送"], ["4〜7日で発送"]], include_blank: '---'
+            %br
+      .products_new_container__content
+        .products_new_container__content__prices
+          %p.products_new_container__content__prices__memo 販売価格(300~9,999,999)
+          .products_new_container__content__prices__box.products_new_container__content__prices__box--none
+            .list_left
+              価格
+              %span 必須
+            .list_right
+              %p.yen_icon ¥
+              = f.text_field :price, class: 'text_field', placeholder: '例）300'
+          .products_new_container__content__prices__box
+            .list_left
+              販売手数料(10%)
+            .list_right
+              ¥100
+          .products_new_container__content__prices__box
+            .list_left
+              販売利益
+            .list_right
+              ¥900
+      .products_new_container__content
+        .products_new_container__content__last
+          %p.products_new_container__content__last__text
+            禁止されている出品、行為を必ずご確認ください。
+            %br
+            またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+            %br
+            また、出品をもちまして加盟店規約に同意したことになります。
+          = f.submit '変更する', class: 'btm_create'
+          %br
+          = button_tag '戻る', class: 'btm_back'
+  .current_user
+    %input{name: "current_user_id", type: "hidden", value: current_user.id, class: 'current_user_id'}
+    %input{name: "product_id", type: "hidden", value: @product.id, class: 'product_id'}
+
+= render 'shared/footer'
