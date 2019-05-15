@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
     @category2 = Category.find_by(name: "メンズ")
     categoryMens = @category2.indirects
     @mens = Product.where(category_id: categoryMens).order('created_at DESC').limit(4)
-
   end
 
   def show
@@ -52,7 +51,7 @@ class ProductsController < ApplicationController
     product = Product.new(product_params)
     product.user = current_user
     product.save
-    redirect_to root_path
+    # redirect_to root_path
   end
 
   def buy
@@ -60,13 +59,13 @@ class ProductsController < ApplicationController
     @image = Image.find_by(product_id: params[:id])
     @address = current_user.address
     
-    Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = 'sk_test_6230d595e2d1fba0881aeaf6'
     customer = Payjp::Customer.retrieve(current_user.id.to_s)
     @card = customer.cards.retrieve(customer.default_card)
   end
   
   def pay
-    Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = 'sk_test_6230d595e2d1fba0881aeaf6'
     Payjp::Charge.create(
       amount:   params[:price],
       customer: current_user.id,
