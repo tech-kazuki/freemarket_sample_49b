@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
   require 'json'
+  before_action :set_product, only: [:edit, :update]
   
   def index
     @category1 = Category.find_by(name: "レディース")
@@ -11,20 +12,18 @@ class ProductsController < ApplicationController
     @category2 = Category.find_by(name: "メンズ")
     categoryMens = @category2.indirects
     @mens = Product.where(category_id: categoryMens).order('created_at DESC').limit(4)
-
   end
 
   def show
     @product, @image = get_product
-    @category = @product.category.parent
     @like = @product.likes
   end
  
   def new
     parents = Category.roots
     @parents = parents.map{|parent| parent.name}
-    get_category_children unless params[:category].nil?
-    get_category_grandchildren unless params[:category_a].nil?
+    get_category_children if params[:category]
+    get_category_grandchildren if params[:category_a]
     @product = Product.new
     @user = User.find(current_user.id)
     @product.images.build
@@ -37,10 +36,39 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    parents = Category.roots
+    @parents = parents.map{|parent| parent.name}
+    @image = Image.find(params[:id])
+    if params[:category]
+      category = params[:category]
+      parents = Category.find_by(name: category)
+      @children = parents.children
+      respond_to do |format|
+        format.json
+      end
+    end
+
+    if params[:category_a]
+      category = params[:category_a]
+      parents = Category.find_by(id: category)
+      @children = parents.children
+      respond_to do |format|
+        format.json
+      end
+     end
+   
+    @user = current_user
+  end
+
+  def update
+    @product.update_attributes(product_params)
+    redirect_to user_product_url(id: @product.user.id, id: @product.id)
+  end
+
   def buy
     @product, @image = get_product
     @address = current_user.address
-    
     Payjp.api_key = ENV["PAYJP_API_KEY"]
     customer = Payjp::Customer.retrieve(current_user.id.to_s)
     @card = customer.cards.retrieve(customer.default_card)
@@ -86,4 +114,7 @@ class ProductsController < ApplicationController
     end
   end
 
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end
