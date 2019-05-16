@@ -114,6 +114,45 @@ $(function(){
       })
   });
 
+  $(document).on('change', "#range_1-second", function(){
+    $("#range_1-third").remove();
+    var category_a = $('#range_1-second option:selected').val();
+
+    function buildHTML(children){
+      var option = ``
+      children.forEach(function(child){
+        option += `<option value="${child.id}">${child.name}</option>`
+      });
+
+      var html = `<select name="range_1-third" id="range_1-third">
+                    <option value label=" "></option>
+                    ${option}
+                   </select>`
+      return html;
+    };
+    
+    $.ajax({
+      url: `/users/${current_user}/products/${product_id}/edit`,
+      type: "GET",
+      data:{category_a: category_a},
+      dataType: 'json'
+      })
+      .done(function(data){
+        var html = buildHTML(data);
+        $(".products_new_container__content__select__box__category-edit").append(html);
+      })
+      .fail(function(){
+        alert('error');
+      })
+  });
+
+  $(document).one('change', "#range_1-third", function(){
+    var category = $("#range_1-third").val();
+    $(".category").val(category);
+  })
+});
+
+
   $(".products_new_container__content__select__box__burden").on("change", function(){
     var val = $("#product_burden").val();
     if(val == "送料込み(出品者負担)"){
@@ -143,5 +182,5 @@ $(function(){
       $(".list_right_price").append("-");
       }
   });
-});
+
 

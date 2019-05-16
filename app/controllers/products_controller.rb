@@ -63,7 +63,7 @@ class ProductsController < ApplicationController
 
   def update
     @product.update_attributes(product_params)
-    redirect_to("/users/#{@product.user.id}/products/#{@product.id}")
+    redirect_to user_product_url(id: @product.user.id, id: @product.id)
   end
 
   def buy
