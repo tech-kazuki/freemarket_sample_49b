@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
 
   def show
     @product, @image = get_product
-    # @like = @product.likes
+    @like = @product.likes
   end
  
   def new
@@ -36,9 +36,9 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
-  def edit
+  before_action :move_to_edit
 
-    @product = Product.find(params[:id])
+  def edit
     parents = Category.roots
     @parents = parents.map{|parent| parent.name}
     @image = Image.find(params[:id])
@@ -60,26 +60,34 @@ class ProductsController < ApplicationController
       end
      end
    
-    @user = User.find(current_user.id)
+    @user = current_user
   end
 
-  def update
+  def move_to_edit
     @product = Product.find(params[:id])
+  end
+
+  before_action :move_to_update
+
+  def update
     @product.update_attributes(product_params)
     redirect_to("/users/#{@product.user.id}/products/#{@product.id}")
+  end
+
+  def move_to_update
+    @product = Product.find(params[:id])
   end
 
   def buy
     @product, @image = get_product
     @address = current_user.address
-    
-    # Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = ENV["PAYJP_API_KEY"]
     customer = Payjp::Customer.retrieve(current_user.id.to_s)
     @card = customer.cards.retrieve(customer.default_card)
   end
   
   def pay
-    # Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = ENV["PAYJP_API_KEY"]
     Payjp::Charge.create(
       amount:   params[:price],
       customer: current_user.id,

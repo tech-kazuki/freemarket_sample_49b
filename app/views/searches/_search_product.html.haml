@@ -1,0 +1,9 @@
+= link_to user_product_path(search_product.user, search_product) do
+  .product_card
+    = image_tag ("#{search_product.images.first.image}"), class: 'product_card__img'
+    .product_card__body
+      .product_card__body__name
+        = search_product.name
+      .product_card__body__price
+        = "#{get_price(search_product)}"
+        %p.product_card__body__price__taxin (税込)

@@ -1,0 +1,92 @@
+@import 'config/color';
+@import 'config/mixin';
+
+.search_container {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  .search_bar {
+    width: 280px;
+    &__field {
+      background-color: #fff;
+      padding: 10px;
+      &__title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .search_text_field {
+        @include formSetting;
+        width: 100%;
+        border-radius: 5px;
+        height: 40px;
+        padding: 5px 10px;
+      }
+      .search_select {
+        width: 100%;
+      }
+      .search_chack {
+        
+      }
+      .search_btn {
+        @include btnSetting;
+      }
+      &__between {
+        display: flex;
+        justify-content: space-between;
+        line-height: 40px;
+        .price_field {
+          @include formSetting;
+          width: 100px;
+          height: 40px;
+          border-radius: 5px;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+  .search_products {
+    width: 700px;
+    padding-bottom: 40px;
+    &__box {
+      &__title {
+        margin-bottom: 8px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .product_box {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -20px;
+        .product_card {
+          width: 160px;
+          margin: 0 0 20px 20px;
+          background-color: white;
+          &__img {
+            width: 160px;
+            height: 160px;
+          }
+          &__body {
+            padding: 16px;
+            color: #333;
+            &__name {
+              height: 50px;
+              overflow: hidden;
+            }
+            &__price {
+              margin: 8px 0 0;
+              font-size: 13px;
+              font-weight: bold;
+              &__taxin {
+                font-size: 10px;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

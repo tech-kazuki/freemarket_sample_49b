@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
   var dropBox = document.getElementById('drop_box');
-  var input = document.getElementById('file_input');
-  var textBox = document.getElementById('text_field');
   
   if (dropBox) {
     
@@ -21,7 +19,7 @@ $(document).on('turbolinks:load', function() {
                                 <div class="drop_content">
                                   <img src="${blobURL}" class="drop_content__img" style="">
                                 </div>
-                              <a href="" class="delete_link">削除</a>
+                              <div class="delete_link">削除</div>
                               </div>`);
     }
     
@@ -30,26 +28,31 @@ $(document).on('turbolinks:load', function() {
                               <div class="drop_content">
                                 <img src="${imageURL}" class="drop_content__img" style="">
                               </div>
-                            <a href="" class="delete_link">削除</a>
+                              <div class="delete_link">削除</div>
                             </div>`);
     }
 
     dropBox.addEventListener('dragover', function(e) {
       e.preventDefault();
+      
+      $(this).addClass("dragover");
 
       e.dataTransfer.dropEffect = 'copy';
     }, false);
     
-    dropBox.addEventListener('dragleave', function () {
+    dropBox.addEventListener('dragleave', function (e) {
+      e.preventDefault();
+      $(this).removeClass("dragover");
     }, false);
     
     dropBox.addEventListener('drop', function (e) {
       e.preventDefault();
+      $(this).removeClass("dragover");
       
       organizeFiles(e.dataTransfer.files);
     }, false);
     
-    $('#file_input').on('change', function(e){
+    $(document).on('change', '#file_input', function(e){
       e.preventDefault();
       var imgs = e.target.files;
       for (var j = 0; j < imgs.length; j++) {
@@ -57,6 +60,12 @@ $(document).on('turbolinks:load', function() {
         getImage(imgURL);
       }
     });
+    
+    $(document).on('click', '.delete_link', function(){
+      $('#file_input').remove();
+      $('.drop_area__image_box').remove();
+      $('.drop_area').append(`<input id="file_input" class="file_input" type="file" name="product[images_attributes][0][image]">`);
+    })
     
     $('.products_new_container__content__title').on('click', function(){
     });
