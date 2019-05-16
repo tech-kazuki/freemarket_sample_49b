@@ -22,8 +22,8 @@ class ProductsController < ApplicationController
   def new
     parents = Category.roots
     @parents = parents.map{|parent| parent.name}
-    get_category_children unless params[:category].nil?
-    get_category_grandchildren unless params[:category_a].nil?
+    get_category_children if params[:category]
+    get_category_grandchildren if params[:category_a]
     @product = Product.new
     @user = User.find(current_user.id)
     @product.images.build
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
     parents = Category.roots
     @parents = parents.map{|parent| parent.name}
     @image = Image.find(params[:id])
-    unless params[:category].nil?
+    if params[:category]
       category = params[:category]
       parents = Category.find_by(name: category)
       @children = parents.children
@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
       end
     end
 
-    unless params[:category_a].nil?
+    if params[:category_a]
       category = params[:category_a]
       parents = Category.find_by(id: category)
       @children = parents.children
