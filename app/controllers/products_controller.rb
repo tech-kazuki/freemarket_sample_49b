@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
   require 'json'
+  before_action :set_product, only: [:edit, :update]
   
   def index
     @category1 = Category.find_by(name: "レディース")
@@ -11,7 +12,6 @@ class ProductsController < ApplicationController
     @category2 = Category.find_by(name: "メンズ")
     categoryMens = @category2.indirects
     @mens = Product.where(category_id: categoryMens).order('created_at DESC').limit(4)
-
   end
 
   def show
@@ -35,8 +35,6 @@ class ProductsController < ApplicationController
     product.save
     redirect_to root_path
   end
-
-  before_action :move_to_edit
 
   def edit
     parents = Category.roots
@@ -63,19 +61,9 @@ class ProductsController < ApplicationController
     @user = current_user
   end
 
-  def move_to_edit
-    @product = Product.find(params[:id])
-  end
-
-  before_action :move_to_update
-
   def update
     @product.update_attributes(product_params)
     redirect_to("/users/#{@product.user.id}/products/#{@product.id}")
-  end
-
-  def move_to_update
-    @product = Product.find(params[:id])
   end
 
   def buy
@@ -124,5 +112,9 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.json
     end
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
