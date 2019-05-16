@@ -30,8 +30,5 @@
 
 config/secrets.yml
 config/deploy.rb
-public/uproads/tmp
-public/uproads/image
-
-
 public/uploads/image/*
+public/uploads/tmp/*
