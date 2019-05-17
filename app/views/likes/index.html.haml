@@ -1,0 +1,10 @@
+.users_like_container
+  = render 'shared/header'
+  .users_like-body
+    = render '/users/user-side'
+    .users_like_main_content
+      .users_like_header
+        .users_like_header__text 
+          いいね!一覧
+        = render partial: "product", collection: @products
+  = render 'shared/footer'

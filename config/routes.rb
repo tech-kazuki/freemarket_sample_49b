@@ -17,8 +17,8 @@ Rails.application.routes.draw do
       get 'credit'
       get 'logout'
     end
-
-    resources :products, only: [:new, :create, :show] do
+    resources :likes, only: :index
+    resources :products, only: [:new, :create, :show, :edit, :update] do
       member do
         get 'buy'
         post 'pay'

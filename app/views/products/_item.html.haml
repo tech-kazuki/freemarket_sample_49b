@@ -5,5 +5,5 @@
       %h3.container__items__content__box__body__title
         = "#{item.name}"
       %div.price
-        = "¥#{item.price}"
+        = get_price(item)
       %p (税込)
