@@ -3,7 +3,6 @@ FactoryBot.define do
     name          {Faker::Name.name}
     price         {Faker::Number.number(5)}
     description   {Faker::Lorem.sentence}
-    category_id   {22}
     product_state {Faker::Lorem.word}
     burden        {Faker::Lorem.word}
     size          {Faker::Lorem.word}

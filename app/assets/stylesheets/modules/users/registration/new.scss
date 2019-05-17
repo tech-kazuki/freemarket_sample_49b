@@ -38,6 +38,9 @@
           font-size: 12px;
           vertical-align: top;
         }
+        .free {
+          background: #ccc;
+        }
         &__form {
           width: 100%;
           margin: 8px 0 0;
@@ -98,7 +101,7 @@ select {
     }
   }
   &__logo {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     margin-top: 30px;    
   }
