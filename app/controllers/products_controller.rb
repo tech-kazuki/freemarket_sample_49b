@@ -60,16 +60,6 @@ class ProductsController < ApplicationController
    
     @user = current_user
   end
-  
-  def create
-    product = Product.new(product_params)
-    product.user = current_user
-    if product.save
-      redirect_to root_path
-    else
-      flash[:notice] = '入力項目に誤りがあります。'
-      redirect_to new_user_product_path(current_user)
-    end
 
   def update
     @product.update_attributes(product_params)
@@ -85,7 +75,7 @@ class ProductsController < ApplicationController
   end
   
   def pay
-    Payjp.api_key = 'sk_test_6230d595e2d1fba0881aeaf6'
+    Payjp.api_key = ENV["PAYJP_API_KEY"]
     Payjp::Charge.create(
       amount:   params[:price],
       customer: current_user.id,
