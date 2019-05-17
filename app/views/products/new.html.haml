@@ -130,4 +130,6 @@
         = f.submit '出品する', class: 'btm_create'
         %br
         = button_tag '戻る', class: 'btm_back'
+  .current_user
+    %input{name: "current_user_id", type: "hidden", value: current_user.id, class: 'current_user_id' }
 = render 'shared/footer'

@@ -1,0 +1,10 @@
+= link_to user_product_path(current_user.id, product.id) do
+  .users_like_content
+    .users_like_content__figure
+      = image_tag "#{product.images.first.image}", width: '50', height: '50'
+    .users_like_content__title
+      = product.name
+      .users_like_content__price
+      = "¥#{product.price}"
+    %i.fas.fa-chevron-right.users_like_content__arrow
+
