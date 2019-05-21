@@ -28,28 +28,28 @@
       .search_bar__field
         .search_bar__field__name 価格
         .search_bar__field__between
-          = f.text_field :price_gteq, placeholder: '¥ max', class: 'price_field'
+          = f.text_field :price_gteq, placeholder: '¥ min', class: 'price_field'
           %p ~
-          = f.text_field :price_lteq, placeholder: '¥ min', class: 'price_field'
+          = f.text_field :price_lteq, placeholder: '¥ max', class: 'price_field'
       .search_bar__field
         .search_bar__field__name 商品の状態
         .search_check
-          = f.check_box :product_state_eq_any, { multiple: true }, '新品、未使用'
+          = f.check_box :product_state_eq_any, { multiple: true, include_hidden: false }, '新品、未使用'
           新品、未使用
         .search_check
-          = f.check_box :product_state_eq_any, { multiple: true }, '未使用に近い'
+          = f.check_box :product_state_eq_any, { multiple: true, include_hidden: false }, '未使用に近い'
           未使用に近い
         .search_check
-          = f.check_box :product_state_eq_any, { multiple: true }, '目立った傷や汚れなし'
+          = f.check_box :product_state_eq_any, { multiple: true, include_hidden: false }, '目立った傷や汚れなし'
           目立った傷や汚れなし
         .search_check
-          = f.check_box :product_state_eq_any, { multiple: true }, 'やや傷や汚れあり'
+          = f.check_box :product_state_eq_any, { multiple: true, include_hidden: false }, 'やや傷や汚れあり'
           やや傷や汚れあり
         .search_check
-          = f.check_box :product_state_eq_any, { multiple: true }, '傷や汚れあり'
+          = f.check_box :product_state_eq_any, { multiple: true, include_hidden: false }, '傷や汚れあり'
           傷や汚れあり
         .search_check
-          = f.check_box :product_state_eq_any, { multiple: true }, '全体的に状態が悪い'
+          = f.check_box :product_state_eq_any, { multiple: true, include_hidden: false }, '全体的に状態が悪い'
           全体的に状態が悪い
       .search_bar__field
         = f.submit class: 'search_btn', value: '検索する'

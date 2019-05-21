@@ -9,10 +9,16 @@ require 'rails_helper'
 #       before do
 #         login user
 #       end
-#       it '商品の出品ができる' do
-#         expect( post :create, params: params ).to change(Product, :count).by(1)
-#       end
-#       describe '商品の購入ができる' do
+      
+#       context '出品できる' do
+#         subject {
+#           post :create,
+#           params: params
+#         }
+        
+#         it '商品のカウントが増える' do
+#           expect { subject }.to change(Product, :count).by(1)
+#         end
 #       end
 #     end
     

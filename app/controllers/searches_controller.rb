@@ -23,7 +23,7 @@ class SearchesController < ApplicationController
       when 'price_lteq'
         keyword = keyword + "¥#{value}" unless value.blank?
       when 'product_state_eq_any'
-        new_word = value.reject!{ |item| item =~ /\A[0]\z/ }.join(',')
+        new_word = value.join(',')
         keyword = keyword + ',' + "#{new_word}" unless value.blank?
       else
         keyword = keyword + ',' + "#{value}" unless value.blank?
@@ -35,8 +35,6 @@ class SearchesController < ApplicationController
   def search_params(params)
     if params[:keyword]
       params.permit(:keyword)
-    elsif params[:q][:product_state_eq_any] == ["0", "0", "0", "0", "0", "0"]
-      params.require(:q).permit(:name_or_description_or_brand_cont, :category_id_eq, :brand_cont, :size_eq, :price_gteq, :price_lteq)
     else
       params.require(:q).permit(:name_or_description_or_brand_cont, :category_id_eq, :brand_cont, :size_eq, :price_gteq, :price_lteq, product_state_eq_any: [])
     end

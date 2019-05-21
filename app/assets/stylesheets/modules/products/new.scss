@@ -3,12 +3,24 @@
 
 .products_header {
   padding: 40px 0;
+  text-align: center;
   &__img {
     width: 185px;
     height: 49px;
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
   }
+}
+
+.flash {
+  text-align: center;
+  color: $mercariRed;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.error_message {
+  color: $mercariRed;
+  display: none;
 }
 
 label {
