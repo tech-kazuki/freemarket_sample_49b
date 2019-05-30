@@ -4,7 +4,7 @@
     %h3.container__items__h3
       = link_to "#{@category1.name} 新着アイテム", '#', class: "container__items__h3__link"
     .container__items__content
-      = render partial: "item", collection: @ladys if @lady.present?
+      = render partial: "item", collection: @ladys if @ladys.present?
 %section.container
   %section.container__items
     %h3.container__items__h3
