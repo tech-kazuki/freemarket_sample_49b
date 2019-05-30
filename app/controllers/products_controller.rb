@@ -69,13 +69,13 @@ class ProductsController < ApplicationController
   def buy
     @product, @image = get_product
     @address = current_user.address
-    Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     customer = Payjp::Customer.retrieve(current_user.id.to_s)
     @card = customer.cards.retrieve(customer.default_card)
   end
   
   def pay
-    Payjp.api_key = ENV["PAYJP_API_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     Payjp::Charge.create(
       amount:   params[:price],
       customer: current_user.id,
