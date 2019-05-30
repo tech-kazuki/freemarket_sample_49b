@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "freemarket_sample_49b"
-set :repo_url, "git@example.com:tech-kazuki/freemarket_sample_49b.git"
+set :repo_url, "git@github.com:tech-kazuki/freemarket_sample_49b.git"
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
