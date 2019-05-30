@@ -28,10 +28,5 @@
 
 /.env
 
-config/secrets.yml
-config/deploy.rb
 public/uploads/tmp/*
-public/uproads/image
-
-
 public/uploads/image/*
